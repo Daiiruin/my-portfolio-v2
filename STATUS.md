@@ -21,7 +21,7 @@ pnpm build        # build de prod
 | Animations | motion v12 (ex-framer-motion) |
 | i18n | react-i18next + i18next-browser-languagedetector |
 | Contact | EmailJS (`@emailjs/browser`) |
-| Icônes | lucide-react (pas d'icônes de marque — GitHub/LinkedIn en SVG inline en PR #8) |
+| Icônes | react-icons v5 — `lu` (Lucide UI), `fa6` (GitHub/LinkedIn/Twitter), `si` (logos tech) |
 | Data | JSON statiques dans `src/data/*.{fr,en}.json` |
 | Package manager | **pnpm** (ne jamais utiliser npm/yarn) |
 | Tests | Aucun (décision volontaire) |
@@ -55,7 +55,7 @@ pnpm build        # build de prod
 
 - `react-router-dom` installé en v7 — API similaire à v6, `<BrowserRouter>` fonctionne pareil.
 - `motion` v12 s'importe via `import { motion } from 'motion/react'`.
-- `lucide-react` v1.16 n'a pas d'icônes de marque (GitHub, LinkedIn...) — sera géré avec SVG inline en PR #8.
+- `react-icons` v5 remplace `lucide-react` — familles utilisées : `lu` (Lucide, icônes UI), `fa6` (Font Awesome 6, icônes de marque), `si` (Simple Icons, logos tech). Import : `import { FaGithub } from 'react-icons/fa6'`.
 - DefaultTheme styled-components override : `src/design-system/theme/types.ts` — pattern `type AppTheme = typeof darkTheme` puis `interface DefaultTheme extends AppTheme {}`.
 - Page démo atoms accessible sur `/dev/components` en mode dev uniquement (conditionnée par `import.meta.env.DEV`).
 - Toutes les données dans `src/data/*.{fr,en}.json` — éditer pour mettre le vrai contenu.

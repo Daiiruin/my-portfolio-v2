@@ -1,4 +1,6 @@
-import { ArrowRight, GitBranch, Mail, Star, PartyPopper } from 'lucide-react'
+import { LuArrowRight, LuGitBranch, LuMail, LuStar, LuPartyPopper } from 'react-icons/lu'
+import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import { SiReact, SiTypescript, SiNodedotjs } from 'react-icons/si'
 import { Button } from '../../design-system/atoms/Button'
 import { Text } from '../../design-system/atoms/Text'
 import { Heading } from '../../design-system/atoms/Heading'
@@ -12,18 +14,6 @@ import styled from 'styled-components'
 const Page = styled.div`
   min-height: 100vh;
   background: ${({ theme }) => theme.colors.background};
-`
-
-const EasterEggBanner = styled.div`
-  background: ${({ theme }) => theme.colors.accentSubtle};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
-  padding: ${({ theme }) => `${theme.space['3']} ${theme.space['4']}`};
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.space['2']};
-  font-family: ${({ theme }) => theme.font.mono};
-  font-size: ${({ theme }) => theme.font.size.sm};
-  color: ${({ theme }) => theme.colors.accent};
 `
 
 const Group = styled.div`
@@ -47,13 +37,25 @@ const Label = styled.p`
   margin-bottom: ${({ theme }) => theme.space['2']};
 `
 
+const EasterEggBanner = styled.div`
+  background: ${({ theme }) => theme.colors.accentSubtle};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+  padding: ${({ theme }) => `${theme.space['3']} ${theme.space['4']}`};
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.space['2']};
+  font-family: ${({ theme }) => theme.font.mono};
+  font-size: ${({ theme }) => theme.font.size.sm};
+  color: ${({ theme }) => theme.colors.accent};
+`
+
 export function DevPage() {
   return (
     <Page>
       <EasterEggBanner>
-        <Icon icon={PartyPopper} size={16} />
-        Haha, vous n&apos;étiez pas censé être là... mais bravo, vous avez trouvé ! Bienvenue dans le
-        design system. Faites comme chez vous.
+        <Icon icon={LuPartyPopper} size={16} />
+        Haha, vous n&apos;étiez pas censé être là... mais bravo, vous avez trouvé ! Bienvenue dans
+        le design system. Faites comme chez vous.
       </EasterEggBanner>
       <Container>
         <Section>
@@ -84,19 +86,25 @@ export function DevPage() {
           <Label>with icon</Label>
           <Group>
             <Button variant="primary">
-              <Icon icon={ArrowRight} size={16} />
+              <Icon icon={LuArrowRight} size={16} />
               See projects
             </Button>
             <Button variant="secondary">
-              <Icon icon={GitBranch} size={16} />
+              <Icon icon={FaGithub} size={16} />
               GitHub
+            </Button>
+            <Button variant="ghost">
+              <Icon icon={FaLinkedin} size={16} />
+              LinkedIn
             </Button>
           </Group>
 
           <Label>disabled</Label>
           <Group>
             <Button disabled>Disabled primary</Button>
-            <Button variant="secondary" disabled>Disabled secondary</Button>
+            <Button variant="secondary" disabled>
+              Disabled secondary
+            </Button>
           </Group>
 
           <Divider />
@@ -134,7 +142,7 @@ export function DevPage() {
             <Link href="#" variant="subtle">Subtle link</Link>
             <Link href="#" variant="underline">Underlined link</Link>
             <Link href="https://github.com" variant="default" external>
-              External <Icon icon={ArrowRight} size={14} />
+              External <Icon icon={LuArrowRight} size={14} />
             </Link>
           </Group>
 
@@ -142,13 +150,35 @@ export function DevPage() {
 
           {/* ICONS */}
           <Heading level={4}>Icon</Heading>
+
+          <Label>UI (Lucide via lu)</Label>
           <Group>
-            <Icon icon={GitBranch} />
-            <Icon icon={Mail} />
-            <Icon icon={Star} />
-            <Icon icon={ArrowRight} />
-            <Icon icon={GitBranch} size={32} />
-            <Icon icon={Mail} size={32} />
+            <Icon icon={LuGitBranch} />
+            <Icon icon={LuMail} />
+            <Icon icon={LuStar} />
+            <Icon icon={LuArrowRight} />
+          </Group>
+
+          <Label>Brands (Font Awesome 6 via fa6)</Label>
+          <Group>
+            <Icon icon={FaGithub} />
+            <Icon icon={FaLinkedin} />
+            <Icon icon={FaXTwitter} />
+          </Group>
+
+          <Label>Tech logos (Simple Icons via si)</Label>
+          <Group>
+            <Icon icon={SiReact} />
+            <Icon icon={SiTypescript} />
+            <Icon icon={SiNodedotjs} />
+          </Group>
+
+          <Label>sizes</Label>
+          <Group>
+            <Icon icon={FaGithub} size={16} />
+            <Icon icon={FaGithub} size={20} />
+            <Icon icon={FaGithub} size={28} />
+            <Icon icon={FaGithub} size={40} />
           </Group>
 
           <Divider />
@@ -167,7 +197,7 @@ export function DevPage() {
           {/* CONTAINER */}
           <Heading level={4}>Container</Heading>
           <Text variant="caption">
-            This page itself uses Container (max-width 1200px, auto margins, responsive padding).
+            Cette page utilise Container (max-width 1200px, marges auto, padding responsive).
           </Text>
         </Section>
       </Container>

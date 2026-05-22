@@ -1,21 +1,12 @@
-import type { LucideIcon } from 'lucide-react'
+import type { IconType } from 'react-icons'
 
 type Props = {
-  icon: LucideIcon
+  icon: IconType
   size?: number
   color?: string
-  strokeWidth?: number
   className?: string
 }
 
-export function Icon({ icon: LucideIconComponent, size = 20, color, strokeWidth = 1.75, className }: Props) {
-  return (
-    <LucideIconComponent
-      size={size}
-      color={color}
-      strokeWidth={strokeWidth}
-      className={className}
-      aria-hidden="true"
-    />
-  )
+export function Icon({ icon: IconComponent, size = 20, color, className }: Props) {
+  return <IconComponent size={size} color={color} className={className} aria-hidden="true" />
 }
