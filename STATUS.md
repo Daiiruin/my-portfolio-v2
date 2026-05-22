@@ -32,7 +32,7 @@ pnpm build        # build de prod
 - [x] **PR #1** `chore/init` — Scaffold + deps + structure + STATUS.md
 - [x] **PR #2** `feat/design-system` — Tokens dark theme + GlobalStyle + atoms (Button, Text, Heading, Link, Icon, Container, Section, Badge) + page démo `/dev/components`
 - [x] **PR #3** `feat/i18n-layout` — Header sticky + Footer + molecules NavItem + LangSwitch + useScrollSpy + useReducedMotion + PageLayout + HomePage shell
-- [ ] **PR #4** `feat/section-hero` — HeroBlock + animations mount (motion)
+- [x] **PR #4** `feat/section-hero` — HeroBlock + variants motion + useLocaleData + Button polymorphe
 - [ ] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip
 - [ ] **PR #6** `feat/section-career` — CareerTimeline animée
 - [ ] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + /projects/:slug
@@ -40,21 +40,24 @@ pnpm build        # build de prod
 - [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
 - [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
 
-## PR suivante : #4 `feat/section-hero`
+## PR suivante : #5 `feat/section-about-stack`
 
 **À faire :**
-- `src/design-system/organisms/HeroBlock/` — nom/prénom + titre + bio + CTA
-- `src/hooks/useLocaleData.ts` — charge le bon JSON selon locale active
-- `src/data/profile.{fr,en}.json` — mettre les vraies infos (ou garder placeholder)
-- Animations motion/react : `fadeInUp` + `staggerContainer` au mount
-- Mettre à jour `HomePage` pour afficher le vrai HeroBlock à la place du placeholder
-- `src/lib/motion.ts` — variants réutilisables
+- `src/design-system/organisms/AboutBlock/` — bio + localisation
+- `src/design-system/organisms/StackGrid/` — grille de StackChip
+- `src/design-system/molecules/StackChip/` — logo (react-icons/si) + nom + catégorie
+- `src/data/stack.{fr,en}.json` — mettre les vraies technos
+- Animations `whileInView` + `staggerContainer` (fadeInUpScroll)
+- Mettre à jour `HomePage` pour remplacer les placeholders About et Stack
 
 ## Notes techniques
 
 - `react-router-dom` installé en v7 — API similaire à v6, `<BrowserRouter>` fonctionne pareil.
 - `motion` v12 s'importe via `import { motion } from 'motion/react'`.
-- `react-icons` v5 remplace `lucide-react` — familles utilisées : `lu` (Lucide, icônes UI), `fa6` (Font Awesome 6, icônes de marque), `si` (Simple Icons, logos tech). Import : `import { FaGithub } from 'react-icons/fa6'`.
+- `react-icons` v5 remplace `lucide-react` — familles : `lu` (UI), `fa6` (marques), `si` (logos tech). Import : `import { FaGithub } from 'react-icons/fa6'`.
+- `motion` v12 : `import { motion } from 'motion/react'`, `import type { Variants } from 'motion/react'`.
+- `Button` est polymorphe : `<Button as="a" href="#projects">` fonctionne grâce au generic `ElementType`.
+- `useLocaleData<T>({ fr, en })` : hook simple qui retourne le bon JSON selon la locale i18next active.
 - DefaultTheme styled-components override : `src/design-system/theme/types.ts` — pattern `type AppTheme = typeof darkTheme` puis `interface DefaultTheme extends AppTheme {}`.
 - Page démo atoms accessible sur `/dev/components` en mode dev uniquement (conditionnée par `import.meta.env.DEV`).
 - Toutes les données dans `src/data/*.{fr,en}.json` — éditer pour mettre le vrai contenu.
