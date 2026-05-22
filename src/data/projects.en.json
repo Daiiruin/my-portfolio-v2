@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "project-alpha",
+    "title": "Project Alpha",
+    "shortDescription": "A modern task management web application.",
+    "description": "Full-featured SaaS with authentication, real-time kanban boards and multi-device sync. Designed for agile teams.",
+    "stack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+    "image": "/projects/project-alpha.jpg",
+    "github": "https://github.com",
+    "demo": "https://example.com"
+  },
+  {
+    "slug": "project-beta",
+    "title": "Project Beta",
+    "shortDescription": "High-performance REST API for e-commerce.",
+    "description": "Scalable RESTful API with Redis caching, Stripe payments, inventory management and real-time WebSocket notifications.",
+    "stack": ["Node.js", "TypeScript", "PostgreSQL", "Redis"],
+    "image": "/projects/project-beta.jpg",
+    "github": "https://github.com",
+    "demo": null
+  },
+  {
+    "slug": "project-gamma",
+    "title": "Project Gamma",
+    "shortDescription": "Analytics dashboard with interactive visualisations.",
+    "description": "Data visualisation dashboard with interactive charts, advanced filters and PDF export. Multi-source data integration.",
+    "stack": ["React", "TypeScript", "D3.js", "Python"],
+    "image": "/projects/project-gamma.jpg",
+    "github": "https://github.com",
+    "demo": "https://example.com"
+  }
+]

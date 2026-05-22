@@ -1,0 +1,8 @@
+[
+  { "name": "React", "category": "Frontend", "icon": "react" },
+  { "name": "TypeScript", "category": "Language", "icon": "typescript" },
+  { "name": "Node.js", "category": "Backend", "icon": "nodejs" },
+  { "name": "PostgreSQL", "category": "Database", "icon": "database" },
+  { "name": "Docker", "category": "DevOps", "icon": "container" },
+  { "name": "Git", "category": "Tools", "icon": "git-branch" }
+]

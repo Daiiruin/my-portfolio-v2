@@ -1,0 +1,8 @@
+{
+  "firstName": "First",
+  "lastName": "Last",
+  "title": "Full-Stack Developer",
+  "bio": "Passionate about building modern, performant web experiences. I craft polished interfaces and solid architectures.",
+  "location": "Paris, France",
+  "avatar": "/avatar.jpg"
+}

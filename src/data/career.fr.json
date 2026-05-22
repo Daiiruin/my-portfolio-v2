@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "period": "2023 — Présent",
+    "company": "Entreprise A",
+    "role": "Développeur Full-Stack Senior",
+    "description": "Développement d'une application SaaS React/Node en équipe agile."
+  },
+  {
+    "id": "2",
+    "period": "2021 — 2023",
+    "company": "Entreprise B",
+    "role": "Développeur Frontend",
+    "description": "Création d'interfaces React performantes, mise en place d'un design system."
+  },
+  {
+    "id": "3",
+    "period": "2019 — 2021",
+    "company": "Entreprise C",
+    "role": "Développeur Junior",
+    "description": "Premiers pas en production sur des projets web variés."
+  }
+]

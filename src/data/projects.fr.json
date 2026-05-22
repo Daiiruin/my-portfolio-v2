@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "project-alpha",
+    "title": "Project Alpha",
+    "shortDescription": "Une application web moderne de gestion de tâches.",
+    "description": "Application SaaS complète avec authentification, tableaux kanban en temps réel et synchronisation multi-appareils. Conçue pour des équipes agiles.",
+    "stack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+    "image": "/projects/project-alpha.jpg",
+    "github": "https://github.com",
+    "demo": "https://example.com"
+  },
+  {
+    "slug": "project-beta",
+    "title": "Project Beta",
+    "shortDescription": "API REST haute performance pour e-commerce.",
+    "description": "API RESTful scalable avec cache Redis, paiement Stripe, gestion des stocks et notifications en temps réel via WebSocket.",
+    "stack": ["Node.js", "TypeScript", "PostgreSQL", "Redis"],
+    "image": "/projects/project-beta.jpg",
+    "github": "https://github.com",
+    "demo": null
+  },
+  {
+    "slug": "project-gamma",
+    "title": "Project Gamma",
+    "shortDescription": "Dashboard analytics avec visualisations interactives.",
+    "description": "Dashboard de visualisation de données avec graphiques interactifs, filtres avancés et export PDF. Intégration de plusieurs sources de données.",
+    "stack": ["React", "TypeScript", "D3.js", "Python"],
+    "image": "/projects/project-gamma.jpg",
+    "github": "https://github.com",
+    "demo": "https://example.com"
+  }
+]
