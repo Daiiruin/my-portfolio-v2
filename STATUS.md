@@ -31,7 +31,7 @@ pnpm build        # build de prod
 
 - [x] **PR #1** `chore/init` — Scaffold + deps + structure + STATUS.md
 - [x] **PR #2** `feat/design-system` — Tokens dark theme + GlobalStyle + atoms (Button, Text, Heading, Link, Icon, Container, Section, Badge) + page démo `/dev/components`
-- [ ] **PR #3** `feat/i18n-layout` — Header + Footer + LangSwitch + PageLayout + useScrollSpy
+- [x] **PR #3** `feat/i18n-layout` — Header sticky + Footer + molecules NavItem + LangSwitch + useScrollSpy + useReducedMotion + PageLayout + HomePage shell
 - [ ] **PR #4** `feat/section-hero` — HeroBlock + animations mount (motion)
 - [ ] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip
 - [ ] **PR #6** `feat/section-career` — CareerTimeline animée
@@ -40,16 +40,15 @@ pnpm build        # build de prod
 - [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
 - [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
 
-## PR suivante : #3 `feat/i18n-layout`
+## PR suivante : #4 `feat/section-hero`
 
 **À faire :**
-- `src/design-system/organisms/Header/` — logo/nom + nav anchors + LangSwitch
-- `src/design-system/organisms/Footer/`
-- `src/design-system/molecules/NavItem/`
-- `src/design-system/molecules/LangSwitch/`
-- `src/hooks/useScrollSpy.ts` — IntersectionObserver, retourne l'id de section actif
-- `src/templates/PageLayout.tsx` — Header + main + Footer
-- `App.tsx` — utilise PageLayout pour la HomePage
+- `src/design-system/organisms/HeroBlock/` — nom/prénom + titre + bio + CTA
+- `src/hooks/useLocaleData.ts` — charge le bon JSON selon locale active
+- `src/data/profile.{fr,en}.json` — mettre les vraies infos (ou garder placeholder)
+- Animations motion/react : `fadeInUp` + `staggerContainer` au mount
+- Mettre à jour `HomePage` pour afficher le vrai HeroBlock à la place du placeholder
+- `src/lib/motion.ts` — variants réutilisables
 
 ## Notes techniques
 
