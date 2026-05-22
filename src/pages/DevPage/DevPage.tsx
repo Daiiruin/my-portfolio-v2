@@ -1,6 +1,7 @@
 import { LuArrowRight, LuGitBranch, LuMail, LuStar, LuPartyPopper } from 'react-icons/lu'
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import { SiReact, SiTypescript, SiNodedotjs } from 'react-icons/si'
+import { RiSpyFill } from 'react-icons/ri'
 import { Button } from '../../design-system/atoms/Button'
 import { Text } from '../../design-system/atoms/Text'
 import { Heading } from '../../design-system/atoms/Heading'
@@ -54,15 +55,16 @@ export function DevPage() {
     <Page>
       <EasterEggBanner>
         <Icon icon={LuPartyPopper} size={16} />
-        Haha, vous n&apos;étiez pas censé être là... mais bravo, vous avez trouvé ! Bienvenue dans
-        le design system. Faites comme chez vous.
+        Haha, vous n'étiez pas censé être là... mais bravo, vous avez trouvé ! Bienvenue dans le
+        design system. Faites comme chez vous.
       </EasterEggBanner>
       <Container>
         <Section>
           <Heading level={1}>Design System — Component Demo</Heading>
-          <Text variant="caption" as="p" style={{ marginTop: '8px' }}>
-            Page secrète — non incluse dans le build de production
-          </Text>
+          <Group>
+            <Icon icon={RiSpyFill} size={20} />
+            <Text variant="caption">Page secrète — non incluse dans le build de production</Text>
+          </Group>
 
           <Divider />
 
@@ -138,9 +140,15 @@ export function DevPage() {
           {/* LINKS */}
           <Heading level={4}>Link</Heading>
           <Group>
-            <Link href="#" variant="default">Default link</Link>
-            <Link href="#" variant="subtle">Subtle link</Link>
-            <Link href="#" variant="underline">Underlined link</Link>
+            <Link href="#" variant="default">
+              Default link
+            </Link>
+            <Link href="#" variant="subtle">
+              Subtle link
+            </Link>
+            <Link href="#" variant="underline">
+              Underlined link
+            </Link>
             <Link href="https://github.com" variant="default" external>
               External <Icon icon={LuArrowRight} size={14} />
             </Link>
