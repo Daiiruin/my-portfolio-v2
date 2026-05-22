@@ -61,20 +61,10 @@ export function HeroBlock() {
           <Bio variants={item}>{profile.bio}</Bio>
 
           <Actions variants={item}>
-            <Button
-              as="a"
-              href="#projects"
-              variant="primary"
-              size="lg"
-            >
+            <Button as="a" href="#projects" variant="primary" size="lg">
               {t('hero.cta')}
             </Button>
-            <Button
-              as="a"
-              href="#contact"
-              variant="secondary"
-              size="lg"
-            >
+            <Button as="a" href="#contact" variant="secondary" size="lg">
               {t('nav.contact')}
             </Button>
           </Actions>
@@ -86,7 +76,7 @@ export function HeroBlock() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.6 }}
       >
-        <Icon icon={LuArrowDown} size={14} />
+        <Icon icon={LuArrowDown} size={18} />
         <ScrollLine
           animate={reducedMotion ? {} : { scaleY: [0, 1, 0], y: [0, 0, 20] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}

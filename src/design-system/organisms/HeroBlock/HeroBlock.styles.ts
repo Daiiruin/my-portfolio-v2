@@ -31,7 +31,11 @@ export const Dot = styled.span`
 `
 
 export const Name = styled(motion.h1)`
-  font-size: clamp(${({ theme }) => theme.font.size['3xl']}, 8vw, ${({ theme }) => theme.font.size['5xl']});
+  font-size: clamp(
+    ${({ theme }) => theme.font.size['3xl']},
+    8vw,
+    ${({ theme }) => theme.font.size['5xl']}
+  );
   font-weight: ${({ theme }) => theme.font.weight.bold};
   letter-spacing: ${({ theme }) => theme.font.letterSpacing.tight};
   line-height: ${({ theme }) => theme.font.lineHeight.tight};
@@ -40,7 +44,11 @@ export const Name = styled(motion.h1)`
 `
 
 export const Title = styled(motion.p)`
-  font-size: clamp(${({ theme }) => theme.font.size.lg}, 3vw, ${({ theme }) => theme.font.size['2xl']});
+  font-size: clamp(
+    ${({ theme }) => theme.font.size.lg},
+    3vw,
+    ${({ theme }) => theme.font.size['2xl']}
+  );
   font-weight: ${({ theme }) => theme.font.weight.medium};
   color: ${({ theme }) => theme.colors.accent};
   margin-bottom: ${({ theme }) => theme.space['6']};
@@ -79,11 +87,7 @@ export const ScrollHint = styled(motion.div)`
 `
 
 export const ScrollLine = styled(motion.div)`
-  width: 1px;
+  width: 2px;
   height: 40px;
-  background: linear-gradient(
-    to bottom,
-    ${({ theme }) => theme.colors.accent},
-    transparent
-  );
+  background: linear-gradient(to bottom, ${({ theme }) => theme.colors.accent}, transparent);
 `
