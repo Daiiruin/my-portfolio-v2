@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "about": "À propos",
+    "stack": "Stack",
+    "career": "Parcours",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "cta": "Voir mes projets"
+  },
+  "about": {
+    "title": "À propos"
+  },
+  "stack": {
+    "title": "Ma Stack"
+  },
+  "career": {
+    "title": "Mon Parcours"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "viewDetails": "Voir le projet",
+    "backHome": "← Retour"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "success": "Message envoyé !",
+    "error": "Erreur lors de l'envoi."
+  }
+}
