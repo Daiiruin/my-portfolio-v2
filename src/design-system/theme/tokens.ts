@@ -1,0 +1,103 @@
+export const tokens = {
+  colors: {
+    background: '#0a0a0a',
+    surface: '#111111',
+    surfaceAlt: '#1a1a1a',
+    border: '#222222',
+    borderHover: '#333333',
+    text: '#ebebeb',
+    textMuted: '#888888',
+    textSubtle: '#555555',
+    accent: '#3b82f6',
+    accentHover: '#2563eb',
+    accentSubtle: 'rgba(59, 130, 246, 0.12)',
+    error: '#ef4444',
+    errorSubtle: 'rgba(239, 68, 68, 0.12)',
+    success: '#22c55e',
+  },
+  space: {
+    '1': '4px',
+    '2': '8px',
+    '3': '12px',
+    '4': '16px',
+    '6': '24px',
+    '8': '32px',
+    '12': '48px',
+    '16': '64px',
+    '24': '96px',
+    '32': '128px',
+  },
+  radii: {
+    sm: '4px',
+    md: '8px',
+    lg: '12px',
+    xl: '16px',
+    full: '9999px',
+  },
+  font: {
+    family: "'Inter', system-ui, -apple-system, sans-serif",
+    mono: "'JetBrains Mono', 'Fira Code', 'Courier New', monospace",
+    size: {
+      xs: '12px',
+      sm: '14px',
+      base: '16px',
+      md: '18px',
+      lg: '20px',
+      xl: '24px',
+      '2xl': '32px',
+      '3xl': '40px',
+      '4xl': '48px',
+      '5xl': '64px',
+    },
+    weight: {
+      regular: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+    },
+    lineHeight: {
+      tight: 1.15,
+      normal: 1.5,
+      relaxed: 1.75,
+    },
+    letterSpacing: {
+      tight: '-0.03em',
+      snug: '-0.015em',
+      normal: '0',
+      wide: '0.05em',
+      wider: '0.1em',
+    },
+  },
+  breakpoints: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
+  shadow: {
+    sm: '0 1px 4px rgba(0,0,0,0.6)',
+    md: '0 4px 16px rgba(0,0,0,0.6)',
+    lg: '0 12px 40px rgba(0,0,0,0.7)',
+  },
+  transition: {
+    fast: '150ms ease',
+    base: '250ms ease',
+    slow: '400ms ease',
+  },
+  zIndex: {
+    base: 0,
+    above: 1,
+    sticky: 100,
+    modal: 200,
+    toast: 300,
+  },
+}
+
+export type Tokens = typeof tokens
+
+export const media = {
+  sm: `@media (min-width: 640px)`,
+  md: `@media (min-width: 768px)`,
+  lg: `@media (min-width: 1024px)`,
+  xl: `@media (min-width: 1280px)`,
+}

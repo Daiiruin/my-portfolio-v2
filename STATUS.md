@@ -21,7 +21,7 @@ pnpm build        # build de prod
 | Animations | motion v12 (ex-framer-motion) |
 | i18n | react-i18next + i18next-browser-languagedetector |
 | Contact | EmailJS (`@emailjs/browser`) |
-| Icônes | lucide-react |
+| Icônes | lucide-react (pas d'icônes de marque — GitHub/LinkedIn en SVG inline en PR #8) |
 | Data | JSON statiques dans `src/data/*.{fr,en}.json` |
 | Package manager | **pnpm** (ne jamais utiliser npm/yarn) |
 | Tests | Aucun (décision volontaire) |
@@ -30,37 +30,32 @@ pnpm build        # build de prod
 ## Roadmap PRs
 
 - [x] **PR #1** `chore/init` — Scaffold + deps + structure + STATUS.md
-- [ ] **PR #2** `feat/design-system` — Tokens dark theme + GlobalStyle + atoms (Button, Text, Heading, Link, Container, Section)
+- [x] **PR #2** `feat/design-system` — Tokens dark theme + GlobalStyle + atoms (Button, Text, Heading, Link, Icon, Container, Section, Badge) + page démo `/dev/components`
 - [ ] **PR #3** `feat/i18n-layout` — Header + Footer + LangSwitch + PageLayout + useScrollSpy
 - [ ] **PR #4** `feat/section-hero` — HeroBlock + animations mount (motion)
 - [ ] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip
 - [ ] **PR #6** `feat/section-career` — CareerTimeline animée
 - [ ] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + /projects/:slug
-- [ ] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo
+- [ ] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo (icônes marque en SVG inline)
 - [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
 - [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
 
-## PR en cours : #1 `chore/init`
+## PR suivante : #3 `feat/i18n-layout`
 
-**Fait :**
-- Scaffold Vite + React 19 + TypeScript (via `pnpm create vite`)
-- Toutes les dépendances installées avec pnpm
-- Structure de dossiers atomique complète créée
-- Prettier + ESLint configurés
-- Fichiers de base : `main.tsx`, `App.tsx`
-- Config i18n + locales FR/EN (strings UI)
-- JSON de données placeholder créés (profile, stack, career, projects, contact)
-- `.env.local.example` avec clés EmailJS
-- `STATUS.md` (ce fichier)
-- `README.md` mis à jour
-
-**Reste :**
-- `pnpm build` et `pnpm dev` validés ✅
-- Git init + repo GitHub créé + PR ouverte
+**À faire :**
+- `src/design-system/organisms/Header/` — logo/nom + nav anchors + LangSwitch
+- `src/design-system/organisms/Footer/`
+- `src/design-system/molecules/NavItem/`
+- `src/design-system/molecules/LangSwitch/`
+- `src/hooks/useScrollSpy.ts` — IntersectionObserver, retourne l'id de section actif
+- `src/templates/PageLayout.tsx` — Header + main + Footer
+- `App.tsx` — utilise PageLayout pour la HomePage
 
 ## Notes techniques
 
-- `react-router-dom` installé en v7 (pas v6 comme prévu initialement) — API similaire, `createBrowserRouter` ou `<BrowserRouter>` fonctionnent pareil.
-- `motion` v12 s'importe via `import { motion } from 'motion/react'` (nouveau nom du package framer-motion).
-- Le thème styled-components sera `DefaultTheme` override via `src/design-system/theme/types.ts` en PR #2.
-- Toutes les données sont dans `src/data/*.{fr,en}.json` — éditer ces fichiers pour mettre ton vrai contenu.
+- `react-router-dom` installé en v7 — API similaire à v6, `<BrowserRouter>` fonctionne pareil.
+- `motion` v12 s'importe via `import { motion } from 'motion/react'`.
+- `lucide-react` v1.16 n'a pas d'icônes de marque (GitHub, LinkedIn...) — sera géré avec SVG inline en PR #8.
+- DefaultTheme styled-components override : `src/design-system/theme/types.ts` — pattern `type AppTheme = typeof darkTheme` puis `interface DefaultTheme extends AppTheme {}`.
+- Page démo atoms accessible sur `/dev/components` en mode dev uniquement (conditionnée par `import.meta.env.DEV`).
+- Toutes les données dans `src/data/*.{fr,en}.json` — éditer pour mettre le vrai contenu.
