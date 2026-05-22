@@ -1,4 +1,4 @@
-import { ArrowRight, GitBranch, Mail, Star } from 'lucide-react'
+import { ArrowRight, GitBranch, Mail, Star, PartyPopper } from 'lucide-react'
 import { Button } from '../../design-system/atoms/Button'
 import { Text } from '../../design-system/atoms/Text'
 import { Heading } from '../../design-system/atoms/Heading'
@@ -12,6 +12,18 @@ import styled from 'styled-components'
 const Page = styled.div`
   min-height: 100vh;
   background: ${({ theme }) => theme.colors.background};
+`
+
+const EasterEggBanner = styled.div`
+  background: ${({ theme }) => theme.colors.accentSubtle};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+  padding: ${({ theme }) => `${theme.space['3']} ${theme.space['4']}`};
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.space['2']};
+  font-family: ${({ theme }) => theme.font.mono};
+  font-size: ${({ theme }) => theme.font.size.sm};
+  color: ${({ theme }) => theme.colors.accent};
 `
 
 const Group = styled.div`
@@ -38,11 +50,16 @@ const Label = styled.p`
 export function DevPage() {
   return (
     <Page>
+      <EasterEggBanner>
+        <Icon icon={PartyPopper} size={16} />
+        Haha, vous n&apos;étiez pas censé être là... mais bravo, vous avez trouvé ! Bienvenue dans le
+        design system. Faites comme chez vous.
+      </EasterEggBanner>
       <Container>
         <Section>
           <Heading level={1}>Design System — Component Demo</Heading>
           <Text variant="caption" as="p" style={{ marginTop: '8px' }}>
-            Dev only — not shipped in production build
+            Page secrète — non incluse dans le build de production
           </Text>
 
           <Divider />
