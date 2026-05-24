@@ -34,20 +34,21 @@ pnpm build        # build de prod
 - [x] **PR #3** `feat/i18n-layout` — Header sticky + Footer + molecules NavItem + LangSwitch + useScrollSpy + useReducedMotion + PageLayout + HomePage shell
 - [x] **PR #4** `feat/section-hero` — HeroBlock + variants motion + useLocaleData + Button polymorphe
 - [x] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip (iconMap react-icons/si) + whileInView stagger
-- [ ] **PR #6** `feat/section-career` — CareerTimeline animée
-- [ ] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + /projects/:slug
+- [x] **PR #6** `feat/section-career` — CareerTimeline animée + TimelineItem (frise verticale desktop, pulse sur item présent)
+- [x] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + ProjectDetailPage + /projects/:slug
 - [ ] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo (icônes marque en SVG inline)
 - [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
 - [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
 
-## PR suivante : #6 `feat/section-career`
+## PR suivante : #8 `feat/section-contact`
 
 **À faire :**
-- `src/design-system/organisms/CareerTimeline/` — frise chronologique
-- `src/design-system/molecules/TimelineItem/` — période + entreprise + rôle + description
-- `src/data/career.{fr,en}.json` — mettre le vrai parcours (ou garder placeholder)
-- Anim séquentielle : items entrent un par un au scroll (stagger `whileInView`)
-- Mettre à jour `HomePage` pour remplacer le placeholder Career
+- `src/design-system/organisms/ContactForm/` — formulaire EmailJS (nom, email, message) + état succès/erreur
+- `src/design-system/organisms/ContactInfo/` — email, LinkedIn, GitHub, localisation (icônes react-icons)
+- `src/lib/emailjs.ts` — wrapper `sendContactEmail()` avec clés `VITE_EMAILJS_*`
+- `.env.local` — ajouter les vraies clés EmailJS
+- `src/data/contact.{fr,en}.json` — infos contact
+- Mettre à jour `HomePage` pour remplacer le placeholder Contact
 
 ## Notes techniques
 
