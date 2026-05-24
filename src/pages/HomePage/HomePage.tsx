@@ -5,6 +5,8 @@ import { Section } from '../../design-system/atoms/Section'
 import { Heading } from '../../design-system/atoms/Heading'
 import { Text } from '../../design-system/atoms/Text'
 import { HeroBlock } from '../../design-system/organisms/HeroBlock'
+import { AboutBlock } from '../../design-system/organisms/AboutBlock'
+import { StackGrid } from '../../design-system/organisms/StackGrid'
 
 const SectionPlaceholder = styled.div`
   padding: ${({ theme }) => theme.space['8']};
@@ -16,27 +18,9 @@ const SectionPlaceholder = styled.div`
 export function HomePage() {
   return (
     <PageLayout>
-      {/* Hero */}
       <HeroBlock />
-
-      {/* About + Stack — PR #5 */}
-      <Section id="about">
-        <Container>
-          <SectionPlaceholder>
-            <Text variant="overline">PR #5</Text>
-            <Heading level={2} style={{ marginTop: '8px' }}>About</Heading>
-          </SectionPlaceholder>
-        </Container>
-      </Section>
-
-      <Section id="stack">
-        <Container>
-          <SectionPlaceholder>
-            <Text variant="overline">PR #5</Text>
-            <Heading level={2} style={{ marginTop: '8px' }}>Stack</Heading>
-          </SectionPlaceholder>
-        </Container>
-      </Section>
+      <AboutBlock />
+      <StackGrid />
 
       {/* Career — PR #6 */}
       <Section id="career">

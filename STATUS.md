@@ -33,22 +33,21 @@ pnpm build        # build de prod
 - [x] **PR #2** `feat/design-system` — Tokens dark theme + GlobalStyle + atoms (Button, Text, Heading, Link, Icon, Container, Section, Badge) + page démo `/dev/components`
 - [x] **PR #3** `feat/i18n-layout` — Header sticky + Footer + molecules NavItem + LangSwitch + useScrollSpy + useReducedMotion + PageLayout + HomePage shell
 - [x] **PR #4** `feat/section-hero` — HeroBlock + variants motion + useLocaleData + Button polymorphe
-- [ ] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip
+- [x] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip (iconMap react-icons/si) + whileInView stagger
 - [ ] **PR #6** `feat/section-career` — CareerTimeline animée
 - [ ] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + /projects/:slug
 - [ ] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo (icônes marque en SVG inline)
 - [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
 - [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
 
-## PR suivante : #5 `feat/section-about-stack`
+## PR suivante : #6 `feat/section-career`
 
 **À faire :**
-- `src/design-system/organisms/AboutBlock/` — bio + localisation
-- `src/design-system/organisms/StackGrid/` — grille de StackChip
-- `src/design-system/molecules/StackChip/` — logo (react-icons/si) + nom + catégorie
-- `src/data/stack.{fr,en}.json` — mettre les vraies technos
-- Animations `whileInView` + `staggerContainer` (fadeInUpScroll)
-- Mettre à jour `HomePage` pour remplacer les placeholders About et Stack
+- `src/design-system/organisms/CareerTimeline/` — frise chronologique
+- `src/design-system/molecules/TimelineItem/` — période + entreprise + rôle + description
+- `src/data/career.{fr,en}.json` — mettre le vrai parcours (ou garder placeholder)
+- Anim séquentielle : items entrent un par un au scroll (stagger `whileInView`)
+- Mettre à jour `HomePage` pour remplacer le placeholder Career
 
 ## Notes techniques
 

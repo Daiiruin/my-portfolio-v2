@@ -1,8 +1,14 @@
 [
   { "name": "React", "category": "Frontend", "icon": "react" },
-  { "name": "TypeScript", "category": "Language", "icon": "typescript" },
-  { "name": "Node.js", "category": "Backend", "icon": "nodejs" },
-  { "name": "PostgreSQL", "category": "Database", "icon": "database" },
-  { "name": "Docker", "category": "DevOps", "icon": "container" },
-  { "name": "Git", "category": "Tools", "icon": "git-branch" }
+  { "name": "TypeScript", "category": "Frontend", "icon": "typescript" },
+  { "name": "Next.js", "category": "Frontend", "icon": "nextdotjs" },
+  { "name": "styled-components", "category": "Frontend", "icon": "styledcomponents" },
+  { "name": "Node.js", "category": "Backend", "icon": "nodedotjs" },
+  { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
+  { "name": "PostgreSQL", "category": "Base de données", "icon": "postgresql" },
+  { "name": "Redis", "category": "Base de données", "icon": "redis" },
+  { "name": "Docker", "category": "DevOps", "icon": "docker" },
+  { "name": "GitHub Actions", "category": "DevOps", "icon": "githubactions" },
+  { "name": "Git", "category": "Outils", "icon": "git" },
+  { "name": "Figma", "category": "Outils", "icon": "figma" }
 ]
