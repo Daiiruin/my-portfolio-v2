@@ -6,7 +6,6 @@ export const Header = styled(motion.div)`
 `
 
 export const SectionLabel = styled.span`
-  font-family: ${({ theme }) => theme.font.mono};
   font-size: ${({ theme }) => theme.font.size.xs};
   font-weight: ${({ theme }) => theme.font.weight.medium};
   color: ${({ theme }) => theme.colors.accent};
