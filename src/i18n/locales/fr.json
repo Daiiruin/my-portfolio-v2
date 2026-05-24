@@ -26,6 +26,7 @@
   },
   "contact": {
     "title": "Contact",
+    "intro": "Un projet, une question ou juste envie de discuter ? Écrivez-moi.",
     "name": "Nom",
     "email": "Email",
     "message": "Message",
