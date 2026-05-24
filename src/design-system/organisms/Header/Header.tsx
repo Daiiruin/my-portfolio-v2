@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { LuMenu, LuX } from 'react-icons/lu'
 import { NavItem } from '../../molecules/NavItem'
 import { LangSwitch } from '../../molecules/LangSwitch'
+import { ThemeToggle } from '../../molecules/ThemeToggle'
 import { Icon } from '../../atoms/Icon'
 import { useScrollSpy, NAV_SECTION_IDS } from '../../../hooks/useScrollSpy'
 import {
@@ -50,6 +51,7 @@ export function Header() {
           </Nav>
 
           <NavRight>
+            <ThemeToggle />
             <LangSwitch />
             <MobileMenuButton
               onClick={() => setMenuOpen((o) => !o)}

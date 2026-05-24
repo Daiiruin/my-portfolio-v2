@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: ${({ theme }) => theme.font.lineHeight.normal};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 300ms ease, color 300ms ease;
   }
 
   a {
