@@ -36,19 +36,19 @@ pnpm build        # build de prod
 - [x] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip (iconMap react-icons/si) + whileInView stagger
 - [x] **PR #6** `feat/section-career` — CareerTimeline animée + TimelineItem (frise verticale desktop, pulse sur item présent)
 - [x] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + ProjectDetailPage + /projects/:slug
-- [ ] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo (icônes marque en SVG inline)
+- [x] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo + atoms Input/Textarea
 - [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
 - [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
 
-## PR suivante : #8 `feat/section-contact`
+## PR suivante : #9 `feat/dark-light-theme`
 
 **À faire :**
-- `src/design-system/organisms/ContactForm/` — formulaire EmailJS (nom, email, message) + état succès/erreur
-- `src/design-system/organisms/ContactInfo/` — email, LinkedIn, GitHub, localisation (icônes react-icons)
-- `src/lib/emailjs.ts` — wrapper `sendContactEmail()` avec clés `VITE_EMAILJS_*`
-- `.env.local` — ajouter les vraies clés EmailJS
-- `src/data/contact.{fr,en}.json` — infos contact
-- Mettre à jour `HomePage` pour remplacer le placeholder Contact
+- `src/design-system/theme/lightTheme.ts` — palette light complète
+- `src/design-system/molecules/ThemeToggle/` — bouton toggle (icône soleil/lune)
+- `src/hooks/useTheme.ts` — state + localStorage + `prefers-color-scheme` au premier chargement
+- Brancher `ThemeProvider` dans `main.tsx` pour swapper dynamiquement
+- Ajouter `ThemeToggle` dans le `Header`
+- Vérifier tous les composants dans les 2 thèmes
 
 ## Notes techniques
 
