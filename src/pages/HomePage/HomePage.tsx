@@ -8,6 +8,7 @@ import { HeroBlock } from '../../design-system/organisms/HeroBlock'
 import { AboutBlock } from '../../design-system/organisms/AboutBlock'
 import { StackGrid } from '../../design-system/organisms/StackGrid'
 import { CareerTimeline } from '../../design-system/organisms/CareerTimeline'
+import { ProjectsGrid } from '../../design-system/organisms/ProjectsGrid'
 
 const SectionPlaceholder = styled.div`
   padding: ${({ theme }) => theme.space['8']};
@@ -25,15 +26,7 @@ export function HomePage() {
 
       <CareerTimeline />
 
-      {/* Projects — PR #7 */}
-      <Section id="projects">
-        <Container>
-          <SectionPlaceholder>
-            <Text variant="overline">PR #7</Text>
-            <Heading level={2} style={{ marginTop: '8px' }}>Projects</Heading>
-          </SectionPlaceholder>
-        </Container>
-      </Section>
+      <ProjectsGrid />
 
       {/* Contact — PR #8 */}
       <Section id="contact">
