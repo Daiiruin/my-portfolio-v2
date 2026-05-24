@@ -6,7 +6,12 @@ import { Section } from '../../atoms/Section'
 import { TimelineItem } from '../../molecules/TimelineItem'
 import { useLocaleData } from '../../../hooks/useLocaleData'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
-import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../../lib/motion'
+import {
+  staggerContainer,
+  fadeInUpScroll,
+  reducedStagger,
+  reducedFadeIn,
+} from '../../../lib/motion'
 import careerFr from '../../../data/career.fr.json'
 import careerEn from '../../../data/career.en.json'
 import { Header, SectionLabel, List } from './CareerTimeline.styles'
@@ -48,13 +53,14 @@ export function CareerTimeline() {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
         >
-          {career.map((entry) => (
+          {career.map((entry, index) => (
             <motion.div key={entry.id} variants={item}>
               <TimelineItem
                 period={entry.period}
                 company={entry.company}
                 role={entry.role}
                 description={entry.description}
+                isPulse={index === 0}
               />
             </motion.div>
           ))}

@@ -5,17 +5,18 @@ type Props = {
   company: string
   role: string
   description: string
+  isPulse?: boolean
 }
 
-export function TimelineItem({ period, company, role, description }: Props) {
+export function TimelineItem({ period, company, role, description, isPulse }: Props) {
   return (
     <Item>
       <PeriodCol>
-        <Dot />
+        <Dot $pulse={isPulse} />
         <Period>{period}</Period>
       </PeriodCol>
       <ContentCol>
-        <ConnectorDot />
+        <ConnectorDot $pulse={isPulse} />
         <Role>{role}</Role>
         <Company>{company}</Company>
         <Description>{description}</Description>

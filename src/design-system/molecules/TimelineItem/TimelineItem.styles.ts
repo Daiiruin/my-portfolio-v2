@@ -1,6 +1,12 @@
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import { motion } from 'motion/react'
 import { media } from '../../theme/tokens'
+
+const pulse = keyframes`
+  0%   { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+`
 
 export const Item = styled(motion.div)`
   display: grid;
@@ -33,7 +39,7 @@ export const Period = styled.span`
   white-space: nowrap;
 `
 
-export const Dot = styled.div`
+export const Dot = styled.div<{ $pulse?: boolean }>`
   width: 10px;
   height: 10px;
   border-radius: ${({ theme }) => theme.radii.full};
@@ -41,6 +47,12 @@ export const Dot = styled.div`
   flex-shrink: 0;
   margin-top: 5px;
   box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.accentSubtle};
+
+  ${({ $pulse }) =>
+    $pulse &&
+    css`
+      animation: ${pulse} 2s ease-out infinite;
+    `}
 
   ${media.md} {
     display: none;
@@ -62,11 +74,7 @@ export const ContentCol = styled.div`
     top: 0;
     bottom: 0;
     width: 1px;
-    background: linear-gradient(
-      to bottom,
-      ${({ theme }) => theme.colors.border},
-      transparent
-    );
+    background: linear-gradient(to bottom, ${({ theme }) => theme.colors.border}, transparent);
     display: none;
 
     ${media.md} {
@@ -75,7 +83,7 @@ export const ContentCol = styled.div`
   }
 `
 
-export const ConnectorDot = styled.div`
+export const ConnectorDot = styled.div<{ $pulse?: boolean }>`
   display: none;
 
   ${media.md} {
@@ -90,6 +98,12 @@ export const ConnectorDot = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.accent};
     box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.accentSubtle};
     z-index: 1;
+
+    ${({ $pulse }) =>
+      $pulse &&
+      css`
+        animation: ${pulse} 2s ease-out infinite;
+      `}
   }
 `
 
