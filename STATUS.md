@@ -34,20 +34,22 @@ pnpm build        # build de prod
 - [x] **PR #3** `feat/i18n-layout` — Header sticky + Footer + molecules NavItem + LangSwitch + useScrollSpy + useReducedMotion + PageLayout + HomePage shell
 - [x] **PR #4** `feat/section-hero` — HeroBlock + variants motion + useLocaleData + Button polymorphe
 - [x] **PR #5** `feat/section-about-stack` — AboutBlock + StackGrid + StackChip (iconMap react-icons/si) + whileInView stagger
-- [ ] **PR #6** `feat/section-career` — CareerTimeline animée
+- [x] **PR #6** `feat/section-career` — CareerTimeline animée + TimelineItem (frise verticale desktop, pulse sur item présent)
 - [ ] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + /projects/:slug
 - [ ] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo (icônes marque en SVG inline)
 - [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
 - [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
 
-## PR suivante : #6 `feat/section-career`
+## PR suivante : #7 `feat/section-projects`
 
 **À faire :**
-- `src/design-system/organisms/CareerTimeline/` — frise chronologique
-- `src/design-system/molecules/TimelineItem/` — période + entreprise + rôle + description
-- `src/data/career.{fr,en}.json` — mettre le vrai parcours (ou garder placeholder)
-- Anim séquentielle : items entrent un par un au scroll (stagger `whileInView`)
-- Mettre à jour `HomePage` pour remplacer le placeholder Career
+- `src/design-system/organisms/ProjectsGrid/` — grille de projets
+- `src/design-system/molecules/ProjectCard/` — card cliquable (image, titre, stack chips, description courte)
+- `src/pages/ProjectDetailPage/` — page détail via `/projects/:slug`
+- Route `/projects/:slug` dans `AppRoutes.tsx`
+- `src/data/projects.{fr,en}.json` — slug, titre, description longue, stack, lien GitHub/live
+- Anim `whileInView` stagger sur la grille
+- Mettre à jour `HomePage` pour remplacer le placeholder Projects
 
 ## Notes techniques
 
