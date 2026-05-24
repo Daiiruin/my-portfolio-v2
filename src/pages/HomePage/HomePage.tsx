@@ -4,12 +4,7 @@ import { Container } from '../../design-system/atoms/Container'
 import { Section } from '../../design-system/atoms/Section'
 import { Heading } from '../../design-system/atoms/Heading'
 import { Text } from '../../design-system/atoms/Text'
-
-const HeroPlaceholder = styled.div`
-  min-height: calc(100vh - 60px);
-  display: flex;
-  align-items: center;
-`
+import { HeroBlock } from '../../design-system/organisms/HeroBlock'
 
 const SectionPlaceholder = styled.div`
   padding: ${({ theme }) => theme.space['8']};
@@ -21,13 +16,8 @@ const SectionPlaceholder = styled.div`
 export function HomePage() {
   return (
     <PageLayout>
-      {/* Hero — PR #4 */}
-      <HeroPlaceholder>
-        <Container>
-          <Text variant="overline" as="p">Coming in PR #4</Text>
-          <Heading level={1} style={{ marginTop: '12px' }}>Hero Section</Heading>
-        </Container>
-      </HeroPlaceholder>
+      {/* Hero */}
+      <HeroBlock />
 
       {/* About + Stack — PR #5 */}
       <Section id="about">
