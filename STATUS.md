@@ -37,18 +37,20 @@ pnpm build        # build de prod
 - [x] **PR #6** `feat/section-career` — CareerTimeline animée + TimelineItem (frise verticale desktop, pulse sur item présent)
 - [x] **PR #7** `feat/section-projects` — ProjectsGrid + ProjectCard + ProjectDetailPage + /projects/:slug
 - [x] **PR #8** `feat/section-contact` — ContactForm EmailJS + ContactInfo + atoms Input/Textarea
-- [ ] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage
-- [ ] **PR #10** `feat/polish-deploy` — SEO + favicon + deploy
+- [x] **PR #9** `feat/dark-light-theme` — ThemeToggle + lightTheme + localStorage + prefers-color-scheme
+- [x] **PR #10** `feat/polish-deploy` — SEO index.html + code-splitting manualChunks + vercel.json + robots.txt + JetBrains Mono
 
-## PR suivante : #9 `feat/dark-light-theme`
+## Roadmap terminée 🎉
 
-**À faire :**
-- `src/design-system/theme/lightTheme.ts` — palette light complète
-- `src/design-system/molecules/ThemeToggle/` — bouton toggle (icône soleil/lune)
-- `src/hooks/useTheme.ts` — state + localStorage + `prefers-color-scheme` au premier chargement
-- Brancher `ThemeProvider` dans `main.tsx` pour swapper dynamiquement
-- Ajouter `ThemeToggle` dans le `Header`
-- Vérifier tous les composants dans les 2 thèmes
+Toutes les 10 PRs sont mergées. Pour déployer sur Vercel :
+1. Connecter le repo GitHub `my-portfolio-v2` sur vercel.com
+2. Build command : `pnpm build` — Output dir : `dist`
+3. Le `vercel.json` gère déjà le routing SPA
+
+**Avant de mettre en ligne :**
+- Remplir les vraies données dans `src/data/*.{fr,en}.json`
+- Ajouter les clés EmailJS dans les variables d'env Vercel (`VITE_EMAILJS_*`)
+- Remplacer `og:url` dans `index.html` avec l'URL réelle du site
 
 ## Notes techniques
 
