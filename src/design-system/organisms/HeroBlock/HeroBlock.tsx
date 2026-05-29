@@ -76,7 +76,13 @@ export function HeroBlock() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.6 }}
       >
-        <Icon icon={LuArrowDown} size={18} />
+        <motion.span
+          animate={reducedMotion ? {} : { y: [0, 6, 0] }}
+          transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ display: 'flex' }}
+        >
+          <Icon icon={LuArrowDown} size={22} />
+        </motion.span>
         <ScrollLine
           animate={reducedMotion ? {} : { scaleY: [0, 1, 0], y: [0, 0, 20] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}

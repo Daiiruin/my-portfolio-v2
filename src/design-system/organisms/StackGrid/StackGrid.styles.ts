@@ -15,6 +15,25 @@ export const SectionLabel = styled.p`
   margin-bottom: ${({ theme }) => theme.space['3']};
 `
 
+export const CategoryGroup = styled(motion.div)`
+  margin-bottom: ${({ theme }) => theme.space['8']};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`
+
+export const CategoryTitle = styled.h3`
+  font-size: ${({ theme }) => theme.font.size.xs};
+  font-weight: ${({ theme }) => theme.font.weight.semibold};
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing.wider};
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.textMuted};
+  margin-bottom: ${({ theme }) => theme.space['4']};
+  padding-bottom: ${({ theme }) => theme.space['2']};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+`
+
 export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

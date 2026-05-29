@@ -1,23 +1,57 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { media } from '../../theme/tokens'
 
-export const Card = styled(motion.article)`
-  display: flex;
-  flex-direction: column;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+const orbitGlow = keyframes`
+  0%   { --card-gx: 0%;   --card-gy: 0%;   }
+  25%  { --card-gx: 100%; --card-gy: 0%;   }
+  50%  { --card-gx: 100%; --card-gy: 100%; }
+  75%  { --card-gx: 0%;   --card-gy: 100%; }
+  100% { --card-gx: 0%;   --card-gy: 0%;   }
+`
+
+export const CardWrapper = styled.div`
+  position: relative;
+  isolation: isolate;
   border-radius: ${({ theme }) => theme.radii.xl};
+  padding: 2px;
+  height: 100%;
+  background: ${({ theme }) => theme.colors.background};
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle at var(--card-gx) var(--card-gy),
+      ${({ theme }) => theme.colors.accent},
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity ${({ theme }) => theme.transition.fast};
+    animation: ${orbitGlow} 3s linear infinite;
+    animation-play-state: paused;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+  }
+`
+
+export const Card = styled(motion.article)`
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border-radius: calc(${({ theme }) => theme.radii.xl} - 2px);
   overflow: hidden;
   background: ${({ theme }) => theme.colors.surface};
-  transition: border-color ${({ theme }) => theme.transition.fast},
-    transform ${({ theme }) => theme.transition.fast};
-  cursor: pointer;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.accent};
-    transform: translateY(-3px);
-  }
+  transition: transform ${({ theme }) => theme.transition.fast};
 `
 
 export const ImageArea = styled.div`
