@@ -14,7 +14,7 @@ export const StyledHeader = styled.header<{ $scrolled: boolean }>`
     border-color ${({ theme }) => theme.transition.base},
     backdrop-filter ${({ theme }) => theme.transition.base};
 
-  background: ${({ $scrolled }) => ($scrolled ? 'rgba(10, 10, 10, 0.85)' : 'transparent')};
+  background: ${({ $scrolled, theme }) => ($scrolled ? `${theme.colors.surface}d9` : 'transparent')};
   backdrop-filter: ${({ $scrolled }) => ($scrolled ? 'blur(12px)' : 'none')};
   border-bottom: 1px solid
     ${({ $scrolled, theme }) => ($scrolled ? theme.colors.border : 'transparent')};
@@ -98,7 +98,7 @@ export const MobileNav = styled.div<{ $open: boolean }>`
   top: 60px;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 10, 0.97);
+  background: ${({ theme }) => `${theme.colors.surface}f7`};
   backdrop-filter: blur(12px);
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   padding: ${({ theme }) => theme.space['4']};

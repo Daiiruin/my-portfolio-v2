@@ -1,23 +1,58 @@
 [
   {
+    "id": "0",
+    "type": "work",
+    "period": "Oct 2024 — Now",
+    "company": "Culture Live",
+    "role": "Développeur Front-end en alternance",
+    "description": "Etant en charge de nombreux sujets, j'ai pu exponentiellement développer mes compétences en React et faire mes débuts en backend avec NestJS. J'ai également pu découvrir de nombreux autres outils et bonnes pratiques."
+  },
+  {
     "id": "1",
-    "period": "2023 — Présent",
-    "company": "Entreprise A",
-    "role": "Développeur Full-Stack Senior",
-    "description": "Développement d'une application SaaS React/Node en équipe agile."
+    "type": "work",
+    "period": "Oct 2022 — Sep 2024",
+    "company": "RIZNA",
+    "role": "Développeur Front-end en alternance",
+    "description": "Deux ans sur des projets frontend variés, du site vitrine à l'application métier. J'y ai solidifié mes pratiques React, gagné en autonomie et appris à livrer dans un vrai environnement de production."
   },
   {
     "id": "2",
-    "period": "2021 — 2023",
-    "company": "Entreprise B",
-    "role": "Développeur Frontend",
-    "description": "Création d'interfaces React performantes, mise en place d'un design system."
+    "type": "work",
+    "period": "Jui — Oct 2022",
+    "company": "RIZNA",
+    "role": "Développeur Front-end Stagiaire",
+    "description": "Ma première expérience professionnelle dans une superbe entreprise. J'ai appris énormément en très peu de temps !!"
   },
   {
     "id": "3",
-    "period": "2019 — 2021",
-    "company": "Entreprise C",
-    "role": "Développeur Junior",
-    "description": "Premiers pas en production sur des projets web variés."
+    "type": "education",
+    "period": "2024 — Présent",
+    "company": "HETIC Titre RNCP niveau 7",
+    "role": "Expert en transformation digitale et technologique",
+    "description": "Après avoir solidifié mes bases techniques, je me concentre désormais sur les dimensions stratégiques de l'ingénierie : architecture propre, DevOps, sécurité applicative et conduite du changement technologique."
+  },
+  {
+    "id": "4",
+    "type": "education",
+    "period": "2021 — 2024",
+    "company": "HETIC Titre RNCP niveau 6",
+    "role": "Designer & Développeur solutions digitales",
+    "description": "C'est là que j'ai commencé à apprendre les langages de programmation de haut niveau."
+  },
+  {
+    "id": "5",
+    "type": "education",
+    "period": "2020 — 2021",
+    "company": "Université Gustave Eiffel",
+    "role": "Licence Mathématiques et Informatique",
+    "description": "L'année où j'ai vraiment compris que j'aimais le développement web en particulier."
+  },
+  {
+    "id": "6",
+    "type": "education",
+    "period": "2017 — 2020",
+    "company": "Lycée Simone de Beauvoir",
+    "role": "Baccalauréat scientifique, option NSI",
+    "description": "Mes années lycée où j'ai pu découvrir le développement web :')."
   }
 ]

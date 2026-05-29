@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
-import { LuArrowDown } from 'react-icons/lu'
+import { LuArrowDown, LuMapPin } from 'react-icons/lu'
 import { Button } from '../../atoms/Button'
 import { Icon } from '../../atoms/Icon'
 import { Container } from '../../atoms/Container'
@@ -11,15 +11,22 @@ import profileFr from '../../../data/profile.fr.json'
 import profileEn from '../../../data/profile.en.json'
 import {
   HeroWrapper,
-  HeroInner,
+  HeroGrid,
+  HeroLeft,
+  HeroRight,
   TagLine,
   Dot,
   Name,
   Title,
   Bio,
+  InfoRow,
+  InfoChip,
   Actions,
   ScrollHint,
   ScrollLine,
+  AvatarFrame,
+  AvatarPlaceholder,
+  AvatarAccent,
 } from './HeroBlock.styles'
 
 export function HeroBlock() {
@@ -30,45 +37,71 @@ export function HeroBlock() {
   const container = reducedMotion ? reducedStagger : staggerContainer
   const item = reducedMotion ? reducedFadeIn : fadeInUp
 
+  const initials = `${profile.firstName[0]}${profile.lastName[0]}`
+
   return (
-    <HeroWrapper>
+    <HeroWrapper id="about">
       <Container>
-        <HeroInner variants={container} initial="hidden" animate="visible">
-          <TagLine variants={item}>
-            <Dot />
-            <motion.span
-              style={{
-                fontSize: '12px',
-                fontFamily: 'var(--font-mono, monospace)',
-                color: 'var(--text-subtle)',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-              }}
-            >
-              {profile.title}
-            </motion.span>
-          </TagLine>
+        <HeroGrid>
+          <HeroLeft variants={container} initial="hidden" animate="visible">
+            <TagLine variants={item}>
+              <Dot />
+              <motion.span
+                style={{
+                  fontSize: '12px',
+                  fontFamily: 'var(--font-mono, monospace)',
+                  color: 'var(--text-subtle)',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {profile.title}
+              </motion.span>
+            </TagLine>
 
-          <Name variants={item}>
-            {t('hero.greeting')}{' '}
-            <span style={{ color: 'inherit' }}>
-              {profile.firstName} {profile.lastName}
-            </span>
-          </Name>
+            <Name variants={item}>
+              {t('hero.greeting')}{' '}
+              <span style={{ color: 'inherit' }}>
+                {profile.firstName} {profile.lastName}
+              </span>
+            </Name>
 
-          <Title variants={item}>{profile.title}</Title>
+            <Title variants={item}>{profile.title}</Title>
 
-          <Bio variants={item}>{profile.bio}</Bio>
+            <Bio variants={item}>{profile.bio}</Bio>
 
-          <Actions variants={item}>
-            <Button as="a" href="#projects" variant="primary" size="lg">
-              {t('hero.cta')}
-            </Button>
-            <Button as="a" href="#contact" variant="secondary" size="lg">
-              {t('nav.contact')}
-            </Button>
-          </Actions>
-        </HeroInner>
+            <InfoRow variants={item}>
+              <InfoChip>
+                <Icon icon={LuMapPin} size={14} />
+                {profile.location}
+              </InfoChip>
+            </InfoRow>
+
+            <Actions variants={item}>
+              <Button as="a" href="#projects" variant="primary" size="lg">
+                {t('hero.cta')}
+              </Button>
+              <Button as="a" href="#contact" variant="secondary" size="lg">
+                {t('nav.contact')}
+              </Button>
+            </Actions>
+          </HeroLeft>
+
+          <HeroRight
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={
+              reducedMotion
+                ? { duration: 0 }
+                : { delay: 0.6, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
+            }
+          >
+            <AvatarFrame>
+              <AvatarPlaceholder>{initials}</AvatarPlaceholder>
+              <AvatarAccent />
+            </AvatarFrame>
+          </HeroRight>
+        </HeroGrid>
       </Container>
 
       <ScrollHint

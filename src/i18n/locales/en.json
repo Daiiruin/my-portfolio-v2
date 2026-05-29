@@ -17,7 +17,11 @@
     "title": "My Stack"
   },
   "career": {
-    "title": "Career"
+    "title": "Career",
+    "work": "Experience",
+    "workBadge": "4 years",
+    "education": "Education",
+    "educationBadge": "Master's level"
   },
   "projects": {
     "title": "Projects",
