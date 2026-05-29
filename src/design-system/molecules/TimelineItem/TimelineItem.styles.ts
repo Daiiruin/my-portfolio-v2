@@ -1,4 +1,31 @@
 import styled, { keyframes, css } from 'styled-components'
+
+export const TypeTag = styled.span<{ $type: 'work' | 'education' }>`
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 10px;
+  border-radius: ${({ theme }) => theme.radii.full};
+  font-size: ${({ theme }) => theme.font.size.xs};
+  font-weight: ${({ theme }) => theme.font.weight.semibold};
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing.wide};
+  text-transform: uppercase;
+  border: 1px solid;
+  width: fit-content;
+
+  ${({ $type, theme }) =>
+    $type === 'work'
+      ? css`
+          color: ${theme.colors.accent};
+          border-color: ${theme.colors.accent};
+          background: ${theme.colors.accentSubtle};
+        `
+      : css`
+          color: ${theme.colors.textMuted};
+          border-color: ${theme.colors.border};
+          background: ${theme.colors.surfaceAlt};
+        `}
+`
 import { motion } from 'motion/react'
 import { media } from '../../theme/tokens'
 

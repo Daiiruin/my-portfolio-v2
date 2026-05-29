@@ -1,23 +1,58 @@
 [
   {
+    "id": "0",
+    "type": "work",
+    "period": "Oct 2024 — Now",
+    "company": "Culture Live",
+    "role": "Work-study Front-end Developer",
+    "description": "Handling a wide range of topics, I was able to exponentially grow my React skills and take my first steps in backend development with NestJS. I also got to discover many other tools and best practices."
+  },
+  {
     "id": "1",
-    "period": "2023 — Present",
-    "company": "Company A",
-    "role": "Senior Full-Stack Developer",
-    "description": "Building a React/Node SaaS application in an agile team."
+    "type": "work",
+    "period": "Oct 2022 — Sep 2024",
+    "company": "RIZNA",
+    "role": "Work-study Front-end Developer",
+    "description": "Two years across varied frontend projects, from landing pages to business applications. I strengthened my React practices, grew more autonomous and learned to ship in a real production environment"
   },
   {
     "id": "2",
-    "period": "2021 — 2023",
-    "company": "Company B",
-    "role": "Frontend Developer",
-    "description": "Building performant React UIs and setting up a design system."
+    "type": "work",
+    "period": "Jul — Oct 2022",
+    "company": "RIZNA",
+    "role": "Front-end Developer Intern",
+    "description": "My first professional experience in a superb company. I learned so much in a short time!!"
   },
   {
     "id": "3",
-    "period": "2019 — 2021",
-    "company": "Company C",
-    "role": "Junior Developer",
-    "description": "First production experience across various web projects."
+    "type": "education",
+    "period": "2024 — Now",
+    "company": "HETIC — RNCP Level 7",
+    "role": "Expert in Digital and Technological Transformation",
+    "description": "Having solidified my technical foundations, I now focus on the strategic dimensions of engineering: clean architecture, DevOps, application security, and driving technological change."
+  },
+  {
+    "id": "4",
+    "type": "education",
+    "period": "2021 — 2024",
+    "company": "HETIC RNCP Level 6",
+    "role": "Designer & Developer — Digital Solutions",
+    "description": "I started learning high level programming languages there."
+  },
+  {
+    "id": "5",
+    "type": "education",
+    "period": "2020 — 2021",
+    "company": "Gustave Eiffel University",
+    "role": "Mathematics and Computer Science Bachelor",
+    "description": "The year I really understood that I loved web development in particular."
+  },
+  {
+    "id": "6",
+    "type": "education",
+    "period": "2017 — 2020",
+    "company": "Simone de Beauvoir High School",
+    "role": "Scientific Baccalaureate, Computer Science Option",
+    "description": "My high school years where I was able to discover web development :')."
   }
 ]

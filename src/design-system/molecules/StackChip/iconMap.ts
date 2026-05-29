@@ -20,6 +20,16 @@ import {
   SiVercel,
   SiVite,
   SiPrisma,
+  SiPython,
+  SiFramer,
+  SiExpress,
+  SiMysql,
+  SiSqlite,
+  SiFirebase,
+  SiLinux,
+  SiStorybook,
+  SiFlutter,
+  SiSentry,
 } from 'react-icons/si'
 import { LuCode } from 'react-icons/lu'
 
@@ -44,6 +54,16 @@ export const iconMap: Record<string, IconType> = {
   vercel: SiVercel,
   vite: SiVite,
   prisma: SiPrisma,
+  python: SiPython,
+  framer: SiFramer,
+  express: SiExpress,
+  mysql: SiMysql,
+  sqlite: SiSqlite,
+  firebase: SiFirebase,
+  linux: SiLinux,
+  storybook: SiStorybook,
+  flutter: SiFlutter,
+  sentry: SiSentry,
 }
 
 export function getIcon(key: string): IconType {

@@ -17,7 +17,11 @@
     "title": "Ma Stack"
   },
   "career": {
-    "title": "Mon Parcours"
+    "title": "Mon Parcours",
+    "work": "Expérience",
+    "workBadge": "4 ans",
+    "education": "Formation",
+    "educationBadge": "Bac +5"
   },
   "projects": {
     "title": "Mes Projets",

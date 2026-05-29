@@ -6,7 +6,6 @@ import { Container } from '../../design-system/atoms/Container'
 import { Section } from '../../design-system/atoms/Section'
 import { Heading } from '../../design-system/atoms/Heading'
 import { HeroBlock } from '../../design-system/organisms/HeroBlock'
-import { AboutBlock } from '../../design-system/organisms/AboutBlock'
 import { StackGrid } from '../../design-system/organisms/StackGrid'
 import { CareerTimeline } from '../../design-system/organisms/CareerTimeline'
 import { ProjectsGrid } from '../../design-system/organisms/ProjectsGrid'
@@ -50,7 +49,6 @@ export function HomePage() {
   return (
     <PageLayout>
       <HeroBlock />
-      <AboutBlock />
       <StackGrid />
       <CareerTimeline />
       <ProjectsGrid />
