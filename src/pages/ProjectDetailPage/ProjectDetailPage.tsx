@@ -140,15 +140,9 @@ export function ProjectDetailPage() {
     <PageLayout>
       <Hero>
         <Container>
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="visible"
-          >
+          <motion.div variants={container} initial="hidden" animate="visible">
             <motion.div variants={item}>
-              <BackButton onClick={() => navigate(-1)}>
-                ← {t('projects.backHome')}
-              </BackButton>
+              <BackButton onClick={() => navigate(-1)}>{t('projects.backHome')}</BackButton>
             </motion.div>
             <motion.div variants={item}>
               <Heading level={1}>{project.title}</Heading>
@@ -156,7 +150,9 @@ export function ProjectDetailPage() {
             <motion.div variants={item}>
               <Meta>
                 {project.stack.map((tech) => (
-                  <Badge key={tech} variant="accent">{tech}</Badge>
+                  <Badge key={tech} variant="accent">
+                    {tech}
+                  </Badge>
                 ))}
               </Meta>
             </motion.div>
@@ -165,11 +161,7 @@ export function ProjectDetailPage() {
       </Hero>
 
       <Container>
-        <Content
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
+        <Content variants={container} initial="hidden" animate="visible">
           <DescriptionBlock variants={item}>
             <DescriptionText>{project.description}</DescriptionText>
           </DescriptionBlock>

@@ -3,7 +3,7 @@ import { LuArrowRight, LuExternalLink } from 'react-icons/lu'
 import { useTranslation } from 'react-i18next'
 import { Badge } from '../../atoms/Badge'
 import { Icon } from '../../atoms/Icon'
-import { Card, ImageArea, Body, Title, Description, StackRow, Footer, ViewLink, IconLinks, IconLink } from './ProjectCard.styles'
+import { CardWrapper, Card, ImageArea, Body, Title, Description, StackRow, Footer, ViewLink, IconLinks, IconLink } from './ProjectCard.styles'
 
 type Props = {
   slug: string
@@ -18,6 +18,7 @@ export function ProjectCard({ slug, title, shortDescription, stack, github, demo
   const { t } = useTranslation()
 
   return (
+    <CardWrapper>
     <Card>
       <ImageArea />
       <Body>
@@ -46,5 +47,6 @@ export function ProjectCard({ slug, title, shortDescription, stack, github, demo
         </IconLinks>
       </Footer>
     </Card>
+    </CardWrapper>
   )
 }

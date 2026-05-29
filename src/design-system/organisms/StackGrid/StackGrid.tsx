@@ -9,7 +9,7 @@ import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../../lib/motion'
 import stackFr from '../../../data/stack.fr.json'
 import stackEn from '../../../data/stack.en.json'
-import { Header, SectionLabel, Grid } from './StackGrid.styles'
+import { Header, SectionLabel, CategoryGroup, CategoryTitle, Grid } from './StackGrid.styles'
 
 export function StackGrid() {
   const { t } = useTranslation()
@@ -18,6 +18,8 @@ export function StackGrid() {
 
   const container = reducedMotion ? reducedStagger : staggerContainer
   const item = reducedMotion ? reducedFadeIn : fadeInUpScroll
+
+  const categories = [...new Set(stack.map((tech) => tech.category))]
 
   return (
     <Section id="stack">
@@ -34,18 +36,25 @@ export function StackGrid() {
           </motion.div>
         </Header>
 
-        <Grid
+        <motion.div
           variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
         >
-          {stack.map((tech) => (
-            <motion.div key={tech.name} variants={item}>
-              <StackChip name={tech.name} icon={tech.icon} />
-            </motion.div>
+          {categories.map((category) => (
+            <CategoryGroup key={category} variants={item}>
+              <CategoryTitle>{category}</CategoryTitle>
+              <Grid>
+                {stack
+                  .filter((tech) => tech.category === category)
+                  .map((tech) => (
+                    <StackChip key={tech.name} name={tech.name} icon={tech.icon} />
+                  ))}
+              </Grid>
+            </CategoryGroup>
           ))}
-        </Grid>
+        </motion.div>
       </Container>
     </Section>
   )

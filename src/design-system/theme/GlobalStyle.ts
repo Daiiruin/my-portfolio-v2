@@ -1,6 +1,17 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+  @property --card-gx {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: false;
+  }
+  @property --card-gy {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: false;
+  }
+
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
