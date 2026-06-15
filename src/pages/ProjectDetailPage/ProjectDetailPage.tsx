@@ -25,7 +25,7 @@ type Project = {
   description: string
   stack: string[]
   image: string
-  github: string
+  github: string | null
   demo: string | null
 }
 
@@ -57,6 +57,26 @@ const Meta = styled.div`
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.space['2']};
   margin-top: ${({ theme }) => theme.space['4']};
+`
+
+const ImageWrapper = styled(motion.div)`
+  margin: ${({ theme }) => theme.space['8']} 0 0;
+  border-radius: ${({ theme }) => theme.radii.xl};
+  overflow: hidden;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  position: relative;
+  background: ${({ theme }) => theme.colors.surface};
+
+  img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+
+    ${media.md} {
+      height: 480px;
+    }
+  }
 `
 
 const Content = styled(motion.div)`
@@ -161,6 +181,10 @@ export function ProjectDetailPage() {
       </Hero>
 
       <Container>
+        <ImageWrapper variants={item} initial="hidden" animate="visible">
+          <img src={project.image} alt={project.title} />
+        </ImageWrapper>
+
         <Content variants={container} initial="hidden" animate="visible">
           <DescriptionBlock variants={item}>
             <DescriptionText>{project.description}</DescriptionText>
@@ -179,18 +203,20 @@ export function ProjectDetailPage() {
             <SidebarSection>
               <SidebarLabel>Links</SidebarLabel>
               <Links>
-                <Button
-                  as="a"
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="secondary"
-                  size="sm"
-                >
-                  <Icon icon={FaGithub} size={16} />
-                  GitHub
-                </Button>
-                {project.demo && (
+                {project.github ? (
+                  <Button
+                    as="a"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="secondary"
+                    size="sm"
+                  >
+                    <Icon icon={FaGithub} size={16} />
+                    GitHub
+                  </Button>
+                ) : null}
+                {project.demo ? (
                   <Button
                     as="a"
                     href={project.demo}
@@ -202,7 +228,7 @@ export function ProjectDetailPage() {
                     <Icon icon={LuExternalLink} size={16} />
                     Demo
                   </Button>
-                )}
+                ) : null}
               </Links>
             </SidebarSection>
           </Sidebar>

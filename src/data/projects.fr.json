@@ -1,32 +1,32 @@
 [
   {
-    "slug": "project-alpha",
-    "title": "Project Alpha",
-    "shortDescription": "Une application web moderne de gestion de tâches.",
-    "description": "Application SaaS complète avec authentification, tableaux kanban en temps réel et synchronisation multi-appareils. Conçue pour des équipes agiles.",
-    "stack": ["React", "TypeScript", "Node.js", "PostgreSQL"],
-    "image": "/projects/project-alpha.jpg",
-    "github": "https://github.com",
-    "demo": "https://example.com"
+    "slug": "culture-live",
+    "title": "Culture Live",
+    "shortDescription": "Plateforme SaaS B2B d'engagement et de culture d'entreprise.",
+    "description": "Application fullstack en monorepo (Turborepo) pour booster l'engagement collaborateur : reconnaissance, challenges, quests, playbooks et impact tracking. Backend NestJS avec architecture feature-first, jobs asynchrones via AWS SQS/SNS et intégrations métier (Slack, Microsoft Teams, Google Chat, HubSpot, Salesforce). Frontend React avec design system maison, i18n sur 9 langues via Lokalise et state management Zustand/TanStack Query.",
+    "stack": ["React", "TypeScript", "NestJS", "PostgreSQL", "Turborepo", "AWS", "Auth0"],
+    "image": "/projects/culture-live.png",
+    "github": null,
+    "demo": "https://www.culture-live.com/"
   },
   {
-    "slug": "project-beta",
-    "title": "Project Beta",
-    "shortDescription": "API REST haute performance pour e-commerce.",
-    "description": "API RESTful scalable avec cache Redis, paiement Stripe, gestion des stocks et notifications en temps réel via WebSocket.",
-    "stack": ["Node.js", "TypeScript", "PostgreSQL", "Redis"],
-    "image": "/projects/project-beta.jpg",
-    "github": "https://github.com",
+    "slug": "les-heritieres",
+    "title": "Les Héritières",
+    "shortDescription": "Marketplace de joaillerie de luxe vintage et de seconde main.",
+    "description": "Plateforme e-commerce curatée dédiée à la revente de bijoux et montres de prestige (Cartier, Bulgari, Van Cleef & Arpels…). Fonctionnalités de filtrage par type, pierre et marque, club membres avec ventes privées, estimation en ligne et accompagnement à la vente. Présence physique à Paris, Bruxelles, Genève et Lausanne.",
+    "stack": ["Shopify", "Liquid", "JavaScript"],
+    "image": "/projects/les-heritieres.png",
+    "github": null,
+    "demo": "https://les-heritieres.com"
+  },
+  {
+    "slug": "lost-world",
+    "title": "Lost World",
+    "shortDescription": "RPG en tour par tour jouable dans le terminal.",
+    "description": "Premier grand projet réalisé à mes débuts. RPG console en Python avec carte de déplacement, système de combats au tour par tour contre des mobs et des boss, progression de niveau, et système de loot (armes & armures). Projet scolaire V1 avec une base solide pensée pour évoluer.",
+    "stack": ["Python"],
+    "image": "/projects/lost-world.png",
+    "github": "https://github.com/Daiiruin/RPG-Python",
     "demo": null
-  },
-  {
-    "slug": "project-gamma",
-    "title": "Project Gamma",
-    "shortDescription": "Dashboard analytics avec visualisations interactives.",
-    "description": "Dashboard de visualisation de données avec graphiques interactifs, filtres avancés et export PDF. Intégration de plusieurs sources de données.",
-    "stack": ["React", "TypeScript", "D3.js", "Python"],
-    "image": "/projects/project-gamma.jpg",
-    "github": "https://github.com",
-    "demo": "https://example.com"
   }
 ]

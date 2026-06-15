@@ -18,7 +18,7 @@ type Project = {
   description: string
   stack: string[]
   image: string
-  github: string
+  github: string | null
   demo: string | null
 }
 
@@ -58,6 +58,7 @@ export function ProjectsGrid() {
                 title={project.title}
                 shortDescription={project.shortDescription}
                 stack={project.stack}
+                image={project.image}
                 github={project.github}
                 demo={project.demo}
               />
