@@ -69,13 +69,8 @@ const ImageWrapper = styled(motion.div)`
 
   img {
     width: 100%;
-    height: 320px;
-    object-fit: cover;
+    height: auto;
     display: block;
-
-    ${media.md} {
-      height: 480px;
-    }
   }
 `
 

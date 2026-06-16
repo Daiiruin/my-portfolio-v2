@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { HomePage } from './pages/HomePage/HomePage'
 import { DevPage } from './pages/DevPage/DevPage'
+import { ScrollToTop } from './components/ScrollToTop'
 
 const ProjectDetailPage = lazy(() =>
   import('./pages/ProjectDetailPage/ProjectDetailPage').then((m) => ({
@@ -12,6 +13,7 @@ const ProjectDetailPage = lazy(() =>
 export default function App() {
   return (
     <Suspense fallback={null}>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
