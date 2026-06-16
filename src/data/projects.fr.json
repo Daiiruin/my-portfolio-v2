@@ -28,5 +28,15 @@
     "image": "/projects/lost-world.png",
     "github": "https://github.com/Daiiruin/RPG-Python",
     "demo": null
+  },
+  {
+    "slug": "atlasee",
+    "title": "Atlasee",
+    "shortDescription": "Suis et partage les pays que tu as visités, seul ou en groupe.",
+    "description": "Application web fullstack pour visualiser ses pays visités sur une carte du monde interactive. Les utilisateurs peuvent suivre leur propre parcours et créer des groupes pour comparer leurs voyages avec des amis ou la famille. Architecture feature-first : React + NestJS + PostgreSQL, authentification JWT avec rotation de refresh token (cookie httpOnly), système d'invitation par groupe et suivi des pays par groupe.",
+    "stack": ["React", "TypeScript", "NestJS", "PostgreSQL", "Docker"],
+    "image": "/projects/atlasee.png",
+    "github": "https://github.com/Daiiruin/Atlasee",
+    "demo": null
   }
 ]
