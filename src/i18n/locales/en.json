@@ -26,7 +26,15 @@
   "projects": {
     "title": "Projects",
     "viewDetails": "View project",
-    "backHome": "← Back"
+    "backHome": "← Back",
+    "announcement": {
+      "badge": "Last updated: August 10, 2026",
+      "message": "Project in development: an interactive online escape game — you'll soon have to save the world from an AI gone rogue! More news coming soon..."
+    },
+    "inProgressCard": {
+      "before": "My escape game codenamed ",
+      "after": " is coming soon!"
+    }
   },
   "contact": {
     "title": "Contact",

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { media } from '../../theme/tokens'
@@ -11,7 +11,7 @@ const orbitGlow = keyframes`
   100% { --card-gx: 0%;   --card-gy: 0%;   }
 `
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.div<{ $inProgress?: boolean }>`
   position: relative;
   isolation: isolate;
   border-radius: ${({ theme }) => theme.radii.xl};
@@ -36,13 +36,17 @@ export const CardWrapper = styled.div`
     pointer-events: none;
   }
 
-  &:hover::before {
-    opacity: 1;
-    animation-play-state: running;
-  }
+  ${({ $inProgress }) =>
+    !$inProgress &&
+    css`
+      &:hover::before {
+        opacity: 1;
+        animation-play-state: running;
+      }
+    `}
 `
 
-export const Card = styled(motion.article)`
+export const Card = styled(motion.article)<{ $inProgress?: boolean }>`
   position: relative;
   z-index: 1;
   display: flex;
@@ -50,11 +54,11 @@ export const Card = styled(motion.article)`
   flex-direction: column;
   border-radius: calc(${({ theme }) => theme.radii.xl} - 2px);
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.surface};
+  background: ${({ theme, $inProgress }) => ($inProgress ? theme.colors.accentSubtle : theme.colors.surface)};
   transition: transform ${({ theme }) => theme.transition.fast};
 `
 
-export const ImageArea = styled.div`
+export const ImageArea = styled.div<{ $inProgress?: boolean }>`
   height: 140px;
   background: linear-gradient(
     135deg,
@@ -63,6 +67,14 @@ export const ImageArea = styled.div`
   );
   position: relative;
   overflow: hidden;
+
+  ${({ $inProgress }) =>
+    $inProgress &&
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `}
 
   &::after {
     content: '';
@@ -78,6 +90,14 @@ export const ImageArea = styled.div`
   ${media.md} {
     height: 160px;
   }
+`
+
+export const QuestionMark = styled.span`
+  position: relative;
+  z-index: 1;
+  font-size: ${({ theme }) => theme.font.size['4xl']};
+  font-weight: ${({ theme }) => theme.font.weight.bold};
+  color: ${({ theme }) => theme.colors.accent};
 `
 
 export const Body = styled.div`

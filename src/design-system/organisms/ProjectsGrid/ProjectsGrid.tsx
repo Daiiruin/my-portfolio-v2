@@ -4,6 +4,7 @@ import { Heading } from '../../atoms/Heading'
 import { Container } from '../../atoms/Container'
 import { Section } from '../../atoms/Section'
 import { ProjectCard } from '../../molecules/ProjectCard'
+import { AnnouncementMarquee } from '../../molecules/AnnouncementMarquee'
 import { useLocaleData } from '../../../hooks/useLocaleData'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../../lib/motion'
@@ -20,6 +21,8 @@ type Project = {
   image: string
   github: string | null
   demo: string | null
+  inProgress: boolean
+  codeName?: string
 }
 
 export function ProjectsGrid() {
@@ -45,6 +48,8 @@ export function ProjectsGrid() {
           </motion.div>
         </Header>
 
+        <AnnouncementMarquee />
+
         <Grid
           variants={container}
           initial="hidden"
@@ -61,6 +66,8 @@ export function ProjectsGrid() {
                 image={project.image}
                 github={project.github}
                 demo={project.demo}
+                inProgress={project.inProgress}
+                codeName={project.codeName}
               />
             </motion.div>
           ))}

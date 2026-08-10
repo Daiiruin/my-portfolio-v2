@@ -26,7 +26,15 @@
   "projects": {
     "title": "Mes Projets",
     "viewDetails": "Voir le projet",
-    "backHome": "← Retour"
+    "backHome": "← Retour",
+    "announcement": {
+      "badge": "Dernière mise à jour : 10 août 2026",
+      "message": "Projet en cours de développement : Escape game interactif en ligne, vous devrez bientôt sauver le monde d'une IA devenue incontrôlable ! Plus de nouvelles bientôt..."
+    },
+    "inProgressCard": {
+      "before": "Mon escape game du nom de ",
+      "after": " arrive bientôt !"
+    }
   },
   "contact": {
     "title": "Contact",

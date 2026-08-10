@@ -18,3 +18,5 @@ export { Section } from './Section'
 
 export { Badge } from './Badge'
 export type { BadgeVariant } from './Badge'
+
+export { GlitchText } from './GlitchText'
