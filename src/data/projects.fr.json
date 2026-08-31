@@ -1,15 +1,14 @@
 [
   {
-    "slug": "escape-game-ia",
-    "title": "Escape Game",
-    "shortDescription": "Un escape game interactif en ligne... les détails arrivent bientôt.",
-    "description": "Un escape game interactif en ligne... les détails arrivent bientôt.",
-    "codeName": "OD_X@KM6",
-    "stack": ["?", "?", "?"],
-    "image": "",
+    "slug": "override",
+    "title": "OVERRIDE",
+    "shortDescription": "Escape game hacker interactif en solo : infiltre les serveurs de l'IA NEXUS avant la fin du compte à rebours.",
+    "description": "Escape game narratif en solo dans une ambiance cyberpunk : une IA nommée NEXUS a pris le contrôle du réseau, et le joueur doit s'infiltrer à travers 8 niveaux avant la fin d'un compte à rebours global. Chaque niveau propose un mécanisme différent — déchiffrement par table de correspondance, fouille dans une fausse arborescence de fichiers, lecture d'un journal système, logique des nombres premiers, mémorisation d'une séquence lumineuse, frappe rapide de mots qui tombent à l'écran, et destruction de bots en temps réel. Toute erreur fait perdre 30 secondes au compte à rebours. Progression sauvegardée en localStorage pour reprendre une partie interrompue.",
+    "stack": ["React", "TypeScript", "Vite", "Vitest"],
+    "image": "/projects/override.png",
     "github": null,
-    "demo": null,
-    "inProgress": true
+    "demo": "https://escape-game-override.vercel.app",
+    "inProgress": false
   },
   {
     "slug": "culture-live",

@@ -1,15 +1,14 @@
 [
   {
-    "slug": "escape-game-ia",
-    "title": "Escape Game",
-    "shortDescription": "An interactive online escape game... more details coming soon.",
-    "description": "An interactive online escape game... more details coming soon.",
-    "codeName": "OD_X@KM6",
-    "stack": ["?", "?", "?"],
-    "image": "",
+    "slug": "override",
+    "title": "OVERRIDE",
+    "shortDescription": "Solo interactive hacker escape game: infiltrate the rogue AI NEXUS's servers before the countdown runs out.",
+    "description": "A narrative solo escape game set in a cyberpunk atmosphere: a rogue AI named NEXUS has taken over the network, and the player must infiltrate it through 8 levels before a global countdown reaches zero. Each level uses a different mechanic — substitution-cipher lookup tables, searching a fake file tree, scrolling through a system log, prime-number logic, memorizing a light sequence, fast-typing falling words, and real-time bot destruction. Any mistake costs 30 seconds off the countdown. Progress is saved to localStorage so an interrupted run can be resumed.",
+    "stack": ["React", "TypeScript", "Vite", "Vitest"],
+    "image": "/projects/override.png",
     "github": null,
-    "demo": null,
-    "inProgress": true
+    "demo": "https://escape-game-override.vercel.app",
+    "inProgress": false
   },
   {
     "slug": "culture-live",
