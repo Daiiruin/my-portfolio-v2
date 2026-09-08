@@ -3,7 +3,8 @@ import { media } from '../../theme/tokens'
 
 export const StyledContainer = styled.div<{ $narrow?: boolean }>`
   width: 100%;
-  max-width: ${({ $narrow }) => ($narrow ? '760px' : '1200px')};
+  max-width: ${({ $narrow, theme }) =>
+    $narrow ? theme.layout.containerNarrow : theme.layout.containerWidth};
   margin-inline: auto;
   padding-inline: ${({ theme }) => theme.space['4']};
 

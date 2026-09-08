@@ -1,6 +1,4 @@
 import { tokens } from './tokens'
 
-export const darkTheme = {
-  ...tokens,
-  mode: 'dark' as const,
-}
+// The site is dark-only by design — no `mode` field, no light variant.
+export const darkTheme = tokens

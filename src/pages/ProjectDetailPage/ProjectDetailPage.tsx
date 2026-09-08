@@ -61,7 +61,7 @@ const Meta = styled.div`
 
 const ImageWrapper = styled(motion.div)`
   margin: ${({ theme }) => theme.space['8']} 0 0;
-  border-radius: ${({ theme }) => theme.radii.xl};
+  border-radius: ${({ theme }) => theme.radii.none};
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.colors.border};
   position: relative;

@@ -19,7 +19,7 @@ export const StyledBadge = styled.span<{ $variant: BadgeVariant }>`
   align-items: center;
   gap: ${({ theme }) => theme.space['1']};
   padding: ${({ theme }) => `2px ${theme.space['2']}`};
-  border-radius: ${({ theme }) => theme.radii.full};
+  border-radius: ${({ theme }) => theme.radii.sm};
   font-size: ${({ theme }) => theme.font.size.xs};
   font-weight: ${({ theme }) => theme.font.weight.medium};
   line-height: 1.4;

@@ -1,19 +1,25 @@
 export const tokens = {
   colors: {
-    background: '#0a0a0a',
-    surface: '#111111',
-    surfaceAlt: '#1a1a1a',
-    border: '#222222',
-    borderHover: '#333333',
-    text: '#ebebeb',
-    textMuted: '#888888',
-    textSubtle: '#555555',
-    accent: '#3b82f6',
-    accentHover: '#2563eb',
-    accentSubtle: 'rgba(59, 130, 246, 0.12)',
-    error: '#ef4444',
-    errorSubtle: 'rgba(239, 68, 68, 0.12)',
-    success: '#22c55e',
+    background: '#08070f',
+    surface: '#0c0b16',
+    surfaceAlt: '#12111d',
+    border: '#201f2e',
+    borderHover: '#2e2c42',
+    grid: '#16151f',
+    text: '#d4d4d0',
+    textMuted: '#7c7f88',
+    textSubtle: '#4a4a58',
+    // Neon system — named by role, never by hue. Naming a token `nexus` instead of
+    // `magenta` is what keeps it from being reached for decoratively.
+    accent: '#00e5ff', // cyan — dominant, all interactive: links, actions, focus, active rails
+    accentHover: '#22ecff',
+    accentSubtle: 'rgba(0, 229, 255, 0.10)',
+    nexus: '#ff2e97', // magenta — highlights, code names, the voice of NEXUS. Never below 14px.
+    nexusSubtle: 'rgba(255, 46, 151, 0.10)',
+    success: '#00ff9c', // green — success states, `[ active ]`, terminal output
+    warning: '#ffb000', // amber — warnings
+    error: '#ff3b30', // red — errors, countdowns
+    errorSubtle: 'rgba(255, 59, 48, 0.12)',
   },
   space: {
     '1': '4px',
@@ -28,15 +34,16 @@ export const tokens = {
     '32': '128px',
   },
   radii: {
-    sm: '4px',
-    md: '8px',
-    lg: '12px',
-    xl: '16px',
+    none: '0',
+    sm: '2px',
     full: '9999px',
   },
   font: {
-    family: "'Inter', system-ui, -apple-system, sans-serif",
+    family: "'JetBrains Mono', 'Fira Code', 'Courier New', monospace",
     mono: "'JetBrains Mono', 'Fira Code', 'Courier New', monospace",
+    // Display face — Chakra Petch, reserved for headings ≥ 32px. Discipline: uppercase,
+    // tight tracking, weight 600-700, zero glow/outline/skew/gradient/shadow treatment.
+    display: "'Chakra Petch', 'JetBrains Mono', monospace",
     size: {
       xs: '12px',
       sm: '14px',
@@ -73,6 +80,11 @@ export const tokens = {
     md: '768px',
     lg: '1024px',
     xl: '1280px',
+  },
+  layout: {
+    headerHeight: '60px',
+    containerWidth: '1200px',
+    containerNarrow: '760px',
   },
   shadow: {
     sm: '0 1px 4px rgba(0,0,0,0.6)',

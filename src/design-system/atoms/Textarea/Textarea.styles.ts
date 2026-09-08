@@ -5,7 +5,7 @@ export const StyledTextarea = styled.textarea`
   padding: ${({ theme }) => theme.space['3']} ${({ theme }) => theme.space['4']};
   background: ${({ theme }) => theme.colors.surface};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.md};
+  border-radius: ${({ theme }) => theme.radii.sm};
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.font.family};
   font-size: ${({ theme }) => theme.font.size.base};

@@ -5,7 +5,7 @@
     "shortDescription": "Escape game hacker interactif en solo : infiltre les serveurs de l'IA NEXUS avant la fin du compte à rebours.",
     "description": "Escape game narratif en solo dans une ambiance cyberpunk : une IA nommée NEXUS a pris le contrôle du réseau, et le joueur doit s'infiltrer à travers 8 niveaux avant la fin d'un compte à rebours global. Chaque niveau propose un mécanisme différent — déchiffrement par table de correspondance, fouille dans une fausse arborescence de fichiers, lecture d'un journal système, logique des nombres premiers, mémorisation d'une séquence lumineuse, frappe rapide de mots qui tombent à l'écran, et destruction de bots en temps réel. Toute erreur fait perdre 30 secondes au compte à rebours. Progression sauvegardée en localStorage pour reprendre une partie interrompue.",
     "stack": ["React", "TypeScript", "Vite", "Vitest"],
-    "image": "/projects/override.png",
+    "image": "/projects/override.webp",
     "github": null,
     "demo": "https://escape-game-override.vercel.app",
     "inProgress": false
@@ -16,7 +16,7 @@
     "shortDescription": "Plateforme SaaS B2B d'engagement et de culture d'entreprise.",
     "description": "Application fullstack en monorepo (Turborepo) pour booster l'engagement collaborateur : reconnaissance, challenges, quests, playbooks et impact tracking. Backend NestJS avec architecture feature-first, jobs asynchrones via AWS SQS/SNS et intégrations métier (Slack, Microsoft Teams, Google Chat, HubSpot, Salesforce). Frontend React avec design system maison, i18n sur 9 langues via Lokalise et state management Zustand/TanStack Query.",
     "stack": ["React", "TypeScript", "NestJS", "PostgreSQL", "Turborepo", "AWS", "Auth0"],
-    "image": "/projects/culture-live.png",
+    "image": "/projects/culture-live.webp",
     "github": null,
     "demo": "https://www.culture-live.com/",
     "inProgress": false
@@ -27,7 +27,7 @@
     "shortDescription": "Marketplace de joaillerie de luxe vintage et de seconde main.",
     "description": "Plateforme e-commerce curatée dédiée à la revente de bijoux et montres de prestige (Cartier, Bulgari, Van Cleef & Arpels…). Fonctionnalités de filtrage par type, pierre et marque, club membres avec ventes privées, estimation en ligne et accompagnement à la vente. Présence physique à Paris, Bruxelles, Genève et Lausanne.",
     "stack": ["Shopify", "Liquid", "JavaScript"],
-    "image": "/projects/les-heritieres.png",
+    "image": "/projects/les-heritieres.webp",
     "github": null,
     "demo": "https://les-heritieres.com",
     "inProgress": false
@@ -49,7 +49,7 @@
     "shortDescription": "Suis et partage les pays que tu as visités, seul ou en groupe.",
     "description": "Application web fullstack pour visualiser ses pays visités sur une carte du monde interactive. Les utilisateurs peuvent suivre leur propre parcours et créer des groupes pour comparer leurs voyages avec des amis ou la famille. Architecture feature-first : React + NestJS + PostgreSQL, authentification JWT avec rotation de refresh token (cookie httpOnly), système d'invitation par groupe et suivi des pays par groupe.",
     "stack": ["React", "TypeScript", "NestJS", "PostgreSQL", "Docker"],
-    "image": "/projects/atlasee.png",
+    "image": "/projects/atlasee.webp",
     "github": "https://github.com/Daiiruin/Atlasee",
     "demo": null,
     "inProgress": false

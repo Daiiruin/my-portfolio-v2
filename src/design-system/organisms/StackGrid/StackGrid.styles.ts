@@ -6,15 +6,6 @@ export const Header = styled(motion.div)`
   margin-bottom: ${({ theme }) => theme.space['12']};
 `
 
-export const SectionLabel = styled.p`
-  font-size: ${({ theme }) => theme.font.size.xs};
-  font-weight: ${({ theme }) => theme.font.weight.semibold};
-  letter-spacing: ${({ theme }) => theme.font.letterSpacing.wider};
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.accent};
-  margin-bottom: ${({ theme }) => theme.space['3']};
-`
-
 export const CategoryGroup = styled(motion.div)`
   margin-bottom: ${({ theme }) => theme.space['8']};
 

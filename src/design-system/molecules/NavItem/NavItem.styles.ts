@@ -6,7 +6,7 @@ export const StyledNavItem = styled.a<{ $active: boolean }>`
   color: ${({ $active, theme }) => ($active ? theme.colors.text : theme.colors.textMuted)};
   text-decoration: none;
   padding: ${({ theme }) => `${theme.space['1']} ${theme.space['2']}`};
-  border-radius: ${({ theme }) => theme.radii.md};
+  border-radius: ${({ theme }) => theme.radii.sm};
   transition: color ${({ theme }) => theme.transition.fast},
     background ${({ theme }) => theme.transition.fast};
   position: relative;

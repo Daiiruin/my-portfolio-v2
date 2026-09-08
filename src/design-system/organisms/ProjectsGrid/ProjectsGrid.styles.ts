@@ -6,16 +6,6 @@ export const Header = styled(motion.div)`
   margin-bottom: ${({ theme }) => theme.space['12']};
 `
 
-export const SectionLabel = styled.span`
-  font-size: ${({ theme }) => theme.font.size.xs};
-  font-weight: ${({ theme }) => theme.font.weight.medium};
-  color: ${({ theme }) => theme.colors.accent};
-  text-transform: uppercase;
-  letter-spacing: ${({ theme }) => theme.font.letterSpacing.wider};
-  display: block;
-  margin-bottom: ${({ theme }) => theme.space['2']};
-`
-
 export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr;

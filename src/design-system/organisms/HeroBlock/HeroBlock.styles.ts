@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { media } from '../../theme/tokens'
 
 export const HeroWrapper = styled.div`
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - ${({ theme }) => theme.layout.headerHeight});
   display: flex;
   align-items: center;
   position: relative;
@@ -54,6 +54,11 @@ export const Dot = styled.span`
 `
 
 export const Name = styled(motion.h1)`
+  /* Bypasses the Heading atom (custom clamp() sizing), so the Chakra Petch discipline
+     — display face, uppercase, tight tracking, weight 600-700, zero extra treatment —
+     is applied here directly rather than through levelStyles. */
+  font-family: ${({ theme }) => theme.font.display};
+  text-transform: uppercase;
   font-size: clamp(
     ${({ theme }) => theme.font.size['2xl']},
     6vw,
@@ -96,7 +101,7 @@ export const InfoChip = styled.span`
   padding: ${({ theme }) => `${theme.space['1']} ${theme.space['3']}`};
   background: ${({ theme }) => theme.colors.surfaceAlt};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.full};
+  border-radius: ${({ theme }) => theme.radii.sm};
   font-size: ${({ theme }) => theme.font.size.sm};
   color: ${({ theme }) => theme.colors.textMuted};
 `
@@ -125,9 +130,9 @@ export const ScrollHint = styled(motion.div)`
 `
 
 export const ScrollLine = styled(motion.div)`
-  width: 2px;
+  width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, ${({ theme }) => theme.colors.accent}, transparent);
+  background: ${({ theme }) => theme.colors.accent};
 `
 
 export const AvatarFrame = styled.div`
@@ -141,7 +146,7 @@ export const AvatarPlaceholder = styled.div`
   height: 100%;
   background: ${({ theme }) => theme.colors.surfaceAlt};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.xl};
+  border-radius: ${({ theme }) => theme.radii.none};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,6 +160,6 @@ export const AvatarAccent = styled.div`
   position: absolute;
   inset: -8px;
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.xl};
+  border-radius: ${({ theme }) => theme.radii.none};
   z-index: -1;
 `

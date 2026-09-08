@@ -20,3 +20,7 @@ export { Badge } from './Badge'
 export type { BadgeVariant } from './Badge'
 
 export { GlitchText } from './GlitchText'
+
+export { GridOverlay } from './GridOverlay'
+
+export { CRTOverlay } from './CRTOverlay'

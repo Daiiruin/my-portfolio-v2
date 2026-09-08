@@ -2,10 +2,13 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { Text } from '../../atoms/Text'
 import { Icon } from '../../atoms/Icon'
 import { StyledFooter, Inner, Links, SocialLink } from './Footer.styles'
-import contactData from '../../../data/contact.en.json'
+import { useLocaleData } from '../../../hooks/useLocaleData'
+import contactFr from '../../../data/contact.fr.json'
+import contactEn from '../../../data/contact.en.json'
 
 export function Footer() {
   const year = new Date().getFullYear()
+  const contactData = useLocaleData({ fr: contactFr, en: contactEn })
 
   return (
     <StyledFooter>

@@ -22,7 +22,7 @@ export const Label = styled.label`
 export const StatusMessage = styled(motion.p)<{ $type: 'success' | 'error' }>`
   font-size: ${({ theme }) => theme.font.size.sm};
   padding: ${({ theme }) => theme.space['3']} ${({ theme }) => theme.space['4']};
-  border-radius: ${({ theme }) => theme.radii.md};
+  border-radius: ${({ theme }) => theme.radii.sm};
   background: ${({ theme, $type }) =>
     $type === 'success' ? theme.colors.success + '1a' : theme.colors.error + '1a'};
   color: ${({ theme, $type }) =>

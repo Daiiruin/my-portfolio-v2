@@ -5,16 +5,6 @@ export const Header = styled(motion.div)`
   margin-bottom: ${({ theme }) => theme.space['12']};
 `
 
-export const SectionLabel = styled.span`
-  font-size: ${({ theme }) => theme.font.size.xs};
-  font-weight: ${({ theme }) => theme.font.weight.medium};
-  color: ${({ theme }) => theme.colors.accent};
-  text-transform: uppercase;
-  letter-spacing: ${({ theme }) => theme.font.letterSpacing.wider};
-  display: block;
-  margin-bottom: ${({ theme }) => theme.space['2']};
-`
-
 export const List = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -29,7 +19,7 @@ export const TabBar = styled.div`
 
 export const TabBadge = styled.span<{ $active: boolean }>`
   padding: 1px 7px;
-  border-radius: ${({ theme }) => theme.radii.full};
+  border-radius: ${({ theme }) => theme.radii.sm};
   font-size: ${({ theme }) => theme.font.size.xs};
   font-weight: ${({ theme }) => theme.font.weight.semibold};
   transition: all ${({ theme }) => theme.transition.fast};
@@ -37,8 +27,8 @@ export const TabBadge = styled.span<{ $active: boolean }>`
   ${({ $active, theme }) =>
     $active
       ? css`
-          background: rgba(255, 255, 255, 0.2);
-          color: #fff;
+          background: ${theme.colors.background}33;
+          color: ${theme.colors.background};
         `
       : css`
           background: ${theme.colors.surfaceAlt};
@@ -51,7 +41,7 @@ export const TabButton = styled.button<{ $active: boolean }>`
   align-items: center;
   gap: ${({ theme }) => theme.space['2']};
   padding: ${({ theme }) => `${theme.space['2']} ${theme.space['4']}`};
-  border-radius: ${({ theme }) => theme.radii.full};
+  border-radius: ${({ theme }) => theme.radii.sm};
   font-size: ${({ theme }) => theme.font.size.sm};
   font-weight: ${({ theme }) => theme.font.weight.medium};
   cursor: pointer;
@@ -62,7 +52,7 @@ export const TabButton = styled.button<{ $active: boolean }>`
     $active
       ? css`
           background: ${theme.colors.accent};
-          color: #fff;
+          color: ${theme.colors.background};
           border-color: ${theme.colors.accent};
         `
       : css`

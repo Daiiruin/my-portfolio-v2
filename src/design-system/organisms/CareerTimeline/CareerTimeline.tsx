@@ -7,6 +7,7 @@ import { Container } from '../../atoms/Container'
 import { Section } from '../../atoms/Section'
 import { Icon } from '../../atoms/Icon'
 import { TimelineItem } from '../../molecules/TimelineItem'
+import { SectionMeta } from '../../molecules/SectionMeta'
 import { useLocaleData } from '../../../hooks/useLocaleData'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import {
@@ -17,7 +18,7 @@ import {
 } from '../../../lib/motion'
 import careerFr from '../../../data/career.fr.json'
 import careerEn from '../../../data/career.en.json'
-import { Header, SectionLabel, List, TabBar, TabButton, TabBadge } from './CareerTimeline.styles'
+import { Header, List, TabBar, TabButton, TabBadge } from './CareerTimeline.styles'
 
 type CareerEntry = {
   id: string
@@ -49,7 +50,7 @@ export function CareerTimeline() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionLabel>{t('career.title')}</SectionLabel>
+            <SectionMeta index={3} path="career" count={career.length} countLabel="entries" />
             <Heading level={2}>Experience</Heading>
           </motion.div>
         </Header>

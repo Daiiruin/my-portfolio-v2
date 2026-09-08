@@ -22,7 +22,7 @@ export const Banner = styled.div`
   overflow: hidden;
   background: ${({ theme }) => theme.colors.accentSubtle};
   border: 1px solid ${({ theme }) => theme.colors.accent}40;
-  border-radius: ${({ theme }) => theme.radii.md};
+  border-radius: ${({ theme }) => theme.radii.sm};
   padding: ${({ theme }) => `${theme.space['3']} 0`};
 
   mask-image: linear-gradient(

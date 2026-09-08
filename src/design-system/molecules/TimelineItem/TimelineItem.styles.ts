@@ -5,7 +5,7 @@ export const TypeTag = styled.span<{ $type: 'work' | 'education' }>`
   align-items: center;
   gap: 5px;
   padding: 2px 10px;
-  border-radius: ${({ theme }) => theme.radii.full};
+  border-radius: ${({ theme }) => theme.radii.sm};
   font-size: ${({ theme }) => theme.font.size.xs};
   font-weight: ${({ theme }) => theme.font.weight.semibold};
   letter-spacing: ${({ theme }) => theme.font.letterSpacing.wide};
@@ -30,9 +30,9 @@ import { motion } from 'motion/react'
 import { media } from '../../theme/tokens'
 
 const pulse = keyframes`
-  0%   { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.6); }
-  70%  { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(0, 229, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
 `
 
 export const Item = styled(motion.div)`
@@ -101,7 +101,7 @@ export const ContentCol = styled.div`
     top: 0;
     bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, ${({ theme }) => theme.colors.border}, transparent);
+    background: ${({ theme }) => theme.colors.border};
     display: none;
 
     ${media.md} {
