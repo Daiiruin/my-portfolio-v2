@@ -129,3 +129,10 @@ néon totale < 15 %, tout ce qui est mouvement/artefact CRT coupé par `useReduc
 - `theme.zIndex.boot` (400) est au-dessus de `toast` (300, partagé par CRTOverlay/CustomCursor/
   RouteTransition) — nécessaire pour garantir l'ordre d'empilement de BootSequence indépendamment
   de l'ordre du DOM dans `App.tsx`.
+- Demande explicite de l'utilisateur : les fichiers `.styles.ts` n'utilisent plus la syntaxe
+  template-string (`` styled.div`...` ``) mais la syntaxe objet
+  (`styled('div')(({ theme }) => ({ ... }))`, propriétés en camelCase). Fait pour l'instant
+  uniquement sur `BootSequence.styles.ts` — pas encore rétro-appliqué au reste du design system,
+  à clarifier avec l'utilisateur avant de le faire ailleurs. Toujours garder les références
+  `theme.*` à l'intérieur de la fonction (jamais de valeurs codées en dur) — c'est un changement
+  de syntaxe, pas un abandon des tokens.
