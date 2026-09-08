@@ -14,7 +14,7 @@ import {
   HintText,
 } from './BootSequence.styles'
 
-const READY_HOLD_MS = 400
+const MIN_VISIBLE_MS = 2000
 const WIPE_DURATION_MS = 550
 
 function dotLine(label: string, value: string, width = 40) {
@@ -29,12 +29,14 @@ export function BootSequence() {
   const { booting, finishBoot } = useBootState()
   const { fontsReady, assetsLoaded, assetsTotal, progress, ready } = useBootProgress()
   const [revealing, setRevealing] = useState(false)
+  const [mountedAt] = useState(() => Date.now())
 
   useEffect(() => {
     if (!booting || !ready || revealing) return
-    const hold = setTimeout(() => setRevealing(true), READY_HOLD_MS)
+    const remaining = Math.max(0, MIN_VISIBLE_MS - (Date.now() - mountedAt))
+    const hold = setTimeout(() => setRevealing(true), remaining)
     return () => clearTimeout(hold)
-  }, [booting, ready, revealing])
+  }, [booting, ready, revealing, mountedAt])
 
   useEffect(() => {
     if (!revealing) return

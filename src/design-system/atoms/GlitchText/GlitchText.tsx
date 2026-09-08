@@ -3,10 +3,24 @@ import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { StyledGlitchText } from './GlitchText.styles'
 
 const GLITCH_CHARS = '!<>-_\\/[]{}=+*^?#01ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const MIN_TICKS = 2
-const MAX_TICKS = 5
-const TICK_INTERVAL_MS = 45
-const MAX_START_DELAY_MS = 200
+// MIN_TICKS * TICK_INTERVAL_MS is the floor — every character scrambles for at least
+// ~700ms before it's allowed to lock in, so the decode reads as an actual effect
+// instead of a flash.
+const MIN_TICKS = 14
+const MAX_TICKS = 20
+const TICK_INTERVAL_MS = 50
+// Start delay is driven by each character's position (see charStartDelay), not pure
+// randomness — a character halfway through the string starts roughly halfway through
+// CASCADE_MS. Without that, characters lock in at close to the same moment regardless
+// of where they sit, and the decode reads as one simultaneous flash instead of a sweep.
+// JITTER_MS keeps neighboring characters from starting in perfect lockstep.
+const CASCADE_MS = 500
+const JITTER_MS = 120
+
+function charStartDelay(index: number, lastIndex: number) {
+  const position = lastIndex > 0 ? index / lastIndex : 0
+  return position * CASCADE_MS + Math.random() * JITTER_MS
+}
 
 function randomChar() {
   return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
@@ -44,6 +58,7 @@ export function GlitchText({ text }: Props) {
     // by the render-time sync above.
     const timeouts: ReturnType<typeof setTimeout>[] = []
     const target = prevText.split('')
+    const lastIndex = target.length - 1
 
     let remaining = target.filter((c) => c !== ' ').length
 
@@ -69,7 +84,7 @@ export function GlitchText({ text }: Props) {
         }
       }
 
-      timeouts[index] = setTimeout(step, Math.random() * MAX_START_DELAY_MS)
+      timeouts[index] = setTimeout(step, charStartDelay(index, lastIndex))
     })
 
     return () => timeouts.forEach(clearTimeout)
