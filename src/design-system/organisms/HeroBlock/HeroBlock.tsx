@@ -5,8 +5,10 @@ import { Button } from '../../atoms/Button'
 import { Icon } from '../../atoms/Icon'
 import { Container } from '../../atoms/Container'
 import { RevealText } from '../../atoms/RevealText'
+import { GlitchText } from '../../atoms/GlitchText'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { useLocaleData } from '../../../hooks/useLocaleData'
+import { useBootState } from '../../../hooks/useBootState'
 import {
   staggerContainer,
   fadeInUp,
@@ -39,12 +41,14 @@ import {
 export function HeroBlock() {
   const { t } = useTranslation()
   const reducedMotion = useReducedMotion()
+  const { booting } = useBootState()
   const profile = useLocaleData({ fr: profileFr, en: profileEn })
 
   const container = reducedMotion ? reducedStagger : staggerContainer
   const item = reducedMotion ? reducedFadeIn : fadeInUp
 
   const initials = `${profile.firstName[0]}${profile.lastName[0]}`
+  const fullName = `${t('hero.greeting')} ${profile.firstName} ${profile.lastName}`
 
   return (
     <HeroWrapper id="about">
@@ -66,14 +70,13 @@ export function HeroBlock() {
               </motion.span>
             </TagLine>
 
-            {/* The single most-viewed text on the site — the one place a masked
-                word-reveal earns its keep over the block-level fadeInUp every other
-                heading still uses. `variants={passthrough}` keeps these h1/p as pure
-                relays so RevealText's own stagger is the only motion on the line. */}
+            {/* The single most-viewed text on the site. While booting, the hero sits
+                behind the boot overlay anyway, so plain text is fine here — swapping to
+                GlitchText only once `booting` flips false mounts it fresh exactly when
+                the boot wipe reveals the page, so the decode-in is what the visitor
+                actually sees instead of finishing unseen behind the overlay. */}
             <Name variants={passthrough}>
-              <RevealText>
-                {`${t('hero.greeting')} ${profile.firstName} ${profile.lastName}`}
-              </RevealText>
+              {booting ? fullName : <GlitchText text={fullName} />}
             </Name>
 
             <Title variants={passthrough}>

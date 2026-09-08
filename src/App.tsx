@@ -8,6 +8,8 @@ import { RouteTransition } from './components/RouteTransition'
 import { GridOverlay } from './design-system/atoms/GridOverlay'
 import { CRTOverlay } from './design-system/atoms/CRTOverlay'
 import { CustomCursor } from './design-system/atoms/CustomCursor'
+import { BootSequence } from './design-system/organisms/BootSequence'
+import { BootProvider } from './contexts/BootContext'
 import { useReducedMotion } from './hooks/useReducedMotion'
 
 const ProjectDetailPage = lazy(() =>
@@ -20,18 +22,21 @@ export default function App() {
   const reducedMotion = useReducedMotion()
 
   const content = (
-    <Suspense fallback={null}>
-      <GridOverlay />
-      <CRTOverlay />
-      <CustomCursor />
-      <RouteTransition />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-        {import.meta.env.DEV && <Route path="/dev/components" element={<DevPage />} />}
-      </Routes>
-    </Suspense>
+    <BootProvider>
+      <Suspense fallback={null}>
+        <GridOverlay />
+        <CRTOverlay />
+        <CustomCursor />
+        <RouteTransition />
+        <BootSequence />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+          {import.meta.env.DEV && <Route path="/dev/components" element={<DevPage />} />}
+        </Routes>
+      </Suspense>
+    </BootProvider>
   )
 
   // Skip Lenis entirely under reduced motion rather than mounting it with smoothing
