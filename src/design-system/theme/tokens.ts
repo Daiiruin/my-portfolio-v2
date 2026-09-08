@@ -103,6 +103,9 @@ export const tokens = {
     sticky: 100,
     modal: 200,
     toast: 300,
+    // Above everything, including CRTOverlay/CustomCursor/RouteTransition (all `toast`) —
+    // the boot sequence must never end up behind a same-tier overlay by DOM order alone.
+    boot: 400,
   },
 }
 
