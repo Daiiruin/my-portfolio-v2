@@ -21,6 +21,11 @@ export type { BadgeVariant } from './Badge'
 
 export { GlitchText } from './GlitchText'
 
+export { RevealText } from './RevealText'
+
 export { GridOverlay } from './GridOverlay'
 
 export { CRTOverlay } from './CRTOverlay'
+
+export { CustomCursor } from './CustomCursor'
+export type { CursorState } from './CustomCursor'

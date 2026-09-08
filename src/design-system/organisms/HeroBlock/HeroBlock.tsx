@@ -4,9 +4,16 @@ import { LuArrowDown, LuMapPin } from 'react-icons/lu'
 import { Button } from '../../atoms/Button'
 import { Icon } from '../../atoms/Icon'
 import { Container } from '../../atoms/Container'
+import { RevealText } from '../../atoms/RevealText'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { useLocaleData } from '../../../hooks/useLocaleData'
-import { staggerContainer, fadeInUp, reducedStagger, reducedFadeIn } from '../../../lib/motion'
+import {
+  staggerContainer,
+  fadeInUp,
+  reducedStagger,
+  reducedFadeIn,
+  passthrough,
+} from '../../../lib/motion'
 import profileFr from '../../../data/profile.fr.json'
 import profileEn from '../../../data/profile.en.json'
 import {
@@ -59,14 +66,19 @@ export function HeroBlock() {
               </motion.span>
             </TagLine>
 
-            <Name variants={item}>
-              {t('hero.greeting')}{' '}
-              <span style={{ color: 'inherit' }}>
-                {profile.firstName} {profile.lastName}
-              </span>
+            {/* The single most-viewed text on the site — the one place a masked
+                word-reveal earns its keep over the block-level fadeInUp every other
+                heading still uses. `variants={passthrough}` keeps these h1/p as pure
+                relays so RevealText's own stagger is the only motion on the line. */}
+            <Name variants={passthrough}>
+              <RevealText>
+                {`${t('hero.greeting')} ${profile.firstName} ${profile.lastName}`}
+              </RevealText>
             </Name>
 
-            <Title variants={item}>{profile.title}</Title>
+            <Title variants={passthrough}>
+              <RevealText>{profile.title}</RevealText>
+            </Title>
 
             <Bio variants={item}>{profile.bio}</Bio>
 

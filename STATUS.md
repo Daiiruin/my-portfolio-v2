@@ -67,9 +67,12 @@ only, jamais de glow/skew/gradient dessus), radius 0 par défaut (2px max), **th
 - [x] **PR 1** `feat/identity-tokens` — tokens néon + suppression thème clair/glass/gradients +
   GridOverlay + CRTOverlay + SectionMeta (`SEC.0N · ./path`) + nettoyage dette (images → WebP,
   Footer i18n, stub mort, champ avatar inutilisé)
-- [ ] **PR 2** `feat/motion-grammar` — Lenis (smooth scroll, ⚠️ conflit avec `scroll-behavior:
-  smooth` déjà retiré en PR 1), RevealText (remplace `fadeInUp` uniforme), curseur custom carré,
-  transitions de page
+- [x] **PR 2** `feat/motion-grammar` — Lenis (`anchors: true`, lit `scroll-margin-top` par cible
+  au lieu d'un offset JS codé en dur — fonctionne identiquement en reduced-motion, où Lenis n'est
+  pas monté du tout), RevealText (mot/char masqué, appliqué au nom+titre du hero seulement — pas
+  partout, ça reste le travail de PR 4), curseur custom carré (3 états, désactivé tactile/reduced-
+  motion), wipe de transition de page (scaleY, pas d'AnimatePresence — un seul motion.div remonté
+  via `key={pathname}` suffit)
 - [ ] **PR 3** `feat/boot-sequence` — séquence de boot liée au vrai chargement, `GlitchText` sur le
   nom au hero (one-shot), aberration chromatique
 - [ ] **PR 4** `feat/diegetic-copy` — ProjectsGrid → arborescence de fichiers (`override.exe [RUN
@@ -102,3 +105,12 @@ néon totale < 15 %, tout ce qui est mouvement/artefact CRT coupé par `useReduc
   au-dessus des `Routes` — décoratifs, `pointer-events: none`, ne pas les remonter ailleurs.
 - `SectionMeta` (`src/design-system/molecules/`) remplace les anciens labels de section dupliqués
   dans StackGrid/CareerTimeline/ProjectsGrid/HomePage(contact) — prend `index`/`path`/`count`.
+- `theme.layout.headerHeight` est un **number** (unitless px), pas une string CSS — sert aussi de
+  base pour la logique JS (Lenis). Toujours suffixer `px` aux points de consommation CSS.
+- Lenis (`lenis/react`) : `<ReactLenis root>` monté dans `App.tsx`, **skip entièrement** si
+  `useReducedMotion()` est vrai (pas juste désactivé). `useLenis()` retourne alors `undefined` —
+  toujours prévoir un fallback natif (voir `ScrollToTop.tsx`) plutôt que de supposer l'instance
+  présente.
+- Nouveaux ancres de scroll : ne pas ajouter d'offset JS pour compenser le header fixe — poser
+  `scroll-margin-top: ${theme.layout.headerHeight}px` sur l'élément ciblé par l'ancre à la place
+  (Lenis le lit nativement, et ça marche aussi pour le saut natif du navigateur en reduced-motion).

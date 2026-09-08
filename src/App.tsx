@@ -1,10 +1,14 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { ReactLenis } from 'lenis/react'
 import { HomePage } from './pages/HomePage/HomePage'
 import { DevPage } from './pages/DevPage/DevPage'
 import { ScrollToTop } from './components/ScrollToTop'
+import { RouteTransition } from './components/RouteTransition'
 import { GridOverlay } from './design-system/atoms/GridOverlay'
 import { CRTOverlay } from './design-system/atoms/CRTOverlay'
+import { CustomCursor } from './design-system/atoms/CustomCursor'
+import { useReducedMotion } from './hooks/useReducedMotion'
 
 const ProjectDetailPage = lazy(() =>
   import('./pages/ProjectDetailPage/ProjectDetailPage').then((m) => ({
@@ -13,10 +17,14 @@ const ProjectDetailPage = lazy(() =>
 )
 
 export default function App() {
-  return (
+  const reducedMotion = useReducedMotion()
+
+  const content = (
     <Suspense fallback={null}>
       <GridOverlay />
       <CRTOverlay />
+      <CustomCursor />
+      <RouteTransition />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -24,5 +32,17 @@ export default function App() {
         {import.meta.env.DEV && <Route path="/dev/components" element={<DevPage />} />}
       </Routes>
     </Suspense>
+  )
+
+  // Skip Lenis entirely under reduced motion rather than mounting it with smoothing
+  // disabled — native scroll then behaves exactly as the OS setting promises.
+  if (reducedMotion) return content
+
+  return (
+    // `anchors: true` reads each target's own scroll-margin-top (see Section.styles.ts /
+    // HeroBlock.styles.ts) instead of a single hardcoded offset here.
+    <ReactLenis root options={{ anchors: true }}>
+      {content}
+    </ReactLenis>
   )
 }
