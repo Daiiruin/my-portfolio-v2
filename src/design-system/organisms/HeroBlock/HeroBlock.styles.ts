@@ -3,11 +3,13 @@ import { motion } from 'motion/react'
 import { media } from '../../theme/tokens'
 
 export const HeroWrapper = styled.div`
-  min-height: calc(100vh - ${({ theme }) => theme.layout.headerHeight});
+  min-height: calc(100vh - ${({ theme }) => theme.layout.headerHeight}px);
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  /* id="about" is a nav target too — same reasoning as Section.styles.ts. */
+  scroll-margin-top: ${({ theme }) => theme.layout.headerHeight}px;
 `
 
 export const HeroGrid = styled.div`

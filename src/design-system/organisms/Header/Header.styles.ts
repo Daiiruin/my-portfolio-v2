@@ -7,7 +7,7 @@ export const StyledHeader = styled.header<{ $scrolled: boolean }>`
   left: 0;
   right: 0;
   z-index: ${({ theme }) => theme.zIndex.sticky};
-  height: ${({ theme }) => theme.layout.headerHeight};
+  height: ${({ theme }) => theme.layout.headerHeight}px;
   display: flex;
   align-items: center;
   transition: background ${({ theme }) => theme.transition.base},
@@ -94,7 +94,7 @@ export const MobileNav = styled.div<{ $open: boolean }>`
   display: ${({ $open }) => ($open ? 'flex' : 'none')};
   flex-direction: column;
   position: fixed;
-  top: ${({ theme }) => theme.layout.headerHeight};
+  top: ${({ theme }) => theme.layout.headerHeight}px;
   left: 0;
   right: 0;
   background: ${({ theme }) => theme.colors.background};

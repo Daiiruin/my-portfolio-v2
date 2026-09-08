@@ -82,7 +82,8 @@ export const tokens = {
     xl: '1280px',
   },
   layout: {
-    headerHeight: '60px',
+    // Unitless (px) — also consumed as a plain number by Lenis's anchor scroll offset.
+    headerHeight: 60,
     containerWidth: '1200px',
     containerNarrow: '760px',
   },

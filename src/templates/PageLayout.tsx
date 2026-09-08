@@ -4,7 +4,7 @@ import { Header } from '../design-system/organisms/Header'
 import { Footer } from '../design-system/organisms/Footer'
 
 const Main = styled.main`
-  padding-top: ${({ theme }) => theme.layout.headerHeight};
+  padding-top: ${({ theme }) => theme.layout.headerHeight}px;
 `
 
 type Props = {
