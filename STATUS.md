@@ -73,8 +73,12 @@ only, jamais de glow/skew/gradient dessus), radius 0 par défaut (2px max), **th
   partout, ça reste le travail de PR 4), curseur custom carré (3 états, désactivé tactile/reduced-
   motion), wipe de transition de page (scaleY, pas d'AnimatePresence — un seul motion.div remonté
   via `key={pathname}` suffit)
-- [ ] **PR 3** `feat/boot-sequence` — séquence de boot liée au vrai chargement, `GlitchText` sur le
-  nom au hero (one-shot), aberration chromatique
+- [x] **PR 3** `feat/boot-sequence` — séquence de boot liée au vrai chargement (`useBootProgress` :
+  fonts.ready + préchargement des 5 screenshots projets, avec garde-fou 4s), skippable, une fois
+  par session (`BootProvider`/`sessionStorage`). `GlitchText` n'est plus une boucle infinie — se
+  fige une fois (2-5 ticks/caractère), aberration chromatique visible seulement pendant le décodage.
+  Le nom du hero bascule texte-plat → `<GlitchText>` exactement quand `booting` passe à `false`,
+  pour que le décodage se joue *après* le wipe, pas caché dessous
 - [ ] **PR 4** `feat/diegetic-copy` — ProjectsGrid → arborescence de fichiers (`override.exe [RUN
   →]`), StackGrid en panneau de contrôle, CareerTimeline en log horodaté, voix NEXUS, prompt de
   commandes (⌘K) — soupape recruteur : jamais bloquant, navigation classique toujours présente
@@ -114,3 +118,14 @@ néon totale < 15 %, tout ce qui est mouvement/artefact CRT coupé par `useReduc
 - Nouveaux ancres de scroll : ne pas ajouter d'offset JS pour compenser le header fixe — poser
   `scroll-margin-top: ${theme.layout.headerHeight}px` sur l'élément ciblé par l'ancre à la place
   (Lenis le lit nativement, et ça marche aussi pour le saut natif du navigateur en reduced-motion).
+- `BootContext` est scindé en 2 fichiers (`contexts/bootContext.ts` pour le `createContext` brut,
+  `contexts/BootContext.tsx` pour le seul composant `BootProvider`) à cause de la règle ESLint
+  `react-refresh/only-export-components` — un fichier `.tsx` ne doit exporter QUE des composants,
+  jamais un hook ou un context à côté. `useBootState()` vit dans `hooks/`, pas dans `contexts/`.
+  Même contrainte si un futur hook/context est ajouté ailleurs dans le rework.
+- `GlitchText` ne fixe plus sa propre police/couleur (avant : mono + accent codés en dur) — il
+  hérite du contexte où il est utilisé. C'est ce qui permet de l'utiliser dans le h1 du hero
+  (Chakra Petch) sans qu'il écrase la police display avec du mono.
+- `theme.zIndex.boot` (400) est au-dessus de `toast` (300, partagé par CRTOverlay/CustomCursor/
+  RouteTransition) — nécessaire pour garantir l'ordre d'empilement de BootSequence indépendamment
+  de l'ordre du DOM dans `App.tsx`.
