@@ -7,22 +7,21 @@ export const StyledHeader = styled.header<{ $scrolled: boolean }>`
   left: 0;
   right: 0;
   z-index: ${({ theme }) => theme.zIndex.sticky};
-  height: 60px;
+  height: ${({ theme }) => theme.layout.headerHeight};
   display: flex;
   align-items: center;
   transition: background ${({ theme }) => theme.transition.base},
-    border-color ${({ theme }) => theme.transition.base},
-    backdrop-filter ${({ theme }) => theme.transition.base};
+    border-color ${({ theme }) => theme.transition.base};
 
-  background: ${({ $scrolled, theme }) => ($scrolled ? `${theme.colors.surface}d9` : 'transparent')};
-  backdrop-filter: ${({ $scrolled }) => ($scrolled ? 'blur(12px)' : 'none')};
+  /* Opaque, not glass — a scanned surface, not frosted glass. */
+  background: ${({ $scrolled, theme }) => ($scrolled ? theme.colors.background : 'transparent')};
   border-bottom: 1px solid
     ${({ $scrolled, theme }) => ($scrolled ? theme.colors.border : 'transparent')};
 `
 
 export const Inner = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.layout.containerWidth};
   margin-inline: auto;
   padding-inline: ${({ theme }) => theme.space['4']};
   display: flex;
@@ -76,7 +75,7 @@ export const MobileMenuButton = styled.button`
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: ${({ theme }) => theme.radii.md};
+  border-radius: ${({ theme }) => theme.radii.sm};
   color: ${({ theme }) => theme.colors.textMuted};
   transition: background ${({ theme }) => theme.transition.fast},
     color ${({ theme }) => theme.transition.fast};
@@ -95,11 +94,10 @@ export const MobileNav = styled.div<{ $open: boolean }>`
   display: ${({ $open }) => ($open ? 'flex' : 'none')};
   flex-direction: column;
   position: fixed;
-  top: 60px;
+  top: ${({ theme }) => theme.layout.headerHeight};
   left: 0;
   right: 0;
-  background: ${({ theme }) => `${theme.colors.surface}f7`};
-  backdrop-filter: blur(12px);
+  background: ${({ theme }) => theme.colors.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   padding: ${({ theme }) => theme.space['4']};
   gap: ${({ theme }) => theme.space['1']};

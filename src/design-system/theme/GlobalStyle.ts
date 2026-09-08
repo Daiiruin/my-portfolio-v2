@@ -1,26 +1,13 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  @property --card-gx {
-    syntax: '<percentage>';
-    initial-value: 0%;
-    inherits: false;
-  }
-  @property --card-gy {
-    syntax: '<percentage>';
-    initial-value: 0%;
-    inherits: false;
-  }
-
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  /* No scroll-behavior: smooth here — Lenis (PR 2) owns scroll physics and the two conflict. */
 
   body {
     background-color: ${({ theme }) => theme.colors.background};
@@ -30,7 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     line-height: ${({ theme }) => theme.font.lineHeight.normal};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 300ms ease, color 300ms ease;
   }
 
   a {

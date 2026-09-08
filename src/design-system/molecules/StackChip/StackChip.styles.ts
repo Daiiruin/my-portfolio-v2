@@ -10,19 +10,15 @@ export const Chip = styled(motion.div)`
   padding: ${({ theme }) => `${theme.space['4']} ${theme.space['3']}`};
   background: ${({ theme }) => theme.colors.surface};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.lg};
+  border-radius: ${({ theme }) => theme.radii.sm};
   cursor: default;
   transition:
     border-color ${({ theme }) => theme.transition.fast},
-    background ${({ theme }) => theme.transition.fast},
-    transform ${({ theme }) => theme.transition.fast},
-    box-shadow ${({ theme }) => theme.transition.fast};
+    background ${({ theme }) => theme.transition.fast};
 
   &:hover {
     border-color: ${({ theme }) => theme.colors.accent};
     background: ${({ theme }) => theme.colors.surfaceAlt};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px ${({ theme }) => theme.colors.accentSubtle};
   }
 `
 

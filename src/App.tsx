@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import { HomePage } from './pages/HomePage/HomePage'
 import { DevPage } from './pages/DevPage/DevPage'
 import { ScrollToTop } from './components/ScrollToTop'
+import { GridOverlay } from './design-system/atoms/GridOverlay'
+import { CRTOverlay } from './design-system/atoms/CRTOverlay'
 
 const ProjectDetailPage = lazy(() =>
   import('./pages/ProjectDetailPage/ProjectDetailPage').then((m) => ({
@@ -13,6 +15,8 @@ const ProjectDetailPage = lazy(() =>
 export default function App() {
   return (
     <Suspense fallback={null}>
+      <GridOverlay />
+      <CRTOverlay />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />

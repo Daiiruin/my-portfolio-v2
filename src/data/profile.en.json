@@ -3,6 +3,5 @@
   "lastName": "DOBROVOLSKYY",
   "title": "Full-Stack Developer",
   "bio": "Full-Stack Developer based in Paris. The kind who refactors working code because it does not read well. Between React and NestJS, I write code you can read six months later without suffering — in that order.",
-  "location": "Paris, France",
-  "avatar": "/avatar.jpg"
+  "location": "Paris, France"
 }

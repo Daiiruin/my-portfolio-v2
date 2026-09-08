@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { motion } from 'motion/react'
-import { useTranslation } from 'react-i18next'
 import { PageLayout } from '../../templates/PageLayout'
 import { Container } from '../../design-system/atoms/Container'
 import { Section } from '../../design-system/atoms/Section'
@@ -11,22 +10,13 @@ import { CareerTimeline } from '../../design-system/organisms/CareerTimeline'
 import { ProjectsGrid } from '../../design-system/organisms/ProjectsGrid'
 import { ContactForm } from '../../design-system/organisms/ContactForm'
 import { ContactInfo } from '../../design-system/organisms/ContactInfo'
+import { SectionMeta } from '../../design-system/molecules/SectionMeta'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../lib/motion'
 import { media } from '../../design-system/theme/tokens'
 
 const ContactHeader = styled(motion.div)`
   margin-bottom: ${({ theme }) => theme.space['12']};
-`
-
-const SectionLabel = styled.span`
-  font-size: ${({ theme }) => theme.font.size.xs};
-  font-weight: ${({ theme }) => theme.font.weight.medium};
-  color: ${({ theme }) => theme.colors.accent};
-  text-transform: uppercase;
-  letter-spacing: ${({ theme }) => theme.font.letterSpacing.wider};
-  display: block;
-  margin-bottom: ${({ theme }) => theme.space['2']};
 `
 
 const ContactGrid = styled.div`
@@ -41,7 +31,6 @@ const ContactGrid = styled.div`
 `
 
 export function HomePage() {
-  const { t } = useTranslation()
   const reducedMotion = useReducedMotion()
   const container = reducedMotion ? reducedStagger : staggerContainer
   const item = reducedMotion ? reducedFadeIn : fadeInUpScroll
@@ -62,7 +51,7 @@ export function HomePage() {
             viewport={{ once: true, margin: '-80px' }}
           >
             <motion.div variants={item}>
-              <SectionLabel>{t('contact.title')}</SectionLabel>
+              <SectionMeta index={5} path="contact" />
               <Heading level={2}>Contact</Heading>
             </motion.div>
           </ContactHeader>

@@ -1,18 +1,17 @@
 import { motion } from 'motion/react'
-import { useTranslation } from 'react-i18next'
 import { Heading } from '../../atoms/Heading'
 import { Container } from '../../atoms/Container'
 import { Section } from '../../atoms/Section'
 import { StackChip } from '../../molecules/StackChip'
+import { SectionMeta } from '../../molecules/SectionMeta'
 import { useLocaleData } from '../../../hooks/useLocaleData'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../../lib/motion'
 import stackFr from '../../../data/stack.fr.json'
 import stackEn from '../../../data/stack.en.json'
-import { Header, SectionLabel, CategoryGroup, CategoryTitle, Grid } from './StackGrid.styles'
+import { Header, CategoryGroup, CategoryTitle, Grid } from './StackGrid.styles'
 
 export function StackGrid() {
-  const { t } = useTranslation()
   const reducedMotion = useReducedMotion()
   const stack = useLocaleData({ fr: stackFr, en: stackEn })
 
@@ -31,7 +30,7 @@ export function StackGrid() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionLabel>{t('stack.title')}</SectionLabel>
+            <SectionMeta index={2} path="stack" count={stack.length} countLabel="modules" />
             <Heading level={2}>Technologies</Heading>
           </motion.div>
         </Header>

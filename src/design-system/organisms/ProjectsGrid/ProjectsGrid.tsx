@@ -1,16 +1,16 @@
 import { motion } from 'motion/react'
-import { useTranslation } from 'react-i18next'
 import { Heading } from '../../atoms/Heading'
 import { Container } from '../../atoms/Container'
 import { Section } from '../../atoms/Section'
 import { ProjectCard } from '../../molecules/ProjectCard'
+import { SectionMeta } from '../../molecules/SectionMeta'
 // import { AnnouncementMarquee } from '../../molecules/AnnouncementMarquee'
 import { useLocaleData } from '../../../hooks/useLocaleData'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../../lib/motion'
 import projectsFr from '../../../data/projects.fr.json'
 import projectsEn from '../../../data/projects.en.json'
-import { Header, SectionLabel, Grid } from './ProjectsGrid.styles'
+import { Header, Grid } from './ProjectsGrid.styles'
 
 type Project = {
   slug: string
@@ -26,7 +26,6 @@ type Project = {
 }
 
 export function ProjectsGrid() {
-  const { t } = useTranslation()
   const reducedMotion = useReducedMotion()
   const projects = useLocaleData<Project[]>({ fr: projectsFr, en: projectsEn })
 
@@ -43,7 +42,7 @@ export function ProjectsGrid() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionLabel>{t('projects.title')}</SectionLabel>
+            <SectionMeta index={4} path="projects" count={projects.length} countLabel="entries" />
             <Heading level={2}>Projects</Heading>
           </motion.div>
         </Header>

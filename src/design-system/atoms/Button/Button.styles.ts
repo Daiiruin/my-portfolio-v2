@@ -5,24 +5,26 @@ const sizeStyles = {
   sm: css`
     padding: ${({ theme }) => `${theme.space['1']} ${theme.space['3']}`};
     font-size: ${({ theme }) => theme.font.size.sm};
-    border-radius: ${({ theme }) => theme.radii.md};
+    border-radius: ${({ theme }) => theme.radii.sm};
   `,
   md: css`
     padding: ${({ theme }) => `${theme.space['2']} ${theme.space['4']}`};
     font-size: ${({ theme }) => theme.font.size.base};
-    border-radius: ${({ theme }) => theme.radii.md};
+    border-radius: ${({ theme }) => theme.radii.sm};
   `,
   lg: css`
     padding: ${({ theme }) => `${theme.space['3']} ${theme.space['6']}`};
     font-size: ${({ theme }) => theme.font.size.md};
-    border-radius: ${({ theme }) => theme.radii.lg};
+    border-radius: ${({ theme }) => theme.radii.sm};
   `,
 }
 
 const variantStyles = {
   primary: css`
+    /* Cyan is bright — pair it with the dark background color for contrast, never white. */
     background: ${({ theme }) => theme.colors.accent};
-    color: #fff;
+    color: ${({ theme }) => theme.colors.background};
+    font-weight: ${({ theme }) => theme.font.weight.semibold};
     &:hover:not(:disabled) {
       background: ${({ theme }) => theme.colors.accentHover};
     }

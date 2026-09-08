@@ -1,7 +1,7 @@
 import 'styled-components'
 import type { darkTheme } from './darkTheme'
 
-type AppTheme = Omit<typeof darkTheme, 'mode'> & { mode: 'dark' | 'light' }
+type AppTheme = typeof darkTheme
 
 declare module 'styled-components' {
   export interface DefaultTheme extends AppTheme {}

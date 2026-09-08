@@ -5,7 +5,7 @@
     "shortDescription": "Solo interactive hacker escape game: infiltrate the rogue AI NEXUS's servers before the countdown runs out.",
     "description": "A narrative solo escape game set in a cyberpunk atmosphere: a rogue AI named NEXUS has taken over the network, and the player must infiltrate it through 8 levels before a global countdown reaches zero. Each level uses a different mechanic — substitution-cipher lookup tables, searching a fake file tree, scrolling through a system log, prime-number logic, memorizing a light sequence, fast-typing falling words, and real-time bot destruction. Any mistake costs 30 seconds off the countdown. Progress is saved to localStorage so an interrupted run can be resumed.",
     "stack": ["React", "TypeScript", "Vite", "Vitest"],
-    "image": "/projects/override.png",
+    "image": "/projects/override.webp",
     "github": null,
     "demo": "https://escape-game-override.vercel.app",
     "inProgress": false
@@ -16,7 +16,7 @@
     "shortDescription": "B2B SaaS platform for employee engagement and company culture.",
     "description": "Full-stack application in a monorepo (Turborepo) to boost employee engagement: recognition, challenges, quests, playbooks and impact tracking. NestJS backend with feature-first architecture, async jobs via AWS SQS/SNS and business integrations (Slack, Microsoft Teams, Google Chat, HubSpot, Salesforce). React frontend with an in-house design system, i18n across 9 languages via Lokalise and Zustand/TanStack Query state management.",
     "stack": ["React", "TypeScript", "NestJS", "PostgreSQL", "Turborepo", "AWS", "Auth0"],
-    "image": "/projects/culture-live.png",
+    "image": "/projects/culture-live.webp",
     "github": null,
     "demo": "https://www.culture-live.com/",
     "inProgress": false
@@ -27,7 +27,7 @@
     "shortDescription": "Luxury vintage and second-hand jewellery marketplace.",
     "description": "Curated e-commerce platform dedicated to reselling prestigious jewellery and watches (Cartier, Bulgari, Van Cleef & Arpels…). Features include filtering by type, stone and brand, members club with private sales, online valuation and sales support. Physical presence in Paris, Brussels, Geneva and Lausanne.",
     "stack": ["Shopify", "Liquid", "JavaScript"],
-    "image": "/projects/les-heritieres.png",
+    "image": "/projects/les-heritieres.webp",
     "github": null,
     "demo": "https://les-heritieres.com",
     "inProgress": false
@@ -49,7 +49,7 @@
     "shortDescription": "Track and share the countries you've visited, solo or with a group.",
     "description": "Fullstack web app to log visited countries on an interactive world map. Users can track their own journey and create groups to compare travel progress with friends or family. Built with a feature-first architecture: React + NestJS + PostgreSQL, JWT authentication with refresh token rotation (httpOnly cookie), group invitation system, and per-group country tracking.",
     "stack": ["React", "TypeScript", "NestJS", "PostgreSQL", "Docker"],
-    "image": "/projects/atlasee.png",
+    "image": "/projects/atlasee.webp",
     "github": "https://github.com/Daiiruin/Atlasee",
     "demo": null,
     "inProgress": false
