@@ -8,7 +8,7 @@ export function ScrollToTop() {
 
   useEffect(() => {
     // A plain window.scrollTo would move the page without telling Lenis, leaving its
-    // internal target/animated scroll values stale — the next smooth scroll would then
+    // internal target/animated scroll values stale - the next smooth scroll would then
     // jump from the wrong position. lenis.scrollTo keeps it in sync; when Lenis isn't
     // mounted (reduced motion), fall back to the native call.
     if (lenis) lenis.scrollTo(0, { immediate: true })

@@ -1,17 +1,17 @@
 # my-portfolio-ad
 
-Portfolio personnel — React 19 + TypeScript + styled-components + motion + react-i18next.
+Portfolio personnel - React 19 + TypeScript + styled-components + motion + react-i18next.
 
 ## Stack
 
-- **Vite 8** — build tool
+- **Vite 8** - build tool
 - **React 19** + **TypeScript** (strict)
-- **react-router-dom v7** — routing (one-page + /projects/:slug)
-- **styled-components v6** — CSS-in-JS avec ThemeProvider (dark/light)
-- **motion v12** — animations
-- **react-i18next** — internationalisation FR/EN
-- **EmailJS** — formulaire de contact sans backend
-- **lucide-react** — icônes
+- **react-router-dom v7** - routing (one-page + /projects/:slug)
+- **styled-components v6** - CSS-in-JS avec ThemeProvider (dark/light)
+- **motion v12** - animations
+- **react-i18next** - internationalisation FR/EN
+- **EmailJS** - formulaire de contact sans backend
+- **lucide-react** - icônes
 
 ## Démarrage
 

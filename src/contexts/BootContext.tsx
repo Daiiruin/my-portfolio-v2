@@ -6,7 +6,7 @@ export function BootProvider({ children }: { children: ReactNode }) {
   const reducedMotion = useReducedMotion()
   const [seen, setSeen] = useState(() => sessionStorage.getItem('boot-seen') === '1')
 
-  // Reduced motion skips the boot outright — there's nothing to animate anyway, and
+  // Reduced motion skips the boot outright - there's nothing to animate anyway, and
   // components gating on `booting` (the Hero's GlitchText swap) should just render
   // their settled state immediately.
   const booting = !reducedMotion && !seen

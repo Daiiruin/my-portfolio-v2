@@ -4,7 +4,7 @@ import { media } from '../../theme/tokens'
 export const Wrapper = styled.div`
   position: fixed;
   inset: 0;
-  z-index: ${({ theme }) => theme.zIndex.base};
+  z-index: ${({ theme }) => theme.zIndex.behind};
   pointer-events: none;
   display: none;
 

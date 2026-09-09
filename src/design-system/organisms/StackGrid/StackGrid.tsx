@@ -48,7 +48,7 @@ export function StackGrid() {
                 {stack
                   .filter((tech) => tech.category === category)
                   .map((tech) => (
-                    <StackChip key={tech.name} name={tech.name} icon={tech.icon} />
+                    <StackChip key={tech.name} name={tech.name} icon={tech.icon} years={tech.years} />
                   ))}
               </Grid>
             </CategoryGroup>

@@ -28,6 +28,7 @@ export function ContactForm() {
     try {
       await sendContactEmail({ name, email, message })
       setStatus('success')
+      window.dispatchEvent(new Event('contact:sent'))
       setName('')
       setEmail('')
       setMessage('')

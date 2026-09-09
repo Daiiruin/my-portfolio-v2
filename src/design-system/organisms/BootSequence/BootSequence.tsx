@@ -65,7 +65,10 @@ export function BootSequence() {
 
   useEffect(() => {
     if (!booting || revealing) return
-    const skip = () => setRevealing(true)
+    const skip = (e: KeyboardEvent) => {
+      e.preventDefault()
+      setRevealing(true)
+    }
     window.addEventListener('keydown', skip)
     return () => window.removeEventListener('keydown', skip)
   }, [booting, revealing])

@@ -7,9 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  /* No scroll-behavior: smooth here — Lenis owns scroll physics and the two conflict. */
+  /* No scroll-behavior: smooth here - Lenis owns scroll physics and the two conflict. */
 
-  /* Toggled by CustomCursor once it confirms a fine pointer + no reduced-motion — never
+  /* Toggled by CustomCursor once it confirms a fine pointer + no reduced-motion - never
      set by default, so devices/preferences it opts out of keep the native cursor. */
   body.custom-cursor-active,
   body.custom-cursor-active * {

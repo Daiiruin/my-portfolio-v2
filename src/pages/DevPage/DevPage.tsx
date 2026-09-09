@@ -60,10 +60,10 @@ export function DevPage() {
       </EasterEggBanner>
       <Container>
         <Section>
-          <Heading level={1}>Design System — Component Demo</Heading>
+          <Heading level={1}>Design System - Component Demo</Heading>
           <Group>
             <Icon icon={RiSpyFill} size={20} />
-            <Text variant="caption">Page secrète — non incluse dans le build de production</Text>
+            <Text variant="caption">Page secrète - non incluse dans le build de production</Text>
           </Group>
 
           <Divider />
@@ -114,12 +114,12 @@ export function DevPage() {
           {/* TEXT */}
           <Heading level={4}>Text</Heading>
           <Group style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-            <Text variant="bodyLg">bodyLg — Passionate about building modern web experiences.</Text>
-            <Text variant="body">body — Passionate about building modern web experiences.</Text>
-            <Text variant="caption">caption — Last updated January 2026</Text>
-            <Text variant="label">label — Section label</Text>
-            <Text variant="overline">overline — Featured Projects</Text>
-            <Text variant="mono">mono — const portfolio = &apos;ready&apos;</Text>
+            <Text variant="bodyLg">bodyLg - Passionate about building modern web experiences.</Text>
+            <Text variant="body">body - Passionate about building modern web experiences.</Text>
+            <Text variant="caption">caption - Last updated January 2026</Text>
+            <Text variant="label">label - Section label</Text>
+            <Text variant="overline">overline - Featured Projects</Text>
+            <Text variant="mono">mono - const portfolio = &apos;ready&apos;</Text>
           </Group>
 
           <Divider />
@@ -127,12 +127,12 @@ export function DevPage() {
           {/* HEADINGS */}
           <Heading level={4}>Heading</Heading>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <Heading level={1}>H1 — Hello, I&apos;m a developer</Heading>
-            <Heading level={2}>H2 — About me</Heading>
-            <Heading level={3}>H3 — My projects</Heading>
-            <Heading level={4}>H4 — Section title</Heading>
-            <Heading level={5}>H5 — Subsection</Heading>
-            <Heading level={6}>H6 — Detail</Heading>
+            <Heading level={1}>H1 - Hello, I&apos;m a developer</Heading>
+            <Heading level={2}>H2 - About me</Heading>
+            <Heading level={3}>H3 - My projects</Heading>
+            <Heading level={4}>H4 - Section title</Heading>
+            <Heading level={5}>H5 - Subsection</Heading>
+            <Heading level={6}>H6 - Detail</Heading>
           </div>
 
           <Divider />

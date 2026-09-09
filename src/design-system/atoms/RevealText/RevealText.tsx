@@ -13,13 +13,13 @@ type Props = {
   by?: 'word' | 'char'
 }
 
-// Masked word/char reveal for text content — the replacement for the blanket fadeInUp
+// Masked word/char reveal for text content - the replacement for the blanket fadeInUp
 // used on every text block before. Renders as an inline span, meant to sit inside an
 // existing semantic element (Heading, Text, a plain h1) and inherit that ancestor's
-// whileInView/variants state — it does not trigger its own viewport observer.
+// whileInView/variants state - it does not trigger its own viewport observer.
 //
 // Reserved for text. Non-text blocks (cards, chip grids, images) keep fadeInUp /
-// fadeInUpScroll — this is deliberately not applied everywhere in this PR.
+// fadeInUpScroll - this is deliberately not applied everywhere in this PR.
 export function RevealText({ children, by = 'word' }: Props) {
   const reducedMotion = useReducedMotion()
   const container = reducedMotion ? reducedRevealContainer : revealContainer

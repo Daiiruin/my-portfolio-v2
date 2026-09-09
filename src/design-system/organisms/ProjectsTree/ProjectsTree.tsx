@@ -2,18 +2,18 @@ import { motion } from 'motion/react'
 import { Heading } from '../../atoms/Heading'
 import { Container } from '../../atoms/Container'
 import { Section } from '../../atoms/Section'
-import { ProjectCard } from '../../molecules/ProjectCard'
+import { ProjectRow } from '../../molecules/ProjectRow'
 import { SectionMeta } from '../../molecules/SectionMeta'
-// import { AnnouncementMarquee } from '../../molecules/AnnouncementMarquee'
 import { useLocaleData } from '../../../hooks/useLocaleData'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../../lib/motion'
 import projectsFr from '../../../data/projects.fr.json'
 import projectsEn from '../../../data/projects.en.json'
-import { Header, Grid } from './ProjectsGrid.styles'
+import { Header, TreeRoot, List } from './ProjectsTree.styles'
 
 type Project = {
   slug: string
+  fileKind: 'exe' | 'py' | 'dir'
   title: string
   shortDescription: string
   description: string
@@ -25,9 +25,12 @@ type Project = {
   codeName?: string
 }
 
-export function ProjectsGrid() {
+export function ProjectsTree() {
   const reducedMotion = useReducedMotion()
-  const projects = useLocaleData<Project[]>({ fr: projectsFr, en: projectsEn })
+  const projects = useLocaleData<Project[]>({
+    fr: projectsFr as Project[],
+    en: projectsEn as Project[],
+  })
 
   const container = reducedMotion ? reducedStagger : staggerContainer
   const item = reducedMotion ? reducedFadeIn : fadeInUpScroll
@@ -47,9 +50,9 @@ export function ProjectsGrid() {
           </motion.div>
         </Header>
 
-        {/*<AnnouncementMarquee />*/}
+        <TreeRoot>./projects/</TreeRoot>
 
-        <Grid
+        <List
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -57,8 +60,9 @@ export function ProjectsGrid() {
         >
           {projects.map((project) => (
             <motion.div key={project.slug} variants={item}>
-              <ProjectCard
+              <ProjectRow
                 slug={project.slug}
+                fileKind={project.fileKind}
                 title={project.title}
                 shortDescription={project.shortDescription}
                 stack={project.stack}
@@ -70,7 +74,7 @@ export function ProjectsGrid() {
               />
             </motion.div>
           ))}
-        </Grid>
+        </List>
       </Container>
     </Section>
   )

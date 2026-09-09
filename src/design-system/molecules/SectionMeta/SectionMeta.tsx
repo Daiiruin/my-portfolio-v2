@@ -3,7 +3,7 @@ import { Row, Path, Count } from './SectionMeta.styles'
 type Props = {
   /** 1-based section index, matches document order. */
   index: number
-  /** Diegetic path, e.g. "stack", "career", "projects" — no leading slash. */
+  /** Diegetic path, e.g. "stack", "career", "projects" - no leading slash. */
   path: string
   count?: number
   countLabel?: string

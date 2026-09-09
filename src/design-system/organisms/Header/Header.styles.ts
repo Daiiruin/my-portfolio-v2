@@ -13,7 +13,7 @@ export const StyledHeader = styled.header<{ $scrolled: boolean }>`
   transition: background ${({ theme }) => theme.transition.base},
     border-color ${({ theme }) => theme.transition.base};
 
-  /* Opaque, not glass — a scanned surface, not frosted glass. */
+  /* Opaque, not glass - a scanned surface, not frosted glass. */
   background: ${({ $scrolled, theme }) => ($scrolled ? theme.colors.background : 'transparent')};
   border-bottom: 1px solid
     ${({ $scrolled, theme }) => ($scrolled ? theme.colors.border : 'transparent')};
@@ -67,6 +67,28 @@ export const NavRight = styled.div`
   align-items: center;
   gap: ${({ theme }) => theme.space['3']};
   flex-shrink: 0;
+`
+
+export const CommandButton = styled.button`
+  display: none;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-family: ${({ theme }) => theme.font.mono};
+  font-size: ${({ theme }) => theme.font.size.xs};
+  color: ${({ theme }) => theme.colors.nexus};
+  border: 1px solid ${({ theme }) => theme.colors.nexus};
+  transition: background ${({ theme }) => theme.transition.fast},
+    box-shadow ${({ theme }) => theme.transition.fast};
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.nexusSubtle};
+    box-shadow: 0 0 12px ${({ theme }) => theme.colors.nexusSubtle};
+  }
+
+  ${media.md} {
+    display: inline-flex;
+  }
 `
 
 export const MobileMenuButton = styled.button`

@@ -7,8 +7,6 @@ export const Wrapper = styled.div`
   pointer-events: none;
 `
 
-// Kept deliberately faint — this is meant to read as a screen artifact, not a filter.
-// If it starts affecting legibility, the opacity here is wrong, not the concept.
 export const Scanlines = styled.div`
   position: absolute;
   inset: 0;

@@ -6,9 +6,9 @@ export const StyledGlitchText = styled.span<{ $settled: boolean }>`
   display: inline-block;
   color: ${({ theme }) => theme.colors.text};
 
-  /* Chromatic aberration — split red/cyan channels peeking from behind the settled
+  /* Chromatic aberration - split red/cyan channels peeking from behind the settled
      glyph, like a CRT's misaligned electron guns. Visible only while decoding, fading
-     to nothing once the text locks — a screen artifact of the glitch moment, not a
+     to nothing once the text locks - a screen artifact of the glitch moment, not a
      permanent style. No font/color opinions beyond that: this inherits typography from
      wherever it's used (a mono paragraph, a Chakra Petch heading, whatever's around it). */
   &::before,
