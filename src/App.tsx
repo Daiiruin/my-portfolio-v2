@@ -9,6 +9,7 @@ import { GridOverlay } from './design-system/atoms/GridOverlay'
 import { CRTOverlay } from './design-system/atoms/CRTOverlay'
 import { CustomCursor } from './design-system/atoms/CustomCursor'
 import { BootSequence } from './design-system/organisms/BootSequence'
+import { CommandPrompt } from './design-system/organisms/CommandPrompt'
 import { BootProvider } from './contexts/BootContext'
 import { useReducedMotion } from './hooks/useReducedMotion'
 
@@ -29,6 +30,7 @@ export default function App() {
         <CustomCursor />
         <RouteTransition />
         <BootSequence />
+        <CommandPrompt />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />

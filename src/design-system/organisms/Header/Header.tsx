@@ -11,6 +11,7 @@ import {
   Logo,
   Nav,
   NavRight,
+  CommandButton,
   MobileMenuButton,
   MobileNav,
 } from './Header.styles'
@@ -50,6 +51,12 @@ export function Header() {
           </Nav>
 
           <NavRight>
+            <CommandButton
+              onClick={() => window.dispatchEvent(new Event('command-prompt:toggle'))}
+              aria-label="Open command prompt"
+            >
+              ⌘K
+            </CommandButton>
             <LangSwitch />
             <MobileMenuButton
               onClick={() => setMenuOpen((o) => !o)}

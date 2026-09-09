@@ -1,7 +1,4 @@
-import { useTranslation } from 'react-i18next'
-import { LuBriefcase, LuGraduationCap } from 'react-icons/lu'
-import { Icon } from '../../atoms/Icon'
-import { Item, PeriodCol, Period, Dot, ContentCol, ConnectorDot, Role, Company, Description, TypeTag } from './TimelineItem.styles'
+import { Item, PeriodCol, Period, Dot, ContentCol, ConnectorDot, Role, Company, Description, TypeTag, StatusTag } from './TimelineItem.styles'
 
 type Props = {
   type: 'work' | 'education'
@@ -13,8 +10,6 @@ type Props = {
 }
 
 export function TimelineItem({ type, period, company, role, description, isPulse }: Props) {
-  const { t } = useTranslation()
-
   return (
     <Item>
       <PeriodCol>
@@ -23,12 +18,10 @@ export function TimelineItem({ type, period, company, role, description, isPulse
       </PeriodCol>
       <ContentCol>
         <ConnectorDot $pulse={isPulse} />
-        <TypeTag $type={type}>
-          <Icon icon={type === 'work' ? LuBriefcase : LuGraduationCap} size={11} />
-          {t(`career.${type}`)}
-        </TypeTag>
+        <TypeTag $type={type}>{type.toUpperCase()}</TypeTag>
+        {isPulse ? <StatusTag>[ active ]</StatusTag> : null}
+        <Company>{company.toUpperCase()}</Company>
         <Role>{role}</Role>
-        <Company>{company}</Company>
         <Description>{description}</Description>
       </ContentCol>
     </Item>

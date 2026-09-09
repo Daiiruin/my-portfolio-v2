@@ -1,6 +1,7 @@
 [
   {
     "slug": "override",
+    "fileKind": "exe",
     "title": "OVERRIDE",
     "shortDescription": "Escape game hacker interactif en solo : infiltre les serveurs de l'IA NEXUS avant la fin du compte à rebours.",
     "description": "Escape game narratif en solo dans une ambiance cyberpunk : une IA nommée NEXUS a pris le contrôle du réseau, et le joueur doit s'infiltrer à travers 8 niveaux avant la fin d'un compte à rebours global. Chaque niveau propose un mécanisme différent — déchiffrement par table de correspondance, fouille dans une fausse arborescence de fichiers, lecture d'un journal système, logique des nombres premiers, mémorisation d'une séquence lumineuse, frappe rapide de mots qui tombent à l'écran, et destruction de bots en temps réel. Toute erreur fait perdre 30 secondes au compte à rebours. Progression sauvegardée en localStorage pour reprendre une partie interrompue.",
@@ -12,6 +13,7 @@
   },
   {
     "slug": "culture-live",
+    "fileKind": "dir",
     "title": "Culture Live",
     "shortDescription": "Plateforme SaaS B2B d'engagement et de culture d'entreprise.",
     "description": "Application fullstack en monorepo (Turborepo) pour booster l'engagement collaborateur : reconnaissance, challenges, quests, playbooks et impact tracking. Backend NestJS avec architecture feature-first, jobs asynchrones via AWS SQS/SNS et intégrations métier (Slack, Microsoft Teams, Google Chat, HubSpot, Salesforce). Frontend React avec design system maison, i18n sur 9 langues via Lokalise et state management Zustand/TanStack Query.",
@@ -23,6 +25,7 @@
   },
   {
     "slug": "les-heritieres",
+    "fileKind": "dir",
     "title": "Les Héritières",
     "shortDescription": "Marketplace de joaillerie de luxe vintage et de seconde main.",
     "description": "Plateforme e-commerce curatée dédiée à la revente de bijoux et montres de prestige (Cartier, Bulgari, Van Cleef & Arpels…). Fonctionnalités de filtrage par type, pierre et marque, club membres avec ventes privées, estimation en ligne et accompagnement à la vente. Présence physique à Paris, Bruxelles, Genève et Lausanne.",
@@ -34,6 +37,7 @@
   },
   {
     "slug": "lost-world",
+    "fileKind": "py",
     "title": "Lost World",
     "shortDescription": "RPG en tour par tour jouable dans le terminal.",
     "description": "Premier grand projet réalisé à mes débuts. RPG console en Python avec carte de déplacement, système de combats au tour par tour contre des mobs et des boss, progression de niveau, et système de loot (armes & armures). Projet scolaire V1 avec une base solide pensée pour évoluer.",
@@ -45,6 +49,7 @@
   },
   {
     "slug": "atlasee",
+    "fileKind": "dir",
     "title": "Atlasee",
     "shortDescription": "Suis et partage les pays que tu as visités, seul ou en groupe.",
     "description": "Application web fullstack pour visualiser ses pays visités sur une carte du monde interactive. Les utilisateurs peuvent suivre leur propre parcours et créer des groupes pour comparer leurs voyages avec des amis ou la famille. Architecture feature-first : React + NestJS + PostgreSQL, authentification JWT avec rotation de refresh token (cookie httpOnly), système d'invitation par groupe et suivi des pays par groupe.",

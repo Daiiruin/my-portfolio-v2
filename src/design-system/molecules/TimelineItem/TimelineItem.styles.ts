@@ -3,13 +3,11 @@ import styled, { keyframes, css } from 'styled-components'
 export const TypeTag = styled.span<{ $type: 'work' | 'education' }>`
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 2px 10px;
-  border-radius: ${({ theme }) => theme.radii.sm};
+  padding: 2px 8px;
+  font-family: ${({ theme }) => theme.font.mono};
   font-size: ${({ theme }) => theme.font.size.xs};
   font-weight: ${({ theme }) => theme.font.weight.semibold};
   letter-spacing: ${({ theme }) => theme.font.letterSpacing.wide};
-  text-transform: uppercase;
   border: 1px solid;
   width: fit-content;
 
@@ -25,6 +23,16 @@ export const TypeTag = styled.span<{ $type: 'work' | 'education' }>`
           border-color: ${theme.colors.border};
           background: ${theme.colors.surfaceAlt};
         `}
+`
+
+export const StatusTag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  font-family: ${({ theme }) => theme.font.mono};
+  font-size: ${({ theme }) => theme.font.size.xs};
+  font-weight: ${({ theme }) => theme.font.weight.semibold};
+  color: ${({ theme }) => theme.colors.success};
+  margin-left: ${({ theme }) => theme.space['2']};
 `
 import { motion } from 'motion/react'
 import { media } from '../../theme/tokens'
@@ -134,14 +142,16 @@ export const ConnectorDot = styled.div<{ $pulse?: boolean }>`
   }
 `
 
-export const Role = styled.h3`
+export const Company = styled.h3`
+  font-family: ${({ theme }) => theme.font.mono};
   font-size: ${({ theme }) => theme.font.size.lg};
-  font-weight: ${({ theme }) => theme.font.weight.semibold};
+  font-weight: ${({ theme }) => theme.font.weight.bold};
+  letter-spacing: ${({ theme }) => theme.font.letterSpacing.wide};
   color: ${({ theme }) => theme.colors.text};
   line-height: ${({ theme }) => theme.font.lineHeight.tight};
 `
 
-export const Company = styled.span`
+export const Role = styled.span`
   font-size: ${({ theme }) => theme.font.size.base};
   font-weight: ${({ theme }) => theme.font.weight.medium};
   color: ${({ theme }) => theme.colors.accent};

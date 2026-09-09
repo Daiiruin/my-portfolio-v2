@@ -7,7 +7,7 @@ import { Heading } from '../../design-system/atoms/Heading'
 import { HeroBlock } from '../../design-system/organisms/HeroBlock'
 import { StackGrid } from '../../design-system/organisms/StackGrid'
 import { CareerTimeline } from '../../design-system/organisms/CareerTimeline'
-import { ProjectsGrid } from '../../design-system/organisms/ProjectsGrid'
+import { ProjectsTree } from '../../design-system/organisms/ProjectsTree'
 import { ContactForm } from '../../design-system/organisms/ContactForm'
 import { ContactInfo } from '../../design-system/organisms/ContactInfo'
 import { SectionMeta } from '../../design-system/molecules/SectionMeta'
@@ -40,7 +40,7 @@ export function HomePage() {
       <HeroBlock />
       <StackGrid />
       <CareerTimeline />
-      <ProjectsGrid />
+      <ProjectsTree />
 
       <Section id="contact">
         <Container>

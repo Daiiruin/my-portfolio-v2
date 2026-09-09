@@ -69,6 +69,28 @@ export const NavRight = styled.div`
   flex-shrink: 0;
 `
 
+export const CommandButton = styled.button`
+  display: none;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-family: ${({ theme }) => theme.font.mono};
+  font-size: ${({ theme }) => theme.font.size.xs};
+  color: ${({ theme }) => theme.colors.textMuted};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  transition: border-color ${({ theme }) => theme.transition.fast},
+    color ${({ theme }) => theme.transition.fast};
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  ${media.md} {
+    display: inline-flex;
+  }
+`
+
 export const MobileMenuButton = styled.button`
   display: flex;
   align-items: center;
