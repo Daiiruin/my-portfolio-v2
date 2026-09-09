@@ -79,9 +79,13 @@ only, jamais de glow/skew/gradient dessus), radius 0 par défaut (2px max), **th
   fige une fois (2-5 ticks/caractère), aberration chromatique visible seulement pendant le décodage.
   Le nom du hero bascule texte-plat → `<GlitchText>` exactement quand `booting` passe à `false`,
   pour que le décodage se joue *après* le wipe, pas caché dessous
-- [ ] **PR 4** `feat/diegetic-copy` — ProjectsGrid → arborescence de fichiers (`override.exe [RUN
-  →]`), StackGrid en panneau de contrôle, CareerTimeline en log horodaté, voix NEXUS, prompt de
-  commandes (⌘K) — soupape recruteur : jamais bloquant, navigation classique toujours présente
+- [~] **PR 4** `feat/diegetic-copy` — 3 volets sur 4 faits : ProjectsGrid/ProjectCard remplacés par
+  ProjectsTree/ProjectRow (arborescence, `fileKind` par projet : `override.exe [RUN →]`,
+  `lost-world.py`, `culture-live/` en dossier) ; CareerTimeline/TimelineItem en log horodaté
+  (société en tête, `[ active ]` sur l'entrée courante) ; StackChip hover affiche `<N>Y` réel
+  (`years` dans stack.json, pas inventé) au lieu d'un glow ; CommandPrompt (⌘K) avec `ls`/`cd
+  <section>`/`open <project>`/`whoami`/`contact`/`clear`/`help` — reste : **la voix de NEXUS**,
+  pas encore commencée (ton à valider avec l'utilisateur avant d'écrire les lignes définitives)
 - [ ] **PR 5** `feat/webgl-hero` — `@react-three/fiber` v9 (compatible React 19), grille wireframe
   derrière le hero, lazy + fallback CSS statique en reduced-motion/mobile/échec WebGL
 - [ ] **PR 6** `feat/sound-and-signal` — toggle son (off par défaut), compteur réel dans le footer
@@ -129,10 +133,30 @@ néon totale < 15 %, tout ce qui est mouvement/artefact CRT coupé par `useReduc
 - `theme.zIndex.boot` (400) est au-dessus de `toast` (300, partagé par CRTOverlay/CustomCursor/
   RouteTransition) — nécessaire pour garantir l'ordre d'empilement de BootSequence indépendamment
   de l'ordre du DOM dans `App.tsx`.
-- Demande explicite de l'utilisateur : les fichiers `.styles.ts` n'utilisent plus la syntaxe
-  template-string (`` styled.div`...` ``) mais la syntaxe objet
-  (`styled('div')(({ theme }) => ({ ... }))`, propriétés en camelCase). Fait pour l'instant
-  uniquement sur `BootSequence.styles.ts` — pas encore rétro-appliqué au reste du design system,
-  à clarifier avec l'utilisateur avant de le faire ailleurs. Toujours garder les références
-  `theme.*` à l'intérieur de la fonction (jamais de valeurs codées en dur) — c'est un changement
-  de syntaxe, pas un abandon des tokens.
+- Demande explicite de l'utilisateur : tout **nouveau** fichier `.styles.ts` utilise la syntaxe
+  objet (`styled('div')(({ theme }) => ({ ... }))`, camelCase) au lieu de template-string. Fait sur
+  `BootSequence.styles.ts` (converti) et `ProjectRow`/`ProjectsTree`/`CommandPrompt` (créés direct
+  en objet). Les fichiers **existants** non touchés pour cette conversion (StackChip, TimelineItem,
+  CareerTimeline, etc.) restent en template-string — pas de rétro-conversion en masse sans
+  demande explicite. Toujours garder les références `theme.*` à l'intérieur de la fonction (jamais
+  de valeurs codées en dur).
+- `ProjectsTree`/`ProjectRow` remplacent `ProjectsGrid`/`ProjectCard` (supprimés). Chaque projet a
+  un champ `fileKind: 'exe' | 'py' | 'dir'` dans `projects.{fr,en}.json` qui pilote à la fois le
+  nom affiché (`override.exe`, `lost-world.py`, `culture-live/`) et le CTA (`RUN →` seulement pour
+  `exe`, `OPEN →` sinon) — un 6e projet n'a besoin que d'une entrée de données, pas de code.
+- `CommandPrompt` (⌘K) : le bouton du Header le déclenche via un `CustomEvent('command-prompt:toggle')`
+  sur `window`, pas un contexte React — volontairement, pour un simple booléen consommé par un seul
+  bouton. `cd`/`open` valident contre les vrais ids de section (`useScrollSpy`) et les vrais slugs
+  de projet — une faute de frappe donne une ligne d'erreur rouge, jamais un no-op silencieux.
+- `theme.zIndex.behind` (-1) : un z-index négatif sur un `position: fixed` peint avant TOUT le
+  contenu normal de la page, contrairement à `z-index: 0` qui ne peint qu'avant les éléments non-
+  positionnés (`position: static`) — un élément avec juste `position: relative` (sans z-index
+  explicite) passera quand même devant un `z-index: 0`. `GridOverlay` utilise ce token ; si un
+  futur overlay doit être garanti derrière tout, réutiliser `behind`, pas `base`.
+- `CustomCursor` a deux couches distinctes : `Dot` (4px, `colors.nexus`, suit la souris sans spring
+  — c'est le curseur réel) et `Trail` (spring, coloré/dimensionné par état, `zIndex.toast + 1` donc
+  au-dessus du Dot). Ne pas remettre un seul carré avec spring sur les deux rôles — le décalage
+  entre le vrai pointeur et le carré spring est justement ce que l'utilisateur a fait corriger.
+- `stack.{fr,en}.json` a un champ `years` par techno (nombre réel donné par l'utilisateur, jamais
+  à inventer/estimer soi-même) et `stack.en.json` a maintenant ses catégories traduites
+  (`Database`/`Tools`, pas `Base de données`/`Outils`).
