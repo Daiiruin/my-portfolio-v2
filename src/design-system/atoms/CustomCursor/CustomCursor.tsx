@@ -1,19 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useMotionValue, useSpring } from 'motion/react'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
-import { Cursor } from './CustomCursor.styles'
+import { Dot, Trail } from './CustomCursor.styles'
 
 export type CursorState = 'default' | 'link' | 'text'
 
 const INTERACTIVE_SELECTOR = 'a, button, [role="button"], summary'
 const TEXT_SELECTOR = 'input:not([type="submit"]):not([type="checkbox"]), textarea, [contenteditable="true"]'
 
-// A square, not a circle — reads technical rather than soft. Squared off
-// entirely for touch (no pointer to track) and reduced-motion (no trailing spring).
 export function CustomCursor() {
   const reducedMotion = useReducedMotion()
-  // Pointer capability doesn't need to be reactive — read once, lazily, instead of
-  // mirroring it into state via an effect.
   const [pointerFine] = useState(
     () => window.matchMedia('(hover: hover) and (pointer: fine)').matches,
   )
@@ -22,8 +18,8 @@ export function CustomCursor() {
 
   const x = useMotionValue(-100)
   const y = useMotionValue(-100)
-  const springX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.3 })
-  const springY = useSpring(y, { stiffness: 500, damping: 40, mass: 0.3 })
+  const trailX = useSpring(x, { stiffness: 500, damping: 40, mass: 0.3 })
+  const trailY = useSpring(y, { stiffness: 500, damping: 40, mass: 0.3 })
 
   useEffect(() => {
     if (!enabled) return
@@ -49,5 +45,10 @@ export function CustomCursor() {
 
   if (!enabled) return null
 
-  return <Cursor $state={state} style={{ x: springX, y: springY }} aria-hidden="true" />
+  return (
+    <>
+      <Trail $state={state} style={{ x: trailX, y: trailY }} aria-hidden="true" />
+      <Dot style={{ x, y }} aria-hidden="true" />
+    </>
+  )
 }

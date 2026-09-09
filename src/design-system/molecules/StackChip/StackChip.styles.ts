@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { motion } from 'motion/react'
 
 export const Chip = styled(motion.div)`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +32,26 @@ export const IconWrapper = styled.div`
 
   ${Chip}:hover & {
     color: ${({ theme }) => theme.colors.text};
+  }
+`
+
+export const YearsReadout = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${({ theme }) => theme.colors.surfaceAlt};
+  color: ${({ theme }) => theme.colors.accent};
+  font-family: ${({ theme }) => theme.font.mono};
+  font-weight: ${({ theme }) => theme.font.weight.bold};
+  font-size: ${({ theme }) => theme.font.size.lg};
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity ${({ theme }) => theme.transition.fast};
+
+  ${Chip}:hover & {
+    opacity: 1;
   }
 `
 

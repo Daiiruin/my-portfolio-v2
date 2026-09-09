@@ -98,6 +98,7 @@ export const tokens = {
     slow: '400ms ease',
   },
   zIndex: {
+    behind: -1,
     base: 0,
     above: 1,
     sticky: 100,
