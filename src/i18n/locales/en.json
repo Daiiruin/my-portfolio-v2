@@ -14,7 +14,9 @@
     "title": "About"
   },
   "stack": {
-    "title": "My Stack"
+    "title": "My Stack",
+    "years_one": "{{count}} year",
+    "years_other": "{{count}} years"
   },
   "career": {
     "title": "Career",
@@ -29,7 +31,7 @@
     "backHome": "← Back",
     "announcement": {
       "badge": "Last updated: August 10, 2026",
-      "message": "Project in development: an interactive online escape game — you'll soon have to save the world from an AI gone rogue! More news coming soon..."
+      "message": "Project in development: an interactive online escape game - you'll soon have to save the world from an AI gone rogue! More news coming soon..."
     },
     "inProgressCard": {
       "before": "My escape game codenamed ",

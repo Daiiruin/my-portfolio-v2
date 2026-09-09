@@ -9,16 +9,16 @@ export const tokens = {
     text: '#d4d4d0',
     textMuted: '#7c7f88',
     textSubtle: '#4a4a58',
-    // Neon system — named by role, never by hue. Naming a token `nexus` instead of
+    // Neon system - named by role, never by hue. Naming a token `nexus` instead of
     // `magenta` is what keeps it from being reached for decoratively.
-    accent: '#00e5ff', // cyan — dominant, all interactive: links, actions, focus, active rails
+    accent: '#00e5ff', // cyan - dominant, all interactive: links, actions, focus, active rails
     accentHover: '#22ecff',
     accentSubtle: 'rgba(0, 229, 255, 0.10)',
-    nexus: '#ff2e97', // magenta — highlights, code names, the voice of NEXUS. Never below 14px.
+    nexus: '#ff2e97', // magenta - highlights, code names, the voice of NEXUS. Never below 14px.
     nexusSubtle: 'rgba(255, 46, 151, 0.10)',
-    success: '#00ff9c', // green — success states, `[ active ]`, terminal output
-    warning: '#ffb000', // amber — warnings
-    error: '#ff3b30', // red — errors, countdowns
+    success: '#00ff9c', // green - success states, `[ active ]`, terminal output
+    warning: '#ffb000', // amber - warnings
+    error: '#ff3b30', // red - errors, countdowns
     errorSubtle: 'rgba(255, 59, 48, 0.12)',
   },
   space: {
@@ -41,7 +41,7 @@ export const tokens = {
   font: {
     family: "'JetBrains Mono', 'Fira Code', 'Courier New', monospace",
     mono: "'JetBrains Mono', 'Fira Code', 'Courier New', monospace",
-    // Display face — Chakra Petch, reserved for headings ≥ 32px. Discipline: uppercase,
+    // Display face - Chakra Petch, reserved for headings ≥ 32px. Discipline: uppercase,
     // tight tracking, weight 600-700, zero glow/outline/skew/gradient/shadow treatment.
     display: "'Chakra Petch', 'JetBrains Mono', monospace",
     size: {
@@ -82,7 +82,7 @@ export const tokens = {
     xl: '1280px',
   },
   layout: {
-    // Unitless (px) — also consumed as a plain number by Lenis's anchor scroll offset.
+    // Unitless (px) - also consumed as a plain number by Lenis's anchor scroll offset.
     headerHeight: 60,
     containerWidth: '1200px',
     containerNarrow: '760px',
@@ -104,7 +104,7 @@ export const tokens = {
     sticky: 100,
     modal: 200,
     toast: 300,
-    // Above everything, including CRTOverlay/CustomCursor/RouteTransition (all `toast`) —
+    // Above everything, including CRTOverlay/CustomCursor/RouteTransition (all `toast`) -
     // the boot sequence must never end up behind a same-tier overlay by DOM order alone.
     boot: 400,
   },

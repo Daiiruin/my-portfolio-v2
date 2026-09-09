@@ -39,13 +39,11 @@ export const YearsReadout = styled.div`
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: ${({ theme }) => theme.space['1']};
   background: ${({ theme }) => theme.colors.surfaceAlt};
-  color: ${({ theme }) => theme.colors.accent};
-  font-family: ${({ theme }) => theme.font.mono};
-  font-weight: ${({ theme }) => theme.font.weight.bold};
-  font-size: ${({ theme }) => theme.font.size.lg};
   opacity: 0;
   pointer-events: none;
   transition: opacity ${({ theme }) => theme.transition.fast};
@@ -53,6 +51,19 @@ export const YearsReadout = styled.div`
   ${Chip}:hover & {
     opacity: 1;
   }
+`
+
+export const YearsName = styled.span`
+  font-size: ${({ theme }) => theme.font.size.xs};
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-family: ${({ theme }) => theme.font.mono};
+`
+
+export const YearsValue = styled.span`
+  color: ${({ theme }) => theme.colors.accent};
+  font-family: ${({ theme }) => theme.font.mono};
+  font-weight: ${({ theme }) => theme.font.weight.bold};
+  font-size: ${({ theme }) => theme.font.size.sm};
 `
 
 export const ChipName = styled.span`

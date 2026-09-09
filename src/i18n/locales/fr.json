@@ -14,7 +14,9 @@
     "title": "À propos"
   },
   "stack": {
-    "title": "Ma Stack"
+    "title": "Ma Stack",
+    "years_one": "{{count}} an",
+    "years_other": "{{count}} ans"
   },
   "career": {
     "title": "Mon Parcours",

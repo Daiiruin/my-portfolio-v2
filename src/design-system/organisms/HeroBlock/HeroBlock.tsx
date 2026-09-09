@@ -71,7 +71,7 @@ export function HeroBlock() {
             </TagLine>
 
             {/* The single most-viewed text on the site. While booting, the hero sits
-                behind the boot overlay anyway, so plain text is fine here — swapping to
+                behind the boot overlay anyway, so plain text is fine here - swapping to
                 GlitchText only once `booting` flips false mounts it fresh exactly when
                 the boot wipe reveals the page, so the decode-in is what the visitor
                 actually sees instead of finishing unseen behind the overlay. */}

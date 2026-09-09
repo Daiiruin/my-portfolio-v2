@@ -2,7 +2,7 @@ import { Wrapper, Inner, Line } from './GridOverlay.styles'
 
 // Signature background layer: hairline verticals aligned to the container's edge
 // and its column divisions. `colors.grid` sits only a shade above `background`,
-// so this reads as structure, not decoration — the site's grid made visible.
+// so this reads as structure, not decoration - the site's grid made visible.
 const COLUMN_COUNT = 6
 
 export function GridOverlay() {

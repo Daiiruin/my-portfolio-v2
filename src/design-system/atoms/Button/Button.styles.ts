@@ -21,7 +21,7 @@ const sizeStyles = {
 
 const variantStyles = {
   primary: css`
-    /* Cyan is bright — pair it with the dark background color for contrast, never white. */
+    /* Cyan is bright - pair it with the dark background color for contrast, never white. */
     background: ${({ theme }) => theme.colors.accent};
     color: ${({ theme }) => theme.colors.background};
     font-weight: ${({ theme }) => theme.font.weight.semibold};

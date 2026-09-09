@@ -57,7 +57,7 @@ export const reducedStagger: Variants = {
   visible: { transition: { staggerChildren: 0.05 } },
 }
 
-// Nested-stagger reveal used by RevealText — a masked word/char sweep instead of the
+// Nested-stagger reveal used by RevealText - a masked word/char sweep instead of the
 // blanket fadeInUp above. `revealContainer` inherits hidden/visible propagated from an
 // ancestor (whileInView, etc., same convention as every other reveal here) and cascades
 // its own stagger timing down to `revealSegment` children.

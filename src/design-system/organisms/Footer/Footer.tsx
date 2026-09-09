@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <StyledFooter>
       <Inner>
-        <Text variant="caption">© {year} — Built with React & styled-components</Text>
+        <Text variant="caption">© {year} - Built with React & styled-components</Text>
         <Links>
           {contactData.github && (
             <SocialLink href={contactData.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">

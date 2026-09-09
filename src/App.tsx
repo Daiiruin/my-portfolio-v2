@@ -10,6 +10,7 @@ import { CRTOverlay } from './design-system/atoms/CRTOverlay'
 import { CustomCursor } from './design-system/atoms/CustomCursor'
 import { BootSequence } from './design-system/organisms/BootSequence'
 import { CommandPrompt } from './design-system/organisms/CommandPrompt'
+import { NexusVoice } from './design-system/organisms/NexusVoice'
 import { BootProvider } from './contexts/BootContext'
 import { useReducedMotion } from './hooks/useReducedMotion'
 
@@ -31,6 +32,7 @@ export default function App() {
         <RouteTransition />
         <BootSequence />
         <CommandPrompt />
+        <NexusVoice />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -42,7 +44,7 @@ export default function App() {
   )
 
   // Skip Lenis entirely under reduced motion rather than mounting it with smoothing
-  // disabled — native scroll then behaves exactly as the OS setting promises.
+  // disabled - native scroll then behaves exactly as the OS setting promises.
   if (reducedMotion) return content
 
   return (

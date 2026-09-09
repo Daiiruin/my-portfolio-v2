@@ -21,6 +21,11 @@ type LogLine = { kind: 'input' | 'output' | 'error'; text: string }
 
 const PROJECT_SLUGS = projects.map((p) => p.slug)
 
+const NEXUS_EASTER_EGG = {
+  fr: "Ah, le fameux NEXUS... Une IA assez marrante, mais du genre pot de colle... Une fois accrochée à ton réseau, bon courage pour t'en débarrasser. J'espère qu'elle ne tombera jamais sur ce message. Si t'as envie de l'affronter : file dans mes projets, trouve OVERRIDE, et infiltre son système. Bonne chance ! (Tu en auras besoin).",
+  en: "Ah, the infamous NEXUS... A pretty funny AI, but clingy as hell... Once it gets its hooks into your network, good luck getting rid of it. Hoping it never reads this message. If you want to try your luck against it: head to my projects, find OVERRIDE, and get in there. Good luck ! (you'll need it).",
+}
+
 export function CommandPrompt() {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState('')
@@ -30,6 +35,7 @@ export function CommandPrompt() {
   const navigate = useNavigate()
   const lenis = useLenis()
   const profile = useLocaleData({ fr: profileFr, en: profileEn })
+  const nexusEasterEgg = useLocaleData(NEXUS_EASTER_EGG)
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -50,7 +56,9 @@ export function CommandPrompt() {
   }, [])
 
   useEffect(() => {
-    if (open) inputRef.current?.focus()
+    if (!open) return
+    inputRef.current?.focus()
+    window.dispatchEvent(new Event('command-prompt:opened'))
   }, [open])
 
   useEffect(() => {
@@ -76,7 +84,7 @@ export function CommandPrompt() {
       case 'help':
         output.push({
           kind: 'output',
-          text: 'ls · cd <section> · open <project> · whoami · contact · clear',
+          text: 'ls · cd <section> · open <project> · whoami · contact · nexus · clear',
         })
         break
       case 'ls':
@@ -110,11 +118,14 @@ export function CommandPrompt() {
       case 'whoami':
         output.push({ kind: 'output', text: profile.bio })
         break
+      case 'nexus':
+        output.push({ kind: 'output', text: nexusEasterEgg })
+        break
       case 'clear':
         setLog([])
         return
       default:
-        output.push({ kind: 'error', text: `command not found: ${cmd} — try 'help'` })
+        output.push({ kind: 'error', text: `command not found: ${cmd} - try 'help'` })
     }
 
     setLog((prev) => [...prev, ...output])

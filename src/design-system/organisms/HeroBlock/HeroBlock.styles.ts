@@ -8,7 +8,7 @@ export const HeroWrapper = styled.div`
   align-items: center;
   position: relative;
   overflow: hidden;
-  /* id="about" is a nav target too — same reasoning as Section.styles.ts. */
+  /* id="about" is a nav target too - same reasoning as Section.styles.ts. */
   scroll-margin-top: ${({ theme }) => theme.layout.headerHeight}px;
 `
 
@@ -57,7 +57,7 @@ export const Dot = styled.span`
 
 export const Name = styled(motion.h1)`
   /* Bypasses the Heading atom (custom clamp() sizing), so the Chakra Petch discipline
-     — display face, uppercase, tight tracking, weight 600-700, zero extra treatment —
+     - display face, uppercase, tight tracking, weight 600-700, zero extra treatment -
      is applied here directly rather than through levelStyles. */
   font-family: ${({ theme }) => theme.font.display};
   text-transform: uppercase;

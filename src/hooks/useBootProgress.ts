@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import projects from '../data/projects.fr.json'
 
-// Image paths are identical across locales — either file works as the asset list.
+// Image paths are identical across locales - either file works as the asset list.
 const ASSET_URLS = projects.map((p) => p.image)
 const SAFETY_TIMEOUT_MS = 4000
 

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import type { HeadingLevel } from './Heading'
 
 // Chakra Petch discipline: display face reserved for ≥32px, uppercase, tight tracking,
-// weight 600-700, and NOTHING else — no glow, outline, skew, gradient, or shadow. The
+// weight 600-700, and NOTHING else - no glow, outline, skew, gradient, or shadow. The
 // typeface carries the "techno" read; any added treatment tips it into e-sport-logo territory.
 const displayFace = css`
   font-family: ${({ theme }) => theme.font.display};
