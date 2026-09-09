@@ -21,7 +21,7 @@
     "period": "Jul - Oct 2022",
     "company": "RIZNA",
     "role": "Front-end Developer Intern",
-    "description": "My first professional experience in a superb company. I learned so much in a short time!!"
+    "description": "My first professional experience, in a company that gave me real confidence. I learned an enormous amount, very fast."
   },
   {
     "id": "3",
@@ -45,7 +45,7 @@
     "period": "2020 - 2021",
     "company": "Gustave Eiffel University",
     "role": "Mathematics and Computer Science Bachelor",
-    "description": "The year I really understood that I loved web development in particular."
+    "description": "That's the year I realized web development was really what interested me."
   },
   {
     "id": "6",
@@ -53,6 +53,6 @@
     "period": "2017 - 2020",
     "company": "Simone de Beauvoir High School",
     "role": "Scientific Baccalaureate, Computer Science Option",
-    "description": "My high school years where I was able to discover web development :')."
+    "description": "My high school years, where I first discovered web development."
   }
 ]

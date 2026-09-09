@@ -21,7 +21,7 @@
     "period": "Jui - Oct 2022",
     "company": "RIZNA",
     "role": "Développeur Front-end Stagiaire",
-    "description": "Ma première expérience professionnelle dans une superbe entreprise. J'ai appris énormément en très peu de temps !!"
+    "description": "Ma première expérience professionnelle, dans une entreprise qui m'a mis en confiance. J'y ai appris énormément, très vite."
   },
   {
     "id": "3",
@@ -45,7 +45,7 @@
     "period": "2020 - 2021",
     "company": "Université Gustave Eiffel",
     "role": "Licence Mathématiques et Informatique",
-    "description": "L'année où j'ai vraiment compris que j'aimais le développement web en particulier."
+    "description": "C'est cette année-là que j'ai compris que le développement web était vraiment ce qui m'intéressait."
   },
   {
     "id": "6",
@@ -53,6 +53,6 @@
     "period": "2017 - 2020",
     "company": "Lycée Simone de Beauvoir",
     "role": "Baccalauréat scientifique, option NSI",
-    "description": "Mes années lycée où j'ai pu découvrir le développement web :')."
+    "description": "Mes années lycée, où j'ai découvert le développement web pour la première fois."
   }
 ]
