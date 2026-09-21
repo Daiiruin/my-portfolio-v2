@@ -45,7 +45,7 @@ export function ProjectsTree() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionMeta index={4} path="projects" count={projects.length} countLabel="entries" />
+            <SectionMeta index={5} path="projects" count={projects.length} countLabel="entries" />
             <Heading level={2}>Projects</Heading>
           </motion.div>
         </Header>

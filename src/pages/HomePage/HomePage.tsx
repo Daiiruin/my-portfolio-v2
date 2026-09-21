@@ -6,6 +6,7 @@ import { Section } from '../../design-system/atoms/Section'
 import { Heading } from '../../design-system/atoms/Heading'
 import { HeroBlock } from '../../design-system/organisms/HeroBlock'
 import { StackGrid } from '../../design-system/organisms/StackGrid'
+import { CertificationsGrid } from '../../design-system/organisms/CertificationsGrid'
 import { CareerTimeline } from '../../design-system/organisms/CareerTimeline'
 import { ProjectsTree } from '../../design-system/organisms/ProjectsTree'
 import { ContactForm } from '../../design-system/organisms/ContactForm'
@@ -39,6 +40,7 @@ export function HomePage() {
     <PageLayout>
       <HeroBlock />
       <StackGrid />
+      <CertificationsGrid />
       <CareerTimeline />
       <ProjectsTree />
 
@@ -51,7 +53,7 @@ export function HomePage() {
             viewport={{ once: true, margin: '-80px' }}
           >
             <motion.div variants={item}>
-              <SectionMeta index={5} path="contact" />
+              <SectionMeta index={6} path="contact" />
               <Heading level={2}>Contact</Heading>
             </motion.div>
           </ContactHeader>

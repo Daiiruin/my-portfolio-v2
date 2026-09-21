@@ -50,7 +50,7 @@ export function CareerTimeline() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionMeta index={3} path="career" count={career.length} countLabel="entries" />
+            <SectionMeta index={4} path="career" count={career.length} countLabel="entries" />
             <Heading level={2}>Experience</Heading>
           </motion.div>
         </Header>

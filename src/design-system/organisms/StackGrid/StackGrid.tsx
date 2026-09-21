@@ -41,8 +41,8 @@ export function StackGrid() {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
         >
-          {categories.map((category) => (
-            <CategoryGroup key={category} variants={item}>
+          {categories.map((category, index) => (
+            <CategoryGroup key={index} variants={item}>
               <CategoryTitle>{category}</CategoryTitle>
               <Grid>
                 {stack

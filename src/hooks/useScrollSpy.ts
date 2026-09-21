@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export const NAV_SECTION_IDS = ['about', 'stack', 'career', 'projects', 'contact'] as const
+export const NAV_SECTION_IDS = ['about', 'stack', 'certifications', 'career', 'projects', 'contact'] as const
 export type NavSectionId = (typeof NAV_SECTION_IDS)[number]
 
 export function useScrollSpy(): NavSectionId | '' {
