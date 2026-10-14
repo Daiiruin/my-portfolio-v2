@@ -22,7 +22,6 @@ import {
   HeroWrapper,
   HeroGrid,
   HeroLeft,
-  HeroRight,
   TagLine,
   Dot,
   Name,
@@ -33,9 +32,6 @@ import {
   Actions,
   ScrollHint,
   ScrollLine,
-  AvatarFrame,
-  AvatarPlaceholder,
-  AvatarAccent,
 } from './HeroBlock.styles'
 
 export function HeroBlock() {
@@ -47,7 +43,6 @@ export function HeroBlock() {
   const container = reducedMotion ? reducedStagger : staggerContainer
   const item = reducedMotion ? reducedFadeIn : fadeInUp
 
-  const initials = `${profile.firstName[0]}${profile.lastName[0]}`
   const fullName = `${t('hero.greeting')} ${profile.firstName} ${profile.lastName}`
 
   return (
@@ -101,21 +96,6 @@ export function HeroBlock() {
               </Button>
             </Actions>
           </HeroLeft>
-
-          <HeroRight
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={
-              reducedMotion
-                ? { duration: 0 }
-                : { delay: 0.6, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
-            }
-          >
-            <AvatarFrame>
-              <AvatarPlaceholder>{initials}</AvatarPlaceholder>
-              <AvatarAccent />
-            </AvatarFrame>
-          </HeroRight>
         </HeroGrid>
       </Container>
 

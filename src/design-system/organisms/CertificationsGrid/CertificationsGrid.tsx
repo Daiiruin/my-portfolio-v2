@@ -27,7 +27,7 @@ export function CertificationsGrid() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionMeta index={3} path="certifications" count={certifications.length} countLabel="badges" />
+            <SectionMeta index={5} path="certifications" count={certifications.length} countLabel="badges" />
             <Heading level={2}>Certifications</Heading>
           </motion.div>
         </Header>

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import styled from 'styled-components'
 import { motion } from 'motion/react'
 import { FaGithub } from 'react-icons/fa6'
-import { LuExternalLink } from 'react-icons/lu'
+import { LuArrowLeft, LuExternalLink } from 'react-icons/lu'
 import { useTranslation } from 'react-i18next'
 import { PageLayout } from '../../templates/PageLayout'
 import { Container } from '../../design-system/atoms/Container'
@@ -37,18 +37,18 @@ const Hero = styled.div`
 const BackButton = styled.button`
   background: none;
   border: none;
-  color: ${({ theme }) => theme.colors.textSubtle};
+  color: ${({ theme }) => theme.colors.text};
   font-size: ${({ theme }) => theme.font.size.sm};
   cursor: pointer;
   padding: 0;
   margin-bottom: ${({ theme }) => theme.space['8']};
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.space['1']};
+  gap: ${({ theme }) => theme.space['2']};
   transition: color ${({ theme }) => theme.transition.fast};
 
   &:hover {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `
 
@@ -157,7 +157,10 @@ export function ProjectDetailPage() {
         <Container>
           <motion.div variants={container} initial="hidden" animate="visible">
             <motion.div variants={item}>
-              <BackButton onClick={() => navigate(-1)}>{t('projects.backHome')}</BackButton>
+              <BackButton onClick={() => navigate(-1)}>
+                <Icon icon={LuArrowLeft} size={16} />
+                {t('projects.backHome')}
+              </BackButton>
             </motion.div>
             <motion.div variants={item}>
               <Heading level={1}>{project.title}</Heading>

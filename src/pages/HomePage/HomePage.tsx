@@ -40,9 +40,9 @@ export function HomePage() {
     <PageLayout>
       <HeroBlock />
       <StackGrid />
-      <CertificationsGrid />
       <CareerTimeline />
       <ProjectsTree />
+      <CertificationsGrid />
 
       <Section id="contact">
         <Container>

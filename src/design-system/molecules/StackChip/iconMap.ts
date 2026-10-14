@@ -30,8 +30,11 @@ import {
   SiStorybook,
   SiFlutter,
   SiSentry,
+  SiAngular,
+  SiOpenjdk,
+  SiSpringboot,
 } from 'react-icons/si'
-import { LuCode } from 'react-icons/lu'
+import { LuCode, LuArrowLeftRight } from 'react-icons/lu'
 
 export const iconMap: Record<string, IconType> = {
   react: SiReact,
@@ -64,6 +67,10 @@ export const iconMap: Record<string, IconType> = {
   storybook: SiStorybook,
   flutter: SiFlutter,
   sentry: SiSentry,
+  angular: SiAngular,
+  java: SiOpenjdk,
+  springboot: SiSpringboot,
+  websocket: LuArrowLeftRight,
 }
 
 export function getIcon(key: string): IconType {

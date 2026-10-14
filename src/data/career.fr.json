@@ -2,26 +2,30 @@
   {
     "id": "0",
     "type": "work",
-    "period": "Oct 2024 - Now",
-    "company": "Culture Live",
-    "role": "Développeur Front-end en alternance",
-    "description": "Etant en charge de nombreux sujets, j'ai pu exponentiellement développer mes compétences en React et faire mes débuts en backend avec NestJS. J'ai également pu découvrir de nombreux autres outils et bonnes pratiques."
+    "years": 0,
+    "active": true,
+    "period": "Oct 2026 - Présent",
+    "company": "Freelance",
+    "role": "Développeur Full-Stack",
+    "description": "En parallèle de ma recherche de CDI, je développe une plateforme SaaS collaborative pour les bureaux d'études. Elle centralise les fichiers techniques d'un projet et réunit whiteboard et mindmap en temps réel, suivi des demandes et messagerie."
   },
   {
     "id": "1",
     "type": "work",
-    "period": "Oct 2022 - Sep 2024",
-    "company": "RIZNA",
-    "role": "Développeur Front-end en alternance",
-    "description": "Deux ans sur des projets frontend variés, du site vitrine à l'application métier. J'y ai solidifié mes pratiques React, gagné en autonomie et appris à livrer dans un vrai environnement de production."
+    "years": 2,
+    "period": "Oct 2024 - Oct 2026",
+    "company": "Culture Live",
+    "role": "Développeur Full-Stack",
+    "description": "Plateforme SaaS B2B, repositionnée en cours de mission d'un produit d'engagement collaborateur vers une offre Sales Tech. Architecture feature-first en monorepo Turborepo (React/TypeScript, NestJS), conception du design system interne (~150 composants sur Ant Design, documentés sous Storybook), refonte complète du frontend et développement d'un portail d'administration interne. Intégrations Slack et Microsoft Teams, i18n sur 9 langues via Lokalise, state management Zustand / TanStack Query."
   },
   {
     "id": "2",
     "type": "work",
-    "period": "Jui - Oct 2022",
+    "years": 3,
+    "period": "Oct 2021 - Sep 2024",
     "company": "RIZNA",
-    "role": "Développeur Front-end Stagiaire",
-    "description": "Ma première expérience professionnelle, dans une entreprise qui m'a mis en confiance. J'y ai appris énormément, très vite."
+    "role": "Développeur Front-end",
+    "description": "Trois ans sur des projets frontend variés, du site vitrine à l'application métier, en environnement de production. Échanges directs avec les clients pour cadrer les besoins fonctionnels, avec une communication principalement en anglais au contact d'une clientèle et d'équipes internationales."
   },
   {
     "id": "3",

@@ -9,7 +9,7 @@ import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { staggerContainer, fadeInUpScroll, reducedStagger, reducedFadeIn } from '../../../lib/motion'
 import projectsFr from '../../../data/projects.fr.json'
 import projectsEn from '../../../data/projects.en.json'
-import { Header, TreeRoot, List } from './ProjectsTree.styles'
+import { Header, List } from './ProjectsTree.styles'
 
 type Project = {
   slug: string
@@ -45,12 +45,10 @@ export function ProjectsTree() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionMeta index={5} path="projects" count={projects.length} countLabel="entries" />
+            <SectionMeta index={4} path="projects" count={projects.length} countLabel="entries" />
             <Heading level={2}>Projects</Heading>
           </motion.div>
         </Header>
-
-        <TreeRoot>./projects/</TreeRoot>
 
         <List
           variants={container}

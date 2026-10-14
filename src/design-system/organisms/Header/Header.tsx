@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { LuMenu, LuX } from 'react-icons/lu'
 import { NavItem } from '../../molecules/NavItem'
@@ -21,6 +22,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const activeId = useScrollSpy()
+  const isHome = useLocation().pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -28,7 +30,7 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const navLinks = NAV_SECTION_IDS.map((id) => ({
+  const navLinks = (isHome ? NAV_SECTION_IDS : []).map((id) => ({
     id,
     href: `#${id}`,
     label: t(`nav.${id}`),
@@ -58,13 +60,15 @@ export function Header() {
               ⌘K
             </CommandButton>
             <LangSwitch />
-            <MobileMenuButton
-              onClick={() => setMenuOpen((o) => !o)}
-              aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-              aria-expanded={menuOpen}
-            >
-              <Icon icon={menuOpen ? LuX : LuMenu} size={20} />
-            </MobileMenuButton>
+            {isHome && (
+              <MobileMenuButton
+                onClick={() => setMenuOpen((o) => !o)}
+                aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+                aria-expanded={menuOpen}
+              >
+                <Icon icon={menuOpen ? LuX : LuMenu} size={20} />
+              </MobileMenuButton>
+            )}
           </NavRight>
         </Inner>
       </StyledHeader>

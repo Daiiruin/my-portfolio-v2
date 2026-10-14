@@ -121,6 +121,13 @@ export function CommandPrompt() {
       case 'nexus':
         output.push({ kind: 'output', text: nexusEasterEgg })
         break
+      case 'rm':
+        if (rest.some((flag) => /^-(rf|fr)$/.test(flag))) {
+          output.push({ kind: 'output', text: "Qu'est-ce que tu espérais en faisant ça..." })
+        } else {
+          output.push({ kind: 'error', text: `command not found: ${cmd} - try 'help'` })
+        }
+        break
       case 'clear':
         setLog([])
         return

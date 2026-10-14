@@ -23,6 +23,8 @@ import { Header, List, TabBar, TabButton, TabBadge } from './CareerTimeline.styl
 type CareerEntry = {
   id: string
   type: 'work' | 'education'
+  years?: number
+  active?: boolean
   period: string
   company: string
   role: string
@@ -50,7 +52,7 @@ export function CareerTimeline() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.div variants={item}>
-            <SectionMeta index={4} path="career" count={career.length} countLabel="entries" />
+            <SectionMeta index={3} path="career" count={career.length} countLabel="entries" />
             <Heading level={2}>Experience</Heading>
           </motion.div>
         </Header>
@@ -59,7 +61,7 @@ export function CareerTimeline() {
           <TabButton $active={activeTab === 'work'} onClick={() => setActiveTab('work')}>
             <Icon icon={LuBriefcase} size={14} />
             {t('career.work')}
-            <TabBadge $active={activeTab === 'work'}>{t('career.workBadge')}</TabBadge>
+            <TabBadge $active={activeTab === 'work'}>{t('career.years', { count: Number(t('career.workYears')) })}</TabBadge>
           </TabButton>
           <TabButton $active={activeTab === 'education'} onClick={() => setActiveTab('education')}>
             <Icon icon={LuGraduationCap} size={14} />
@@ -82,15 +84,16 @@ export function CareerTimeline() {
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
             >
-              {filtered.map((entry, index) => (
+              {filtered.map((entry) => (
                 <motion.div key={entry.id} variants={item}>
                   <TimelineItem
                     type={entry.type}
+                    tag={entry.years !== undefined ? t('career.years', { count: entry.years }) : undefined}
                     period={entry.period}
                     company={entry.company}
                     role={entry.role}
                     description={entry.description}
-                    isPulse={index === 0 && activeTab === 'work'}
+                    isPulse={entry.active}
                   />
                 </motion.div>
               ))}

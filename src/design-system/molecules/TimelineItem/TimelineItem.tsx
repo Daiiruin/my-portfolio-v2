@@ -2,6 +2,7 @@ import { Item, PeriodCol, Period, Dot, ContentCol, ConnectorDot, Role, Company, 
 
 type Props = {
   type: 'work' | 'education'
+  tag?: string
   period: string
   company: string
   role: string
@@ -9,7 +10,7 @@ type Props = {
   isPulse?: boolean
 }
 
-export function TimelineItem({ type, period, company, role, description, isPulse }: Props) {
+export function TimelineItem({ type, tag, period, company, role, description, isPulse }: Props) {
   return (
     <Item>
       <PeriodCol>
@@ -18,7 +19,7 @@ export function TimelineItem({ type, period, company, role, description, isPulse
       </PeriodCol>
       <ContentCol>
         <ConnectorDot $pulse={isPulse} />
-        <TypeTag $type={type}>{type.toUpperCase()}</TypeTag>
+        <TypeTag $type={type}>{(tag ?? type).toUpperCase()}</TypeTag>
         {isPulse ? <StatusTag>[ active ]</StatusTag> : null}
         <Company>{company.toUpperCase()}</Company>
         <Role>{role}</Role>

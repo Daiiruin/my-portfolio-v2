@@ -2,26 +2,30 @@
   {
     "id": "0",
     "type": "work",
-    "period": "Oct 2024 - Now",
-    "company": "Culture Live",
-    "role": "Work-study Front-end Developer",
-    "description": "Handling a wide range of topics, I was able to exponentially grow my React skills and take my first steps in backend development with NestJS. I also got to discover many other tools and best practices."
+    "years": 0,
+    "active": true,
+    "period": "Oct 2026 - Now",
+    "company": "Freelance",
+    "role": "Full-Stack Developer",
+    "description": "Alongside my search for a permanent position, I am building a collaborative SaaS platform for engineering firms. It centralizes a project's technical files and brings together real-time whiteboard and mind map, request tracking and messaging."
   },
   {
     "id": "1",
     "type": "work",
-    "period": "Oct 2022 - Sep 2024",
-    "company": "RIZNA",
-    "role": "Work-study Front-end Developer",
-    "description": "Two years across varied frontend projects, from landing pages to business applications. I strengthened my React practices, grew more autonomous and learned to ship in a real production environment"
+    "years": 2,
+    "period": "Oct 2024 - Oct 2026",
+    "company": "Culture Live",
+    "role": "Full-Stack Developer",
+    "description": "B2B SaaS platform, repositioned mid-mission from an employee engagement product to a Sales Tech offering. Feature-first architecture in a Turborepo monorepo (React/TypeScript, NestJS), design of the internal design system (~150 components built on Ant Design, documented in Storybook), full frontend rebuild and development of an internal admin portal. Slack and Microsoft Teams integrations, i18n across 9 languages via Lokalise, state management with Zustand / TanStack Query."
   },
   {
     "id": "2",
     "type": "work",
-    "period": "Jul - Oct 2022",
+    "years": 3,
+    "period": "Oct 2021 - Sep 2024",
     "company": "RIZNA",
-    "role": "Front-end Developer Intern",
-    "description": "My first professional experience, in a company that gave me real confidence. I learned an enormous amount, very fast."
+    "role": "Front-end Developer",
+    "description": "Three years on varied frontend projects in production, from landing pages to business applications. Worked directly with clients to scope functional requirements, communicating mostly in English with international clients and teams."
   },
   {
     "id": "3",

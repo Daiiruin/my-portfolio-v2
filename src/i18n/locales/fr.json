@@ -1,10 +1,10 @@
 {
   "nav": {
     "about": "À propos",
-    "stack": "Stack",
-    "certifications": "Certifications",
-    "career": "Parcours",
+    "stack": "Technologies",
+    "career": "Expérience",
     "projects": "Projets",
+    "certifications": "Certifications",
     "contact": "Contact"
   },
   "hero": {
@@ -16,20 +16,24 @@
   },
   "stack": {
     "title": "Ma Stack",
+    "years_zero": "< 1 an",
     "years_one": "{{count}} an",
     "years_other": "{{count}} ans"
   },
   "career": {
     "title": "Mon Parcours",
     "work": "Expérience",
-    "workBadge": "4 ans",
+    "workYears": 5,
+    "years_zero": "< 1 an",
+    "years_one": "{{count}} an",
+    "years_other": "{{count}} ans",
     "education": "Formation",
     "educationBadge": "Bac +5"
   },
   "projects": {
     "title": "Mes Projets",
     "viewDetails": "Voir le projet",
-    "backHome": "← Retour",
+    "backHome": "Retour",
     "announcement": {
       "badge": "Dernière mise à jour : 10 août 2026",
       "message": "Projet en cours de développement : Escape game interactif en ligne, vous devrez bientôt sauver le monde d'une IA devenue incontrôlable ! Plus de nouvelles bientôt..."

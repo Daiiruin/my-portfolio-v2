@@ -48,6 +48,12 @@
     "years": 1
   },
   {
+    "name": "Angular",
+    "category": "Frontend",
+    "icon": "angular",
+    "years": 0
+  },
+  {
     "name": "React Native",
     "category": "Mobile",
     "icon": "reactnative",
@@ -82,6 +88,24 @@
     "category": "Backend",
     "icon": "python",
     "years": 5
+  },
+  {
+    "name": "Java",
+    "category": "Backend",
+    "icon": "java",
+    "years": 0
+  },
+  {
+    "name": "Spring Boot",
+    "category": "Backend",
+    "icon": "springboot",
+    "years": 0
+  },
+  {
+    "name": "WebSocket",
+    "category": "Backend",
+    "icon": "websocket",
+    "years": 1
   },
   {
     "name": "PostgreSQL",

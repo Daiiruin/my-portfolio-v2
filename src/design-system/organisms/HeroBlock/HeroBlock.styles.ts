@@ -18,25 +18,11 @@ export const HeroGrid = styled.div`
   gap: ${({ theme }) => theme.space['12']};
   align-items: center;
   width: 100%;
-
-  ${media.lg} {
-    grid-template-columns: 1fr 1fr;
-  }
 `
 
 export const HeroLeft = styled(motion.div)`
   display: flex;
   flex-direction: column;
-`
-
-export const HeroRight = styled(motion.div)`
-  display: none;
-
-  ${media.lg} {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
 `
 
 export const TagLine = styled(motion.div)`
@@ -135,33 +121,4 @@ export const ScrollLine = styled(motion.div)`
   width: 1px;
   height: 40px;
   background: ${({ theme }) => theme.colors.accent};
-`
-
-export const AvatarFrame = styled.div`
-  position: relative;
-  width: 280px;
-  height: 320px;
-`
-
-export const AvatarPlaceholder = styled.div`
-  width: 100%;
-  height: 100%;
-  background: ${({ theme }) => theme.colors.surfaceAlt};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.none};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: ${({ theme }) => theme.font.size['5xl']};
-  color: ${({ theme }) => theme.colors.textSubtle};
-  font-weight: ${({ theme }) => theme.font.weight.bold};
-  letter-spacing: ${({ theme }) => theme.font.letterSpacing.tight};
-`
-
-export const AvatarAccent = styled.div`
-  position: absolute;
-  inset: -8px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.none};
-  z-index: -1;
 `
